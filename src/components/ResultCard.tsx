@@ -1,7 +1,9 @@
 "use client";
 
-import React from 'react';
-import { ShoppingBag, RotateCcw, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShoppingBag, RotateCcw, Info } from 'lucide-react';
+import { ingredientsData } from '../data/ingredients';
+import IngredientModal from './IngredientModal';
 
 interface Profile {
   id: string;
@@ -15,6 +17,8 @@ interface Profile {
 }
 
 const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => void }) => {
+  const [selectedIngredient, setSelectedIngredient] = useState<any>(null);
+
   if (!profile) return null;
 
   const phoneNumber = "5515996842962";
@@ -22,7 +26,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="max-w-6xl mx-auto min-h-[80vh] bg-stone-900/40 border border-stone-800 rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 mx-4">
+    <div className="max-w-6xl mx-auto min-h-[80vh] bg-stone-900/40 border border-stone-800 rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 mx-4 mb-20">
       <div className="grid lg:grid-cols-12 min-h-full">
         <div className="lg:col-span-5 relative h-72 md:h-auto overflow-hidden">
           <img 
@@ -45,12 +49,22 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
             {profile.description}
           </p>
 
-          <div className="flex flex-wrap gap-2">
-            {profile.notes?.map((note, i) => (
-              <span key={i} className="px-5 py-2 bg-stone-800/50 text-stone-300 text-sm rounded-full border border-stone-700/50 uppercase tracking-widest">
-                {note}
-              </span>
-            ))}
+          <div className="space-y-4">
+            <p className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
+              Composição da Fragrância (clique para detalhes)
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {profile.notes?.map((note, i) => (
+                <button 
+                  key={i} 
+                  onClick={() => setSelectedIngredient(ingredientsData[note] || { name: note, description: "Uma nota olfativa essencial.", benefit: "Equilíbrio", image: "https://images.unsplash.com/photo-1596726839719-7925e5ec028a?auto=format&fit=crop&q=60&w=600" })}
+                  className="group flex items-center gap-2 px-5 py-2 bg-stone-800/50 text-stone-300 text-sm rounded-full border border-stone-700/50 uppercase tracking-widest hover:bg-stone-100 hover:text-stone-950 transition-all active:scale-95"
+                >
+                  {note}
+                  <Info size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-10">
@@ -73,6 +87,11 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
           </div>
         </div>
       </div>
+
+      <IngredientModal 
+        ingredient={selectedIngredient} 
+        onClose={() => setSelectedIngredient(null)} 
+      />
     </div>
   );
 };
