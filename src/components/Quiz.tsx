@@ -93,23 +93,23 @@ const Quiz = () => {
     <div className="max-w-2xl mx-auto px-4" role="form" aria-live="polite">
       <div className="mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="h-[1px] w-8 bg-stone-300"></div>
-          <span className="text-[10px] font-bold text-stone-600 uppercase tracking-[0.3em]">
+          <div className="h-[1px] w-8 bg-stone-800"></div>
+          <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.3em]">
             Protocolo Sensorial • Passo {currentStep + 1} de {questions.length}
           </span>
-          <div className="h-[1px] w-8 bg-stone-300"></div>
+          <div className="h-[1px] w-8 bg-stone-800"></div>
         </div>
         
-        <div className="w-full bg-stone-100 h-1 rounded-full overflow-hidden max-w-xs mx-auto" role="progressbar" aria-valuenow={((currentStep + 1) / questions.length) * 100} aria-valuemin={0} aria-valuemax={100}>
+        <div className="w-full bg-stone-900 h-1 rounded-full overflow-hidden max-w-xs mx-auto" role="progressbar" aria-valuenow={((currentStep + 1) / questions.length) * 100} aria-valuemin={0} aria-valuemax={100}>
           <div 
-            className="bg-stone-800 h-full transition-all duration-700 ease-out" 
+            className="bg-stone-100 h-full transition-all duration-700 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>
 
       <div className="space-y-8">
-        <h2 className="text-3xl md:text-5xl font-serif text-center text-stone-800 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-serif text-center text-stone-100 leading-tight">
           {currentQuestion.text}
         </h2>
         
@@ -119,13 +119,13 @@ const Quiz = () => {
               key={index}
               onClick={() => handleAnswer(option.value)}
               aria-label={`Escolher opção: ${option.text}`}
-              className="group relative w-full text-left p-6 bg-white/50 border border-stone-200 rounded-xl hover:border-stone-800 hover:bg-stone-50 transition-all duration-300 focus:ring-2 focus:ring-stone-400 focus:outline-none"
+              className="group relative w-full text-left p-6 bg-stone-900/40 border border-stone-800 rounded-xl hover:border-stone-500 hover:bg-stone-800/60 transition-all duration-300 focus:ring-2 focus:ring-stone-600 focus:outline-none"
             >
               <div className="flex items-center justify-between">
-                <span className="text-lg text-stone-600 group-hover:text-stone-900 transition-colors">
+                <span className="text-lg text-stone-400 group-hover:text-stone-100 transition-colors">
                   {option.text}
                 </span>
-                <div className="h-1.5 w-1.5 rounded-full bg-stone-200 group-hover:bg-stone-800 transition-colors"></div>
+                <div className="h-1.5 w-1.5 rounded-full bg-stone-800 group-hover:bg-stone-100 transition-colors"></div>
               </div>
             </button>
           ))}
