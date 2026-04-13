@@ -8,13 +8,23 @@ interface Profile {
   name: string;
   archetype: string;
   description: string;
-  notes: string[];
+  notes?: string[]; // Tornando opcional para evitar quebras
   emotion: string;
   imageUrl: string;
   color: string;
 }
 
 const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => void }) => {
+  // Verificação de segurança: se o perfil não existir, mostra uma mensagem amigável
+  if (!profile) {
+    return (
+      <div className="text-center p-20 text-stone-100">
+        <p>Houve um erro ao processar o resultado. Por favor, tente novamente.</p>
+        <button onClick={onReset} className="mt-4 text-stone-400 underline">Voltar ao início</button>
+      </div>
+    );
+  }
+
   const phoneNumber = "5515996842962";
   const message = `Olá! Meu arquétipo olfativo é: ${profile.name} (${profile.archetype}). Gostaria de encomendar minha vela!`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -61,7 +71,8 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               {profile.description}
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-2 md:gap-3">
-              {profile.notes.map((note, i) => (
+              {/* Adicionada verificação opcional (?) para evitar o erro de map */}
+              {profile.notes?.map((note, i) => (
                 <span key={i} className="px-3 py-1 md:px-5 md:py-2 bg-stone-800/50 text-stone-300 text-[9px] md:text-sm rounded-full border border-stone-700/50 uppercase tracking-widest">
                   {note}
                 </span>
