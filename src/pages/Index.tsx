@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState, Suspense, lazy, useEffect, useRef } from 'react';
 import Hero from '../components/Hero';
 import { X, Loader2 } from 'lucide-react';
 
@@ -19,6 +19,19 @@ const LoadingFallback = () => (
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<ViewState>('hero');
+  const scrollContainerRef = useRef<Record<string, HTMLDivElement | null>>({});
+
+  // Resetar o scroll sempre que a view mudar
+  useEffect(() => {
+    const activeContainer = scrollContainerRef.current[currentView];
+    if (activeContainer) {
+      activeContainer.scrollTo(0, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [currentView]);
+
+  const handleClose = () => setCurrentView('hero');
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
@@ -33,6 +46,7 @@ const Index = () => {
 
       {/* Camada Sobreposta: Quiz */}
       <div 
+        ref={el => scrollContainerRef.current['quiz'] = el}
         className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
           currentView === 'quiz' ? 'translate-y-0' : 'translate-y-full'
         }`}
@@ -41,7 +55,7 @@ const Index = () => {
           {currentView === 'quiz' && (
             <div className="relative min-h-screen py-10 md:py-20">
               <button 
-                onClick={() => setCurrentView('hero')}
+                onClick={handleClose}
                 className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
               >
                 <X size={24} />
@@ -54,6 +68,7 @@ const Index = () => {
 
       {/* Camada Sobreposta: Ciência */}
       <div 
+        ref={el => scrollContainerRef.current['science'] = el}
         className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
           currentView === 'science' ? 'translate-x-0' : 'translate-x-full'
         }`}
@@ -62,7 +77,7 @@ const Index = () => {
           {currentView === 'science' && (
             <div className="relative min-h-screen">
               <button 
-                onClick={() => setCurrentView('hero')}
+                onClick={handleClose}
                 className="fixed top-6 left-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
               >
                 <X size={24} />
@@ -77,6 +92,7 @@ const Index = () => {
 
       {/* Camada Sobreposta: Ingredientes */}
       <div 
+        ref={el => scrollContainerRef.current['ingredients'] = el}
         className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
           currentView === 'ingredients' ? 'translate-x-0' : 'translate-x-full'
         }`}
@@ -85,7 +101,7 @@ const Index = () => {
           {currentView === 'ingredients' && (
             <div className="relative min-h-screen">
               <button 
-                onClick={() => setCurrentView('hero')}
+                onClick={handleClose}
                 className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
               >
                 <X size={24} />

@@ -50,7 +50,7 @@ const Hero = ({ onStartQuiz, onOpenScience, onOpenIngredients }: HeroProps) => {
               className="flex items-center gap-2 px-6 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium text-sm md:text-base"
             >
               <BookOpen size={18} />
-              <span>Ciência</span>
+              <span>A Ciência por trás</span>
             </button>
             <div className="w-[1px] h-4 bg-stone-800 hidden md:block"></div>
             <button 
@@ -58,7 +58,7 @@ const Hero = ({ onStartQuiz, onOpenScience, onOpenIngredients }: HeroProps) => {
               className="flex items-center gap-2 px-6 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium text-sm md:text-base"
             >
               <Droplets size={18} />
-              <span>Essências</span>
+              <span>Nossas Essências</span>
             </button>
           </div>
         </div>
