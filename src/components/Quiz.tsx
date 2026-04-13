@@ -17,36 +17,106 @@ const questions = [
   },
   {
     id: 2,
-    text: "Como você deseja que seu espaço seja percebido pelos outros?",
+    text: "Como você deseja que seu espaço seja percebido?",
     options: [
       { text: "Um ambiente solar, energético e receptivo", value: "joy" },
-      { text: "Um refúgio de mistério, luxo e sofisticação", value: "sensuality" },
-      { text: "Um templo de foco, ordem e silêncio", value: "mental_fatigue" },
+      { text: "Um refúgio de mistério e sofisticação", value: "sensuality" },
+      { text: "Um templo de foco e clareza estratégica", value: "mental_fatigue" },
       { text: "Um abraço acolhedor e seguro", value: "loneliness" }
     ]
   },
   {
     id: 3,
-    text: "Escolha o estímulo tátil que mais ressoa com seu estado atual:",
+    text: "Qual estímulo tátil ressoa mais com seu estado atual?",
     options: [
-      { text: "Seda pura e veludo italiano", value: "sensuality" },
-      { text: "Linho egípcio fresco ao sol", value: "joy" },
-      { text: "Couro rústico e carvalho maciço", value: "mental_fatigue" },
+      { text: "Seda pura e veludo", value: "sensuality" },
+      { text: "Linho fresco ao sol", value: "joy" },
+      { text: "Couro rústico e madeira", value: "mental_fatigue" },
       { text: "Caxemira espessa e envolvente", value: "loneliness" }
     ]
   },
   {
     id: 4,
-    text: "Em qual cenário você encontra seu maior potencial?",
+    text: "Como é sua resposta a ambientes com excesso de informação?",
     options: [
-      { text: "Em conexões sociais vibrantes e festivas", value: "joy" },
-      { text: "Em momentos de intimidade e poder pessoal", value: "sensuality" },
-      { text: "Na clareza estratégica e execução impecável", value: "mental_fatigue" },
-      { text: "Na resiliência silenciosa diante do caos", value: "acute_stress" }
+      { text: "Sinto necessidade imediata de isolamento", value: "burnout" },
+      { text: "Minha mente acelera e perco o foco", value: "anxiety" },
+      { text: "Consigo filtrar, mas exijo esforço cognitivo", value: "mental_fatigue" },
+      { text: "Absorvo a energia e me sinto estimulado", value: "joy" }
     ]
   },
   {
     id: 5,
+    text: "Em qual período sua energia oscila mais drasticamente?",
+    options: [
+      { text: "Início da manhã (dificuldade em despertar)", value: "burnout" },
+      { text: "Meio da tarde (queda de produtividade)", value: "mental_fatigue" },
+      { text: "Crepúsculo (aumento da melancolia/solidão)", value: "loneliness" },
+      { text: "Madrugada (insônia ou hiperatividade mental)", value: "anxiety" }
+    ]
+  },
+  {
+    id: 6,
+    text: "Qual memória olfativa te traz segurança instantânea?",
+    options: [
+      { text: "Terra molhada e floresta densa", value: "acute_stress" },
+      { text: "Roupas limpas e brisa marinha", value: "anxiety" },
+      { text: "Especiarias quentes e resinas", value: "sensuality" },
+      { text: "Cítricos e flores frescas", value: "joy" }
+    ]
+  },
+  {
+    id: 7,
+    text: "Como você descreveria sua 'Bateria Social' hoje?",
+    options: [
+      { text: "Esgotada. Preciso de silêncio regenerativo", value: "burnout" },
+      { text: "Seletiva. Apenas conexões profundas", value: "sensuality" },
+      { text: "Em alerta. Sinto necessidade de proteção", value: "acute_stress" },
+      { text: "Carregada. Pronta para expansão", value: "joy" }
+    ]
+  },
+  {
+    id: 8,
+    text: "Qual é a sua relação atual com o silêncio?",
+    options: [
+      { text: "É o único lugar onde me sinto seguro", value: "loneliness" },
+      { text: "É necessário para meu trabalho intelectual", value: "mental_fatigue" },
+      { text: "Às vezes é ensurdecedor e gera angústia", value: "anxiety" },
+      { text: "Um espaço para contemplação e prazer", value: "sensuality" }
+    ]
+  },
+  {
+    id: 9,
+    text: "O que mais te impede de entrar em estado de 'Flow'?",
+    options: [
+      { text: "Cansaço físico e mental acumulado", value: "burnout" },
+      { text: "Interrupções externas e ruído visual", value: "mental_fatigue" },
+      { text: "Pensamentos intrusivos sobre o futuro", value: "anxiety" },
+      { text: "Falta de propósito ou estímulo emocional", value: "joy" }
+    ]
+  },
+  {
+    id: 10,
+    text: "Se sua ansiedade fosse uma textura, qual seria?",
+    options: [
+      { text: "Lixa áspera e persistente", value: "anxiety" },
+      { text: "Nuvem densa e opaca", value: "burnout" },
+      { text: "Espinhos metálicos e frios", value: "acute_stress" },
+      { text: "Areia movediça e instável", value: "loneliness" }
+    ]
+  },
+  {
+    id: 11,
+    text: "Qual é o seu 'Ritual de Poder' favorito?",
+    options: [
+      { text: "Um banho longo com óleos essenciais", value: "sensuality" },
+      { text: "Uma caminhada rápida ao ar livre", value: "joy" },
+      { text: "Organizar meticulosamente meu espaço", value: "mental_fatigue" },
+      { text: "Meditação ou escrita terapêutica", value: "acute_stress" }
+    ]
+  },
+  {
+    id: 12,
     text: "O que sua mente mais pede neste exato segundo?",
     options: [
       { text: "Expansão e brilho", value: "joy" },
@@ -63,7 +133,8 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false);
 
   const handleAnswer = (value: string) => {
-    setScores(prev => ({ ...prev, [value]: (prev[value] || 0) + 1 }));
+    const newScores = { ...scores, [value]: (scores[value] || 0) + 1 };
+    setScores(newScores);
     
     if (currentStep < questions.length - 1) {
       setCurrentStep(prev => prev + 1);
@@ -73,7 +144,9 @@ const Quiz = () => {
   };
 
   const getWinner = () => {
-    return Object.entries(scores).reduce((a, b) => a[1] > b[1] ? a : b)[0];
+    const entries = Object.entries(scores);
+    if (entries.length === 0) return "joy";
+    return entries.reduce((a, b) => a[1] > b[1] ? a : b)[0];
   };
 
   const resetQuiz = () => {
@@ -118,7 +191,6 @@ const Quiz = () => {
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              aria-label={`Escolher opção: ${option.text}`}
               className="group relative w-full text-left p-6 bg-stone-900/40 border border-stone-800 rounded-xl hover:border-stone-500 hover:bg-stone-800/60 transition-all duration-300 focus:ring-2 focus:ring-stone-600 focus:outline-none"
             >
               <div className="flex items-center justify-between">

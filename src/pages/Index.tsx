@@ -1,11 +1,14 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import Quiz from '../components/Quiz';
-import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import ReferencesModal from '../components/ReferencesModal';
+import { ShieldCheck, Heart, Sparkles, BookOpen } from 'lucide-react';
 
 const Index = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     document.title = "Luz & Essência | Mapeamento de Arquétipos Olfativos";
   }, []);
@@ -18,12 +21,10 @@ const Index = () => {
 
       <section id="quiz-section" className="py-20 md:py-32" aria-labelledby="quiz-heading">
         <div className="container mx-auto">
-          <h2 id="quiz-heading" className="sr-only">Mapeamento de Perfil Sensorial</h2>
           <Quiz />
         </div>
       </section>
 
-      {/* Trust Section - Dark Theme */}
       <section className="py-20 bg-stone-900/30 border-y border-stone-800/50" aria-labelledby="trust-heading">
         <div className="container mx-auto px-4">
           <h2 id="trust-heading" className="text-[10px] font-bold uppercase tracking-[0.4em] text-center text-stone-500 mb-16">
@@ -59,12 +60,24 @@ const Index = () => {
       </section>
 
       <footer className="py-12 border-t border-stone-900 bg-stone-950">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-[10px] uppercase tracking-widest text-stone-600">
+        <div className="container mx-auto px-4 text-center space-y-8">
+          <div className="flex justify-center">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="group flex items-center gap-2 text-[10px] uppercase tracking-widest text-stone-500 hover:text-stone-300 transition-colors"
+            >
+              <BookOpen size={12} />
+              Referências Científicas do Protocolo
+            </button>
+          </div>
+          
+          <p className="text-[10px] uppercase tracking-widest text-stone-700">
             © {new Date().getFullYear()} Luz & Essência • Engenharia Sensorial • Todos os direitos reservados.
           </p>
         </div>
       </footer>
+
+      <ReferencesModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </main>
   );
 };
