@@ -3,30 +3,29 @@
 import React, { useState, useMemo } from 'react';
 import { ingredientsData } from '../data/ingredients';
 import IngredientModal from './IngredientModal';
-import { Search, Filter, Droplets } from 'lucide-react';
+import { Search, Droplets } from 'lucide-react';
 
 const categories = [
   { id: 'all', name: 'Todos' },
-  { id: 'herbals', name: 'Herbais' },
+  { id: 'sweets', name: 'Doces' },
   { id: 'fruity', name: 'Frutados' },
-  { id: 'gourmand', name: 'Gourmand' },
   { id: 'florals', name: 'Florais' },
-  { id: 'spices', name: 'Especiarias' }
+  { id: 'citrus', name: 'Cítricos' },
+  { id: 'fresh', name: 'Frescos' }
 ];
 
-// Mapeamento manual baseado no conteúdo de ingredients.ts
 const categorize = (name: string) => {
-  const herbais = ["Alecrim", "Alfazema", "Arruda", "Arnica", "Andiroba", "Babosa", "Aloe Vera", "Capim Limão", "Camomila", "Calêndula", "Cedro", "Copaíba", "Erva Cidreira", "Erva Doce", "Eucalipto", "Hortelã", "Manjerona", "Mirra", "Olíbano", "Patchouli", "Sândalo", "Bamboo", "Pinho", "Hortelã-Pimenta", "Alecrim Blanc"];
-  const frutados = ["Abacaxi", "Açaí", "Ameixa", "Amora Negra", "Banana", "Blueberry", "Caju", "Cajá", "Cereja", "Jabuticaba", "Pitanga", "Pitaya", "Romã", "Siriguela", "Melão"];
-  const gourmand = ["Chocolate", "Baunilha", "Avelã", "Café", "Buriti", "Choconilha", "Chocotone", "Amêndoas", "Mel"];
-  const florais = ["Flor", "Rosa", "Gerânio", "Girassol", "Neroli", "Frésia", "Jasmim", "Lavanda"];
-  const especiarias = ["Canela", "Cravo", "Gengibre", "Noz Moscada", "Pimenta"];
+  const doces = ["Café", "Mel", "Vanilla", "Avelã", "Canela", "Chocolate", "Baunilha"];
+  const frutados = ["Abacaxi", "Cereja", "Pitanga", "Coco", "Açaí", "Ameixa", "Jabuticaba"];
+  const florais = ["Lavanda", "Flor", "Rosa", "Gerânio", "Jasmim", "Neroli"];
+  const citricos = ["Bergamota", "Tangerina", "Limão", "Laranja"];
+  const frescos = ["Alecrim", "Capim Limão", "Eucalipto", "Bamboo", "Pinho", "Hortelã", "Cedro", "Patchouli", "Sândalo", "Âmbar", "Vet Vert"];
 
-  if (herbais.some(h => name.includes(h))) return 'herbals';
+  if (doces.some(d => name.includes(d))) return 'sweets';
   if (frutados.some(f => name.includes(f))) return 'fruity';
-  if (gourmand.some(g => name.includes(g))) return 'gourmand';
   if (florais.some(fl => name.includes(fl))) return 'florals';
-  if (especiarias.some(e => name.includes(e))) return 'spices';
+  if (citricos.some(c => name.includes(c))) return 'citrus';
+  if (frescos.some(fr => name.includes(fr))) return 'fresh';
   return 'others';
 };
 
