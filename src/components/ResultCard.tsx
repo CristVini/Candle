@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { CandleProfile } from '../data/candleProfiles';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { ShieldCheck, Activity, User, BookOpen } from 'lucide-react';
+import { MessageCircle, RefreshCw, Star, Info } from 'lucide-react';
 
 interface ResultCardProps {
   profile: CandleProfile;
@@ -12,62 +12,82 @@ interface ResultCardProps {
 }
 
 const ResultCard = ({ profile, onReset }: ResultCardProps) => {
+  const whatsappNumber = "5511999999999"; // Substitua pelo número real
+  const message = `Olá! Fiz o teste de Mapeamento Emocional e meu perfil deu "${profile.title}" (${profile.scent}). Gostaria de encomendar essa vela para me ajudar com ${profile.archetype.toLowerCase()}.`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
   return (
-    <div className="max-w-3xl mx-auto animate-in zoom-in-95 duration-500">
-      <Card className={`border-t-8 shadow-2xl ${profile.color}`}>
-        <CardHeader className="text-center pb-2">
-          <div className="flex justify-center mb-4">
-            <span className="px-3 py-1 bg-white/50 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold">
-              Perfil Identificado
-            </span>
-          </div>
-          <CardTitle className="text-4xl font-serif mb-2">{profile.title}</CardTitle>
-          <div className="flex items-center justify-center gap-2 text-sm font-medium opacity-80">
-            <User className="w-4 h-4" /> Arquétipo: {profile.archetype}
-          </div>
-        </CardHeader>
-        
-        <CardContent className="space-y-8 pt-6">
-          <div className="prose prose-slate">
-            <p className="text-lg leading-relaxed text-center italic">
-              "{profile.description}"
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white/40 p-5 rounded-xl border border-white/50">
-              <h4 className="font-bold flex items-center gap-2 mb-3 text-sm uppercase tracking-wider">
-                <Activity className="w-4 h-4" /> Contexto Clínico
-              </h4>
-              <p className="text-sm leading-relaxed">{profile.clinicalContext}</p>
-            </div>
-            
-            <div className="bg-white/40 p-5 rounded-xl border border-white/50">
-              <h4 className="font-bold flex items-center gap-2 mb-3 text-sm uppercase tracking-wider">
-                <ShieldCheck className="w-4 h-4" /> Prescrição Aromática
-              </h4>
-              <p className="text-sm font-semibold mb-1">{profile.scent}</p>
-              <p className="text-xs opacity-70">Ativos: {profile.activeIngredients}</p>
+    <div className="max-w-4xl mx-auto animate-in fade-in zoom-in-95 duration-700">
+      <Card className="overflow-hidden border-none shadow-2xl bg-white/95 backdrop-blur-md">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {/* Lado da Imagem */}
+          <div className="relative h-64 md:h-full min-h-[400px]">
+            <img 
+              src={profile.imageUrl} 
+              alt={profile.scent}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-end p-8 items-end">
+              <div className="text-white">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold opacity-80 mb-2">Prescrição Sensorial</p>
+                <h3 className="text-2xl font-serif">{profile.scent}</h3>
+              </div>
             </div>
           </div>
 
-          <div className="bg-slate-900 text-white p-6 rounded-xl shadow-inner">
-            <h4 className="font-bold flex items-center gap-2 mb-3 text-sm uppercase tracking-wider text-slate-300">
-              <BookOpen className="w-4 h-4" /> Mecanismo de Ação Psicológica
-            </h4>
-            <p className="text-sm leading-relaxed">{profile.psychologicalAction}</p>
-          </div>
+          {/* Lado do Conteúdo */}
+          <div className="p-8 md:p-12 flex flex-col justify-center">
+            <div className="mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <Star className="w-3 h-3 fill-slate-500" /> {profile.archetype}
+              </div>
+              <h2 className="text-4xl font-serif text-slate-800 mb-4 leading-tight">
+                {profile.title}
+              </h2>
+              <p className="text-slate-600 leading-relaxed text-lg italic">
+                "{profile.description}"
+              </p>
+            </div>
 
-          <div className="flex flex-col items-center gap-4 pt-4">
-            <Button 
-              onClick={onReset}
-              variant="ghost"
-              className="text-xs uppercase tracking-widest hover:bg-black/5"
-            >
-              Refazer Mapeamento Emocional
-            </Button>
+            <div className="space-y-6 mb-10">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center">
+                  <Info className="w-5 h-5 text-slate-400" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-800 uppercase tracking-tight mb-1">Análise Terapêutica</h4>
+                  <p className="text-sm text-slate-500 leading-snug">{profile.psychologicalAction}</p>
+                </div>
+              </div>
+              
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <p className="text-slate-800 font-medium text-center">
+                  {profile.strongCTA}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <Button 
+                asChild
+                className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white h-16 rounded-2xl text-lg font-bold shadow-lg shadow-green-200 transition-all hover:scale-[1.02]"
+              >
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
+                  <MessageCircle className="w-6 h-6" />
+                  Encomendar minha Vela
+                </a>
+              </Button>
+              
+              <Button 
+                onClick={onReset}
+                variant="ghost"
+                className="text-slate-400 hover:text-slate-800 flex items-center gap-2 mx-auto"
+              >
+                <RefreshCw className="w-4 h-4" /> Refazer teste
+              </Button>
+            </div>
           </div>
-        </CardContent>
+        </div>
       </Card>
     </div>
   );
