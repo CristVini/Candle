@@ -11,8 +11,9 @@ interface ResultCardProps {
 }
 
 const ResultCard = ({ profile, onReset }: ResultCardProps) => {
-  const whatsappNumber = "5511999999999";
-  const message = `Olá! Fiz o mapeamento emocional e meu perfil deu: ${profile.title} (${profile.scent}). Gostaria de saber mais sobre esta vela.`;
+  // Número atualizado para o fornecido: 15 996842962 (DDI 55 Brasil)
+  const whatsappNumber = "5515996842962";
+  const message = `Olá! Acabei de fazer o Mapeamento Arquétipo na Luz & Essência e meu resultado foi: ${profile.title}.\n\nAssinatura: ${profile.scent}\nArquétipo: ${profile.archetype}\n\nGostaria de encomendar esta essência!`;
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (
