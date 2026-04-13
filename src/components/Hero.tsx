@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { Sparkles, BookOpen } from 'lucide-react';
 
 interface HeroProps {
   onStartQuiz: () => void;
@@ -10,55 +10,49 @@ interface HeroProps {
 
 const Hero = ({ onStartQuiz, onOpenScience }: HeroProps) => {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=80&w=2000" 
-          alt="Candle Atmosphere" 
-          className="w-full h-full object-cover scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950/80 via-stone-950/60 to-stone-950" />
+    <header className="relative h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-20%] left-[-10%] w-[120%] h-[120%] bg-stone-800/20 rounded-full blur-[120px] animate-pulse"></div>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8 backdrop-blur-sm">
-          <Sparkles size={14} className="text-amber-400" />
-          <span className="text-xs uppercase tracking-[0.2em] text-stone-300">Consultoria Olfativa Profissional</span>
+      <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-12">
+        <div className="flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="flex items-center gap-2 md:gap-3 px-4 py-1.5 bg-stone-900/50 border border-stone-800 rounded-full">
+            <Sparkles className="w-3 h-3 text-stone-400" />
+            <span className="text-[10px] md:text-[11px] font-bold text-stone-300 uppercase tracking-[0.4em]">
+              Engenharia Olfativa
+            </span>
+          </div>
         </div>
-
-        <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-6 text-white">
-          Candle <span className="italic font-serif text-amber-500">Mind</span>
+        
+        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[110px] font-serif text-stone-100 leading-[1.1] md:leading-[0.9] tracking-tight">
+          O aroma que <br />
+          <span className="italic font-light text-stone-500 block mt-2">define sua alma.</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-stone-300 font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-          Velas para seu corpo, mente e espírito. Descubra a fragrância que ressoa com a sua frequência emocional hoje.
+        <p className="text-base md:text-xl text-stone-400 max-w-xs md:max-w-2xl mx-auto leading-relaxed font-light">
+          Descubra a assinatura olfativa desenvolvida para o seu estado emocional através do nosso protocolo exclusivo.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 px-4">
           <button 
             onClick={onStartQuiz}
-            className="group relative px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-full transition-all duration-300 overflow-hidden"
+            className="group relative w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 bg-stone-100 text-stone-950 rounded-full font-bold text-base md:text-lg transition-all hover:scale-105 active:scale-95 shadow-2xl"
           >
-            <span className="relative z-10 flex items-center font-medium">
-              Iniciar Jornada Sensorial
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
+            Começar Mapeamento
           </button>
           
           <button 
             onClick={onOpenScience}
-            className="px-8 py-4 text-stone-300 hover:text-white transition-colors underline-offset-8 hover:underline decoration-amber-500/50"
+            className="flex items-center gap-3 px-8 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium"
           >
-            A Ciência do Aroma
+            <BookOpen size={20} />
+            <span>A Ciência por trás</span>
           </button>
         </div>
       </div>
-      
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-px h-12 bg-gradient-to-b from-amber-500/50 to-transparent" />
-      </div>
-    </div>
+    </header>
   );
 };
 
