@@ -23,56 +23,66 @@ const ReferencesModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
   if (!isOpen) return null;
 
   const references = [
-    { title: "The Scent of Desire", author: "Dr. Rachel Herz", year: "2007", focus: "Neurobiologia das emoções olfativas." },
-    { title: "Aromatherapy and the Mind", author: "Julia Lawless", year: "1994", focus: "Psicologia dos aromas e estados de humor." },
-    { title: "Influence of Fragrances on Human Psychophysiological Activity", author: "Sowndhararajan & Kim", year: "2016", focus: "Estudo sobre EEG e óleos essenciais." },
-    { title: "The Limbic System and Olfaction", author: "Journal of Neuroscience", year: "2021", focus: "Conexão entre bulbo olfativo e sistema límbico." }
+    { title: "The Scent of Desire", author: "Dr. Rachel Herz", year: "2007", focus: "Neurobiologia das emoções olfativas e como aromas resgatam memórias autobiográficas." },
+    { title: "Aromatherapy and the Mind", author: "Julia Lawless", year: "1994", focus: "Exploração psicológica dos óleos essenciais e seus efeitos nos estados cognitivos." },
+    { title: "Influence of Fragrances on Human Psychophysiological Activity", author: "Sowndhararajan & Kim", year: "2016", focus: "Estudo quantitativo sobre ondas cerebrais (EEG) em resposta a diferentes estímulos aromáticos." },
+    { title: "The Limbic System and Olfaction", author: "Journal of Neuroscience", year: "2021", focus: "Mapeamento das vias neurais entre o bulbo olfativo, a amígdala e o hipocampo." }
   ];
 
   return createPortal(
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-stone-950/95 backdrop-blur-md animate-in fade-in duration-300"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8 bg-stone-950/95 backdrop-blur-md animate-in fade-in duration-300"
       onClick={onClose}
     >
       <div 
-        className="bg-stone-900 border border-stone-800 w-full max-w-lg rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300"
+        className="bg-stone-900 border border-stone-800 w-full max-w-2xl rounded-[40px] overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.5)] animate-in zoom-in-95 duration-300 flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-8 border-b border-stone-800 flex justify-between items-center bg-stone-900/50">
-          <div className="flex items-center gap-3 text-stone-400">
-            <div className="w-10 h-10 bg-stone-800 rounded-2xl flex items-center justify-center text-stone-200">
-              <BookOpen size={20} />
+        <div className="p-8 md:p-12 border-b border-stone-800 flex justify-between items-center bg-stone-900/50">
+          <div className="flex items-center gap-4 text-stone-400">
+            <div className="w-12 h-12 bg-stone-800 rounded-2xl flex items-center justify-center text-stone-200">
+              <BookOpen size={24} />
             </div>
-            <h3 className="font-serif text-xl text-stone-200">Base Científica</h3>
+            <div>
+              <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.4em] block mb-1">Evidências</span>
+              <h3 className="font-serif text-2xl md:text-3xl text-stone-100">Base Científica</h3>
+            </div>
           </div>
           <button 
             onClick={onClose} 
-            className="p-2 hover:bg-stone-800 rounded-full transition-colors text-stone-500 hover:text-stone-100"
+            className="p-3 hover:bg-stone-800 rounded-full transition-colors text-stone-500 hover:text-stone-100 border border-stone-800"
           >
             <X size={24} />
           </button>
         </div>
         
-        <div className="p-8 space-y-8 max-h-[60vh] overflow-y-auto custom-scrollbar">
-          <p className="text-[10px] text-stone-500 uppercase tracking-[0.3em] font-bold">Estudos que fundamentam o algoritmo Luz & Essência</p>
-          <div className="space-y-6">
+        <div className="p-8 md:p-12 space-y-10 max-h-[60vh] overflow-y-auto custom-scrollbar">
+          <p className="text-[11px] text-stone-500 uppercase tracking-[0.3em] font-bold border-b border-stone-800 pb-4">
+            Estudos que fundamentam o mapeamento Luz & Essência
+          </p>
+          
+          <div className="space-y-10">
             {references.map((ref, i) => (
-              <div key={i} className="border-l-2 border-stone-800 pl-6 space-y-2 group">
-                <p className="text-stone-200 font-medium text-base italic group-hover:text-stone-100 transition-colors">"{ref.title}"</p>
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] text-stone-600 uppercase tracking-tighter font-bold">{ref.author}</span>
-                  <span className="w-1 h-1 bg-stone-800 rounded-full"></span>
-                  <span className="text-[10px] text-stone-600 uppercase tracking-tighter font-bold">{ref.year}</span>
+              <div key={i} className="border-l-2 border-stone-700 pl-8 space-y-3 group">
+                <p className="text-stone-100 font-medium text-lg md:text-xl italic font-serif leading-tight group-hover:text-white transition-colors">
+                  "{ref.title}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <span className="text-[11px] text-stone-500 uppercase tracking-widest font-bold">{ref.author}</span>
+                  <span className="w-1 h-1 bg-stone-700 rounded-full"></span>
+                  <span className="text-[11px] text-stone-500 uppercase tracking-widest font-bold">{ref.year}</span>
                 </div>
-                <p className="text-xs text-stone-400 leading-relaxed">{ref.focus}</p>
+                <p className="text-sm md:text-base text-stone-400 leading-relaxed font-light">
+                  {ref.focus}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="p-8 bg-stone-950/50 text-center border-t border-stone-800">
-          <p className="text-[11px] text-stone-500 leading-relaxed italic max-w-[280px] mx-auto">
-            "O olfato é o único sentido que se conecta diretamente com a amígdala e o hipocampo."
+        <div className="p-10 bg-stone-950/50 text-center border-t border-stone-800">
+          <p className="text-sm md:text-base text-stone-500 leading-relaxed italic max-w-md mx-auto font-serif">
+            "O olfato é o único sentido com acesso privilegiado às áreas do cérebro que processam emoção e memória de longo prazo."
           </p>
         </div>
       </div>
