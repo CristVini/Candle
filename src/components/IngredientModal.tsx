@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Sparkles, Droplets } from 'lucide-react';
+import { X, Sparkles, Droplets, Wind } from 'lucide-react';
 import { Ingredient } from '../data/ingredients';
 
 interface IngredientModalProps {
@@ -13,7 +13,6 @@ interface IngredientModalProps {
 const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
   useEffect(() => {
     if (ingredient) {
-      // Bloqueio rigoroso de scroll no nível da raiz
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     } else {
@@ -29,7 +28,6 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
 
   if (!ingredient) return null;
 
-  // Renderizamos o modal via Portal para que ele saia do container com scroll
   return createPortal(
     <div 
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-stone-950/95 backdrop-blur-xl p-4 md:p-8 animate-in fade-in duration-300"
@@ -39,7 +37,6 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
         className="relative w-full max-w-2xl max-h-[90vh] bg-stone-900 border border-stone-800 rounded-[40px] shadow-[0_0_100px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col animate-in zoom-in-95 slide-in-from-bottom-10 duration-500"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Botão de fechar visível e acessível */}
         <button 
           onClick={onClose}
           className="absolute top-6 right-6 z-50 p-3 bg-stone-950/80 text-white rounded-full hover:bg-stone-100 hover:text-stone-950 transition-all border border-stone-800 shadow-xl"
@@ -79,6 +76,24 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
               <p className="text-stone-200 leading-relaxed text-2xl md:text-3xl font-light italic font-serif">
                 "{ingredient.description}"
               </p>
+
+              {/* Seção de Notas de Perfumaria */}
+              {ingredient.notes && (
+                <div className="pt-8 border-t border-stone-800/50 space-y-4">
+                  <div className="flex items-center gap-2 text-stone-500">
+                    <Wind size={14} />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Notas de Composição</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {ingredient.notes.map((note, i) => (
+                      <span key={i} className="px-4 py-2 bg-stone-950 border border-stone-800 rounded-xl text-[12px] text-stone-300 font-medium">
+                        {note}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="pt-8 border-t border-stone-800/50">
                 <p className="text-stone-400 text-sm md:text-base leading-relaxed max-w-prose">
                   Este extrato molecular atua nos receptores olfativos para modular o estado de <span className="text-stone-100 font-medium">{ingredient.benefit.toLowerCase()}</span>.

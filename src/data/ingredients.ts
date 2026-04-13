@@ -3,6 +3,7 @@ export interface Ingredient {
   image: string;
   benefit: string;
   description: string;
+  notes?: string[]; // Novo campo para composições de perfumaria
 }
 
 export const ingredientsData: Record<string, Ingredient> = {
@@ -51,7 +52,7 @@ export const ingredientsData: Record<string, Ingredient> = {
   "Amêndoas": { name: "Amêndoas", image: "", benefit: "Zelo", description: "Suave e protetor, ideal para ambientes de descanso." },
 
   // --- SENSUAL ---
-  "Patchouli": { name: "Patchouli", image: "", benefit: "Magnetismo", description: "Terroso e misterioso, desperta a sensualidade profunda." },
+  "Patchouly": { name: "Patchouly", image: "", benefit: "Magnetismo", description: "Terroso e misterioso, desperta a sensualidade profunda." },
   "Jasmim": { name: "Jasmim", image: "", benefit: "Intensidade", description: "Floral inebriante que aumenta a confiança e a atração." },
   "Morango": { name: "Morango", image: "", benefit: "Desejo", description: "Doce e vibrante, associado à jovialidade e sedução." },
   "Cereja": { name: "Cereja", image: "", benefit: "Sedução", description: "Envolvente e marcante, cria uma atmosfera de mistério." },
@@ -68,8 +69,20 @@ export const ingredientsData: Record<string, Ingredient> = {
   "Chá Branco": { name: "Chá Branco", image: "", benefit: "Clareza", description: "Aroma delicado que promove pureza e ordem mental." },
   "Chá Verde": { name: "Chá Verde", image: "", benefit: "Revitalização", description: "Notas herbais que auxiliam na renovação das energias." },
   "Aloe Vera": { name: "Aloe Vera", image: "", benefit: "Cura", description: "Fresco e aquoso, promove sensação de regeneração." },
-  "Palmoluxo": { name: "Palmoluxo", image: "", benefit: "Higiene", description: "Floral limpo com fundo de musk, remete ao sabonete clássico." },
-  "Eco Brasilis": { name: "Eco Brasilis", image: "", benefit: "Natureza Viva", description: "Mix verde e cítrico que traz a floresta para dentro de casa." },
+  "Palmoluxo": { 
+    name: "Palmoluxo", 
+    image: "", 
+    benefit: "Higiene", 
+    description: "Fragrância de perfumaria fina que remete ao sabonete clássico e ao cuidado pessoal.",
+    notes: ["Floral limpo", "Musk", "Sabonete"]
+  },
+  "Eco Brasilis": { 
+    name: "Eco Brasilis", 
+    image: "", 
+    benefit: "Natureza Viva", 
+    description: "Composição que traz a floresta para dentro de casa com frescor e vitalidade.",
+    notes: ["Verde", "Herbal", "Cítrico suave"]
+  },
 
   // --- SOFISTICADO ---
   "Âmbar": { name: "Âmbar", image: "", benefit: "Elegância", description: "Resinoso e quente, cria uma atmosfera de status." },
@@ -78,8 +91,20 @@ export const ingredientsData: Record<string, Ingredient> = {
   "Figo": { name: "Figo", image: "", benefit: "Status", description: "Verde e doce, aroma clássico de ambientes premium." },
   "Neroli": { name: "Neroli", image: "", benefit: "Preciosidade", description: "Extraído da flor de laranjeira, é puro refinamento." },
   "Madeira do Oriente": { name: "Madeira do Oriente", image: "", benefit: "Poder", description: "Amadeirado denso que evoca sabedoria e estabilidade." },
-  "Douvie": { name: "Douvie", image: "", benefit: "Suavidade", description: "Floral musk com baunilha leve, pura elegância discreta." },
-  "Iguatemi": { name: "Iguatemi", image: "", benefit: "Design", description: "Madeiras nobres e âmbar, remete ao luxo contemporâneo." },
+  "Douvie": { 
+    name: "Douvie", 
+    image: "", 
+    benefit: "Suavidade", 
+    description: "Pura elegância discreta em uma composição floral aveludada.",
+    notes: ["Floral suave", "Musk", "Baunilha leve"]
+  },
+  "Iguatemi": { 
+    name: "Iguatemi", 
+    image: "", 
+    benefit: "Design", 
+    description: "Remete ao luxo contemporâneo com uma base amadeirada nobre.",
+    notes: ["Madeiras nobres", "Âmbar", "Toque floral"]
+  },
 
   // --- NATUREZA ---
   "Cedro": { name: "Cedro", image: "", benefit: "Segurança", description: "Traz estabilidade e sensação de aterramento." },
@@ -99,7 +124,13 @@ export const ingredientsData: Record<string, Ingredient> = {
   "Maçã com Canela": { name: "Maçã com Canela", image: "", benefit: "Aconchego", description: "Combinação clássica que desperta o desejo e o conforto." },
   "Lírio": { name: "Lírio", image: "", benefit: "Nobreza", description: "Floral branco que exala elegância e pureza." },
   "Violeta": { name: "Violeta", image: "", benefit: "Modéstia", description: "Aroma doce e sutil que acalma o coração." },
-  "Love Spell": { name: "Love Spell", image: "", benefit: "Encanto", description: "Mix de pêssego e cerejeira que desperta o romance." },
+  "Love Spell": { 
+    name: "Love Spell", 
+    image: "", 
+    benefit: "Encanto", 
+    description: "Fragrância romântica inspirada em grandes sucessos da perfumaria.",
+    notes: ["Pêssego", "Flor de Cerejeira", "Maçã Vermelha"]
+  },
 
   // --- EQUILÍBRIO ---
   "Verbena": { name: "Verbena", image: "", benefit: "Equilíbrio", description: "Cítrico herbal que acalma o sistema nervoso." },
@@ -115,12 +146,30 @@ export const ingredientsData: Record<string, Ingredient> = {
   "Noz Moscada": { name: "Noz Moscada", image: "", benefit: "Ativação", description: "Quente e exótico, auxilia na prontidão física." },
   "Cardamomo": { name: "Cardamomo", image: "", benefit: "Vigor", description: "Especiaria nobre que desperta a mente e o corpo." },
   "Pimenta Preta": { name: "Pimenta Preta", image: "", benefit: "Fogo", description: "Estimulante intenso que combate a apatia." },
-  "Noite Feliz": { name: "Noite Feliz", image: "", benefit: "Celebração", description: "Canela, cravo e baunilha para um estímulo festivo." },
+  "Noite Feliz": { 
+    name: "Noite Feliz", 
+    image: "", 
+    benefit: "Celebração", 
+    description: "Aroma festivo que aquece o ambiente e o coração.",
+    notes: ["Canela", "Cravo", "Baunilha"]
+  },
 
   // --- CONFORTO ---
   "Algodão": { name: "Algodão", image: "", benefit: "Proteção", description: "Suave e limpo, remete ao conforto de um lar seguro." },
   "Talco": { name: "Talco", image: "", benefit: "Nostalgia", description: "Aroma de limpeza clássica que gera relaxamento." },
   "Flor de Algodão": { name: "Flor de Algodão", image: "", benefit: "Zelo", description: "Combina limpeza com um toque floral delicado." },
-  "Donna Spark": { name: "Donna Spark", image: "", benefit: "Modernidade", description: "Floral frutado com fundo doce, pura sofisticação." },
-  "Marine": { name: "Marine", image: "", benefit: "Amplitude", description: "Aquático e fresco, traz a brisa do mar para o lar." }
+  "Donna Spark": { 
+    name: "Donna Spark", 
+    image: "", 
+    benefit: "Modernidade", 
+    description: "Fragrância floral moderna com um toque frutado envolvente.",
+    notes: ["Floral moderno", "Frutado leve", "Fundo doce"]
+  },
+  "Marine": { 
+    name: "Marine", 
+    image: "", 
+    benefit: "Amplitude", 
+    description: "Traz a brisa do mar e a sensação de horizonte aberto para o lar.",
+    notes: ["Aquático", "Fresco", "Verde"]
+  }
 };
