@@ -4,13 +4,14 @@ import React, { useMemo } from 'react';
 
 const Fireflies = () => {
   const particles = useMemo(() => {
-    return Array.from({ length: 35 }).map((_, i) => ({
+    return Array.from({ length: 45 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      duration: 15 + Math.random() * 20,
-      delay: Math.random() * 10,
-      size: 1.5 + Math.random() * 3
+      duration: 10 + Math.random() * 15,
+      delay: Math.random() * -20, // Delay negativo para começar em pontos diferentes da animação
+      size: 1.5 + Math.random() * 4,
+      color: Math.random() > 0.3 ? 'rgba(251, 191, 36, 0.8)' : 'rgba(190, 242, 100, 0.7)', // Mix de âmbar e um toque de verde lima
     }));
   }, []);
 
@@ -19,35 +20,55 @@ const Fireflies = () => {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full bg-amber-400/60"
+          className="absolute rounded-full"
           style={{
             left: p.left,
             top: p.top,
             width: `${p.size}px`,
             height: `${p.size}px`,
-            boxShadow: `0 0 ${p.size * 4}px ${p.size / 2}px rgba(251, 191, 36, 0.4)`,
-            animation: `breathe-firefly ${p.duration}s infinite ease-in-out ${p.delay}s`,
+            backgroundColor: p.color,
+            boxShadow: `0 0 ${p.size * 6}px ${p.size * 2}px ${p.color}`,
+            animation: `
+              wander-firefly ${p.duration}s infinite ease-in-out ${p.delay}s,
+              twinkle-firefly ${2 + Math.random() * 3}s infinite ease-in-out ${p.delay}s
+            `,
           }}
         />
       ))}
       <style>{`
-        @keyframes breathe-firefly {
-          0%, 100% {
-            transform: translate(0, 0) scale(0.5);
-            opacity: 0;
-            filter: blur(1px);
+        @keyframes wander-firefly {
+          0% {
+            transform: translate(0, 0);
           }
-          20% {
-            opacity: 0.1;
+          25% {
+            transform: translate(60px, -40px);
           }
           50% {
-            transform: translate(40px, -60px) scale(1.2);
-            opacity: 0.8;
-            filter: blur(0px);
-            box-shadow: 0 0 15px 4px rgba(251, 191, 36, 0.6);
+            transform: translate(-20px, -100px);
           }
-          80% {
+          75% {
+            transform: translate(-80px, -30px);
+          }
+          100% {
+            transform: translate(0, 0);
+          }
+        }
+
+        @keyframes twinkle-firefly {
+          0%, 100% {
             opacity: 0.1;
+            transform: scale(0.5);
+            filter: blur(2px);
+          }
+          30%, 70% {
+            opacity: 0.8;
+            transform: scale(1.2);
+            filter: blur(0px);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.5);
+            box-shadow: 0 0 20px 6px rgba(251, 191, 36, 0.9);
           }
         }
       `}</style>
