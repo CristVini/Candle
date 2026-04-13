@@ -38,8 +38,8 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto bg-stone-900/20 border border-stone-800/40 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl animate-in fade-in zoom-in-98 duration-1000 backdrop-blur-md">
-      <div className="p-8 md:p-12 lg:p-14 flex flex-col space-y-12">
+    <div className="w-full max-w-7xl mx-auto bg-stone-900/20 border border-stone-800/40 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl animate-in fade-in zoom-in-98 duration-1000 backdrop-blur-md">
+      <div className="p-8 md:p-12 lg:p-16 flex flex-col space-y-12">
         
         {/* Top Bar: Status & Reset */}
         <div className="flex items-center justify-between border-b border-stone-800/30 pb-6">
@@ -56,16 +56,16 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
           </button>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
+        {/* Main Content Grid - Expandido lateralmente */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left Side: Identity & Diagnosis (7 cols) */}
           <div className="lg:col-span-7 space-y-10">
             <div className="space-y-3">
-              <h2 className="text-5xl md:text-7xl font-serif text-stone-100 tracking-tight leading-none">
+              <h2 className="text-6xl md:text-8xl font-serif text-stone-100 tracking-tight leading-none">
                 {profile.name}
               </h2>
-              <p className="text-stone-500 text-lg md:text-xl font-light tracking-wide">
+              <p className="text-stone-500 text-xl md:text-2xl font-light tracking-wide">
                 {profile.archetype}
               </p>
             </div>
@@ -75,7 +75,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
                 <Beaker size={14} />
                 <span className="text-[9px] font-bold uppercase tracking-[0.2em]">Parecer Neurobiológico</span>
               </div>
-              <p className="text-stone-300 text-xl md:text-2xl leading-relaxed font-serif italic font-light max-w-2xl">
+              <p className="text-stone-300 text-2xl md:text-3xl lg:text-4xl leading-tight font-serif italic font-light max-w-3xl">
                 "{profile.description}"
               </p>
             </div>
@@ -90,10 +90,10 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
                   <button 
                     key={i} 
                     onClick={() => setSelectedIngredient(ingredientsData[note] || { name: note, description: "Nota olfativa essencial.", benefit: "Equilíbrio", image: "" })}
-                    className="group flex items-center gap-3 px-5 py-2.5 bg-stone-800/20 hover:bg-stone-100 hover:text-stone-950 border border-stone-800/40 rounded-full transition-all duration-300"
+                    className="group flex items-center gap-3 px-6 py-3 bg-stone-800/20 hover:bg-stone-100 hover:text-stone-950 border border-stone-800/40 rounded-full transition-all duration-300"
                   >
-                    <span className="text-[11px] font-bold uppercase tracking-widest">{note}</span>
-                    <Info size={12} className="opacity-30 group-hover:opacity-100" />
+                    <span className="text-[12px] font-bold uppercase tracking-widest">{note}</span>
+                    <Info size={14} className="opacity-30 group-hover:opacity-100" />
                   </button>
                 ))}
               </div>
@@ -102,30 +102,30 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
 
           {/* Right Side: Protocol (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="bg-stone-900/40 border border-stone-800/50 rounded-[32px] p-8 space-y-8">
+            <div className="bg-stone-900/40 border border-stone-800/50 rounded-[40px] p-10 space-y-10">
               <div className="flex items-center gap-2 text-stone-500">
                 <Sparkles size={14} />
                 <span className="text-[9px] font-bold uppercase tracking-[0.2em]">Protocolo de Aplicação</span>
               </div>
               
-              <div className="space-y-8">
+              <div className="space-y-10">
                 {profile.candleRitual.map((step, i) => (
-                  <div key={i} className="flex gap-5 group">
+                  <div key={i} className="flex gap-6 group">
                     <div className="flex flex-col items-center gap-2">
-                      <div className="w-8 h-8 rounded-full border border-stone-800 flex items-center justify-center bg-stone-950/50 group-hover:border-stone-600 transition-colors">
+                      <div className="w-10 h-10 rounded-full border border-stone-800 flex items-center justify-center bg-stone-950/50 group-hover:border-stone-600 transition-colors">
                         {getIcon(i)}
                       </div>
                       {i < profile.candleRitual.length - 1 && (
                         <div className="w-[1px] flex-1 bg-stone-800/50"></div>
                       )}
                     </div>
-                    <div className="space-y-1.5 pb-4">
-                      <h5 className="text-stone-200 text-[11px] font-bold uppercase tracking-widest flex items-center gap-2">
+                    <div className="space-y-2 pb-4">
+                      <h5 className="text-stone-200 text-[12px] font-bold uppercase tracking-widest flex items-center gap-2">
                         {step.title}
                         <span className="w-1 h-1 rounded-full bg-stone-700"></span>
                         <span className="text-stone-500 font-medium lowercase">{step.candle}</span>
                       </h5>
-                      <p className="text-stone-400 text-xs leading-relaxed font-light">
+                      <p className="text-stone-400 text-sm md:text-base leading-relaxed font-light">
                         {step.description}
                       </p>
                     </div>
@@ -137,21 +137,21 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
         </div>
 
         {/* Footer Action */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-stone-800/30">
+        <div className="pt-10 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-stone-800/30">
           <div className="text-center md:text-left space-y-1">
             <p className="text-stone-500 text-[10px] font-bold uppercase tracking-widest">Próximo Passo</p>
-            <p className="text-stone-400 text-sm font-light">Receba seu kit personalizado via WhatsApp.</p>
+            <p className="text-stone-400 text-base font-light">Receba seu kit personalizado via WhatsApp.</p>
           </div>
           
           <a 
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-auto flex items-center justify-center gap-4 bg-stone-100 text-stone-950 px-10 py-5 rounded-full font-bold text-sm uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.02] transition-all shadow-xl active:scale-95 group"
+            className="w-full md:w-auto flex items-center justify-center gap-6 bg-stone-100 text-stone-950 px-12 py-6 rounded-full font-bold text-base uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.02] transition-all shadow-xl active:scale-95 group"
           >
-            <ShoppingBag size={18} />
+            <ShoppingBag size={20} />
             Garantir meu Protocolo
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </div>
