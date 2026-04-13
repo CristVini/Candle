@@ -1,79 +1,51 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Brain, Wind, FlaskConical, Microscope, BookOpen } from 'lucide-react';
-import ReferencesModal from './ReferencesModal';
+import React from 'react';
+import { Brain, Heart, Wind, Zap } from 'lucide-react';
 
 const Science = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const principles = [
-    {
-      icon: <Brain className="w-6 h-6" />,
-      title: "Sistema Límbico",
-      description: "Diferente de outros sentidos, o olfato tem conexão direta com o sistema límbico, a 'central emocional' do cérebro, acessando memórias e sentimentos instantaneamente."
-    },
-    {
-      icon: <Wind className="w-6 h-6" />,
-      title: "Notas de Cabeça",
-      description: "Moléculas leves que impactam o humor no primeiro contato. Bergamota e Hortelã são usadas para clareza mental imediata."
-    },
-    {
-      icon: <FlaskConical className="w-6 h-6" />,
-      title: "Coração & Base",
-      description: "Notas que sustentam a experiência. O Patchouli e o Sândalo atuam no aterramento e redução de picos de cortisol."
-    }
-  ];
-
   return (
-    <div className="max-w-5xl mx-auto px-6 pb-20 space-y-16">
-      <div className="text-center space-y-6">
-        <h2 className="text-4xl md:text-7xl font-serif text-stone-100">Bioquímica Sensorial</h2>
-        <p className="text-stone-400 max-w-2xl mx-auto text-lg leading-relaxed">
-          Nossas velas não são apenas fragrâncias, são ferramentas neurobiológicas desenvolvidas para modular estados de espírito através de moléculas aromáticas específicas.
+    <div className="max-w-5xl mx-auto px-6 py-20">
+      <div className="text-center mb-20">
+        <h2 className="text-sm uppercase tracking-[0.3em] text-amber-500 mb-4 font-medium">A Ciência por trás do Aroma</h2>
+        <h3 className="text-4xl md:text-5xl font-light mb-8">Como o Olfato Conecta-se à Alma</h3>
+        <p className="text-stone-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          Na Candle Mind, não apenas criamos velas; estudamos a interação entre moléculas odoríferas e o sistema límbico — o centro das emoções e memórias no cérebro.
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {principles.map((p, i) => (
-          <div key={i} className="p-8 bg-stone-900/50 border border-stone-800 rounded-[32px] space-y-4 hover:border-stone-600 transition-colors">
-            <div className="w-12 h-12 bg-stone-100 text-stone-950 rounded-2xl flex items-center justify-center">
-              {p.icon}
+      <div className="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            icon: <Brain className="text-amber-500" />,
+            title: "Sistema Límbico",
+            desc: "Ao contrário dos outros sentidos, o olfato é o único conectado diretamente ao sistema emocional do cérebro, permitindo respostas imediatas ao estresse e humor."
+          },
+          {
+            icon: <Heart className="text-amber-500" />,
+            title: "Memória Afetiva",
+            desc: "Certas essências podem resgatar memórias de segurança e conforto, ativando neurotransmissores como a serotonina e a dopamina."
+          },
+          {
+            icon: <Zap className="text-amber-500" />,
+            title: "Neuroquímica",
+            desc: "Ingredientes como Lavanda e Bergamota interagem quimicamente com o corpo para reduzir os níveis de cortisol, o hormônio do estresse."
+          },
+          {
+            icon: <Wind className="text-amber-500" />,
+            title: "Pureza Molecular",
+            desc: "Utilizamos apenas essências de alta qualidade para garantir que as moléculas suspensas no ar sejam benéficas para o seu trato respiratório e sistema nervoso."
+          }
+        ].map((item, i) => (
+          <div key={i} className="p-8 bg-stone-900/30 border border-stone-800/50 rounded-2xl hover:border-amber-500/30 transition-all duration-500">
+            <div className="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mb-6">
+              {item.icon}
             </div>
-            <h3 className="text-xl font-serif text-stone-200">{p.title}</h3>
-            <p className="text-stone-400 text-sm leading-relaxed">{p.description}</p>
+            <h4 className="text-xl font-medium mb-4">{item.title}</h4>
+            <p className="text-stone-500 leading-relaxed text-sm italic">{item.desc}</p>
           </div>
         ))}
       </div>
-
-      <div className="relative p-10 md:p-16 bg-stone-100 text-stone-950 rounded-[40px] overflow-hidden">
-        <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-stone-950/10 rounded-full text-[10px] font-bold uppercase tracking-widest">
-              Protocolo Luz & Essência
-            </div>
-            <h3 className="text-3xl md:text-5xl font-serif leading-tight">Ciência a serviço do bem-estar.</h3>
-            <p className="text-stone-700 leading-relaxed">
-              Cada combinação em nosso mapeamento foi validada por estudos de psicologia olfativa, garantindo que o aroma escolhido seja exatamente o que seu sistema nervoso precisa.
-            </p>
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-2 text-stone-900 font-bold border-b-2 border-stone-900 pb-1 hover:opacity-70 transition-opacity"
-            >
-              <BookOpen size={16} />
-              Ver Referências Bibliográficas
-            </button>
-          </div>
-          <div className="flex justify-center">
-             <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
-                <div className="absolute inset-0 border-2 border-dashed border-stone-300 rounded-full animate-[spin_20s_linear_infinite]"></div>
-                <Microscope size={64} className="text-stone-300" />
-             </div>
-          </div>
-        </div>
-      </div>
-
-      <ReferencesModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
