@@ -158,7 +158,7 @@ const Quiz = () => {
   if (showResult) {
     const winnerId = getWinner();
     return (
-      <div className="flex items-center justify-center min-h-[80vh] w-full">
+      <div className="flex items-center justify-center min-h-full w-full py-10">
         <ResultCard profile={olfactoryProfiles[winnerId]} onReset={resetQuiz} />
       </div>
     );
@@ -167,18 +167,18 @@ const Quiz = () => {
   const currentQuestion = questions[currentStep];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center py-10">
       {/* Header Fixo */}
-      <div className="mb-8 md:mb-12 text-center space-y-4">
+      <div className="mb-6 md:mb-12 text-center space-y-3">
         <div className="flex items-center justify-center gap-3">
-          <div className="h-[1px] w-8 bg-stone-800"></div>
-          <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.4em]">
+          <div className="h-[1px] w-6 md:w-8 bg-stone-800"></div>
+          <span className="text-[9px] md:text-[10px] font-bold text-stone-500 uppercase tracking-[0.3em] md:tracking-[0.4em]">
             Passo {currentStep + 1} / {questions.length}
           </span>
-          <div className="h-[1px] w-8 bg-stone-800"></div>
+          <div className="h-[1px] w-6 md:w-8 bg-stone-800"></div>
         </div>
         
-        <div className="w-full bg-stone-900/50 h-1 rounded-full overflow-hidden max-w-[160px] mx-auto">
+        <div className="w-full bg-stone-900/50 h-1 rounded-full overflow-hidden max-w-[120px] md:max-w-[160px] mx-auto">
           <div 
             className="bg-stone-100 h-full transition-all duration-700 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
@@ -186,9 +186,9 @@ const Quiz = () => {
         </div>
       </div>
 
-      {/* Container de Altura Fixa para as Perguntas */}
-      <div className="min-h-[450px] md:min-h-[550px] flex flex-col justify-center space-y-8 md:space-y-12">
-        <h2 className="text-2xl sm:text-4xl md:text-6xl font-serif text-center text-stone-100 leading-tight max-w-4xl mx-auto min-h-[2.5em] flex items-center justify-center">
+      {/* Container de Perguntas */}
+      <div className="flex flex-col justify-center space-y-6 md:space-y-12">
+        <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-center text-stone-100 leading-tight max-w-4xl mx-auto min-h-[3em] flex items-center justify-center px-2">
           {currentQuestion.text}
         </h2>
         
@@ -197,13 +197,13 @@ const Quiz = () => {
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className="group relative w-full text-left p-5 md:p-8 bg-stone-900/30 border border-stone-800 rounded-2xl hover:border-stone-500 hover:bg-stone-900/60 transition-all duration-300 active:scale-[0.98]"
+              className="group relative w-full text-left p-4 md:p-8 bg-stone-900/30 border border-stone-800 rounded-xl md:rounded-2xl hover:border-stone-500 hover:bg-stone-900/60 transition-all duration-300 active:scale-[0.98]"
             >
-              <div className="flex flex-col gap-2">
-                <span className="text-sm md:text-xl text-stone-400 group-hover:text-stone-100 transition-colors leading-relaxed">
+              <div className="flex flex-col gap-1.5 md:gap-2">
+                <span className="text-sm md:text-xl text-stone-400 group-hover:text-stone-100 transition-colors leading-snug md:leading-relaxed">
                   {option.text}
                 </span>
-                <div className="h-[1px] w-6 bg-stone-800 group-hover:w-full group-hover:bg-stone-500 transition-all duration-500"></div>
+                <div className="h-[1px] w-4 md:w-6 bg-stone-800 group-hover:w-full group-hover:bg-stone-500 transition-all duration-500"></div>
               </div>
             </button>
           ))}
