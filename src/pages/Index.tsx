@@ -36,12 +36,14 @@ const Index = () => {
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
       <Fireflies />
 
-      {/* Camada Base: Hero - REMOVIDO BLUR para ganho de performance massivo */}
+      {/* Camada Base: Hero - Agora oculta totalmente quando não está ativa para evitar sobreposição */}
       <div 
-        className={`w-full h-full transition-[transform,opacity] duration-500 ease-out ${
-          currentView !== 'hero' ? 'scale-[0.98] opacity-20' : 'scale-100 opacity-100'
+        className={`w-full h-full transition-all duration-700 ease-in-out ${
+          currentView !== 'hero' 
+            ? 'scale-[0.95] opacity-0 pointer-events-none blur-lg' 
+            : 'scale-100 opacity-100 pointer-events-auto blur-0'
         }`}
-        style={{ willChange: 'transform, opacity' }}
+        style={{ willChange: 'transform, opacity, filter' }}
       >
         <Hero 
           onStartQuiz={() => setCurrentView('quiz')} 
@@ -53,10 +55,10 @@ const Index = () => {
       {/* Camada Sobreposta: Quiz */}
       <div 
         ref={el => scrollContainerRef.current['quiz'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950/95 transition-[transform,opacity] duration-500 ease-out overflow-y-auto ${
-          currentView === 'quiz' ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        className={`fixed inset-0 z-50 bg-stone-950 transition-all duration-500 ease-out overflow-y-auto ${
+          currentView === 'quiz' ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
         }`}
-        style={{ willChange: 'transform, opacity', transform: currentView === 'quiz' ? 'translate3d(0,0,0)' : 'translate3d(0,100%,0)' }}
+        style={{ willChange: 'transform, opacity' }}
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'quiz' && (
@@ -78,10 +80,10 @@ const Index = () => {
       {/* Camada Sobreposta: Ciência */}
       <div 
         ref={el => scrollContainerRef.current['science'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950/98 transition-[transform,opacity] duration-500 ease-out overflow-y-auto ${
-          currentView === 'science' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        className={`fixed inset-0 z-50 bg-stone-950 transition-all duration-500 ease-out overflow-y-auto ${
+          currentView === 'science' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
-        style={{ willChange: 'transform, opacity', transform: currentView === 'science' ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)' }}
+        style={{ willChange: 'transform, opacity' }}
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'science' && (
@@ -103,10 +105,10 @@ const Index = () => {
       {/* Camada Sobreposta: Ingredientes */}
       <div 
         ref={el => scrollContainerRef.current['ingredients'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950/98 transition-[transform,opacity] duration-500 ease-out overflow-y-auto ${
-          currentView === 'ingredients' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+        className={`fixed inset-0 z-50 bg-stone-950 transition-all duration-500 ease-out overflow-y-auto ${
+          currentView === 'ingredients' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
-        style={{ willChange: 'transform, opacity', transform: currentView === 'ingredients' ? 'translate3d(0,0,0)' : 'translate3d(100%,0,0)' }}
+        style={{ willChange: 'transform, opacity' }}
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'ingredients' && (
