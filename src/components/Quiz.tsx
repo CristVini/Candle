@@ -186,8 +186,11 @@ const Quiz = () => {
         </div>
       </div>
 
-      {/* Container de Perguntas */}
-      <div className="flex flex-col justify-center space-y-6 md:space-y-12">
+      {/* Container de Perguntas com Key para resetar estado no mobile */}
+      <div 
+        key={currentStep} 
+        className="flex flex-col justify-center space-y-6 md:space-y-12 animate-in fade-in slide-in-from-right-4 duration-500"
+      >
         <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-center text-stone-100 leading-tight max-w-4xl mx-auto min-h-[3em] flex items-center justify-center px-2">
           {currentQuestion.text}
         </h2>
@@ -195,7 +198,7 @@ const Quiz = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 max-w-4xl mx-auto w-full">
           {currentQuestion.options.map((option, index) => (
             <button
-              key={index}
+              key={`${currentStep}-${index}`}
               onClick={() => handleAnswer(option.value)}
               className="group relative w-full text-left p-4 md:p-8 bg-stone-900/30 border border-stone-800 rounded-xl md:rounded-2xl hover:border-stone-500 hover:bg-stone-900/60 transition-all duration-300 active:scale-[0.98]"
             >
