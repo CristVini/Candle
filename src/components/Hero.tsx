@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Sparkles, BookOpen, Droplets } from 'lucide-react';
+import { Flame, BookOpen, Droplets } from 'lucide-react';
 
 interface HeroProps {
   onStartQuiz: () => void;
@@ -20,7 +20,7 @@ const Hero = ({ onStartQuiz, onOpenScience, onOpenIngredients }: HeroProps) => {
       <div className="w-full max-w-6xl mx-auto space-y-8 md:space-y-12">
         <div className="flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <div className="flex items-center gap-2 md:gap-3 px-4 py-1.5 bg-stone-900/50 border border-stone-800 rounded-full">
-            <Sparkles className="w-3 h-3 text-stone-400" />
+            <Flame className="w-3 h-3 text-amber-500 fill-amber-500/20" />
             <span className="text-[10px] md:text-[11px] font-bold text-stone-300 uppercase tracking-[0.4em]">
               Engenharia Olfativa
             </span>
