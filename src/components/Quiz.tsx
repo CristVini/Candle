@@ -2,128 +2,119 @@
 
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
 import { candleProfiles } from '../data/candleProfiles';
 import ResultCard from './ResultCard';
 
 const questions = [
   {
     id: 1,
-    text: "Se sua mente fosse um estado climático hoje, como ela estaria?",
+    text: "Como você descreveria o 'clima' da sua mente agora?",
     options: [
-      { text: "Uma tempestade elétrica incessante", value: "acute_stress" },
-      { text: "Uma neblina densa e fria que não se dissipa", value: "burnout" },
-      { text: "Um céu cinza e estático, sem vento", value: "sadness" },
-      { text: "Um eclipse total, onde a luz parece ter sumido", value: "hopelessness" }
+      { text: "Uma tempestade de pensamentos que não param", value: "anxiety" },
+      { text: "Uma neblina densa, sinto-me esgotado", value: "burnout" },
+      { text: "Um deserto seco, sem ideias ou inspiração", value: "creative_block" },
+      { text: "Um vulcão prestes a entrar em erupção", value: "irritability" }
     ]
   },
   {
     id: 2,
-    text: "Como você se sente em relação às suas responsabilidades atuais?",
+    text: "O que mais te incomoda no seu dia a dia ultimamente?",
     options: [
-      { text: "Sufocado, como se estivesse carregando o mundo", value: "acute_stress" },
-      { text: "Indiferente, não sinto mais conexão com o que faço", value: "burnout" },
-      { text: "Incapaz de enxergar sentido em continuar tentando", value: "hopelessness" },
-      { text: "Sinto que ninguém percebe o quanto estou sobrecarregado", value: "loneliness" }
+      { text: "A falta de paciência com as pessoas", value: "irritability" },
+      { text: "A sensação de estar sempre atrasado ou ansioso", value: "anxiety" },
+      { text: "Não conseguir focar em nada por muito tempo", value: "mental_fatigue" },
+      { text: "Sentir que nada mais me traz prazer", value: "hopelessness" }
     ]
   },
   {
     id: 3,
-    text: "Ao final do dia, qual é o sentimento predominante?",
+    text: "Como você se sente ao olhar para o seu futuro?",
     options: [
-      { text: "Vazio e isolamento, mesmo perto de pessoas", value: "loneliness" },
-      { text: "Esgotamento que vai além do sono físico", value: "burnout" },
-      { text: "Nervosismo e dificuldade em 'desligar' o corpo", value: "acute_stress" },
-      { text: "Uma tristeza silenciosa e profunda", value: "sadness" }
+      { text: "Com medo do que pode dar errado", value: "anxiety" },
+      { text: "Sem esperança de que algo mude", value: "hopelessness" },
+      { text: "Cansado só de pensar no trabalho", value: "burnout" },
+      { text: "Sinto falta de alguém ou de um tempo que passou", value: "grief" }
     ]
   },
   {
     id: 4,
-    text: "Como você descreveria sua 'centelha' interior agora?",
+    text: "Qual é o seu maior desejo sensorial agora?",
     options: [
-      { text: "Parece que o combustível acabou completamente", value: "burnout" },
-      { text: "Ela brilha freneticamente mas está me queimando", value: "acute_stress" },
-      { text: "Sinto que ela se apagou e não sei como reacender", value: "hopelessness" },
-      { text: "Ela brilha fraco, pedindo por um abraço", value: "loneliness" }
+      { text: "Um silêncio absoluto para relaxar", value: "acute_stress" },
+      { text: "Um abraço quente e acolhedor", value: "loneliness" },
+      { text: "Um choque de energia para acordar", value: "mental_fatigue" },
+      { text: "Sentir que estou flutuando sem peso", value: "creative_block" }
     ]
   },
   {
     id: 5,
-    text: "Qual dessas situações mais te define socialmente hoje?",
+    text: "Como está sua produtividade?",
     options: [
-      { text: "Evito as pessoas porque não tenho energia para conversar", value: "burnout" },
-      { text: "Estou entre pessoas mas me sinto a quilômetros de distância", value: "loneliness" },
-      { text: "Fico irritado com barulhos ou conversas triviais", value: "acute_stress" },
-      { text: "Sinto que não sou importante para ninguém", value: "sadness" }
+      { text: "Trabalho muito, mas sinto que não saio do lugar", value: "burnout" },
+      { text: "Minha mente 'trava' quando preciso criar algo", value: "creative_block" },
+      { text: "Estou distraído por notificações e ruídos", value: "mental_fatigue" },
+      { text: "Fico irritado quando sou interrompido", value: "irritability" }
     ]
   },
   {
     id: 6,
-    text: "O que você busca em um momento de pausa?",
+    text: "O que você sente no corpo quando está sob pressão?",
     options: [
-      { text: "Silêncio absoluto e redução de estímulos", value: "acute_stress" },
-      { text: "Sentir que a vida ainda tem cor e alegria", value: "hopelessness" },
-      { text: "Sentir que alguém se importa comigo", value: "loneliness" },
-      { text: "Apenas conseguir fechar os olhos e parar de pensar", value: "burnout" }
+      { text: "Aperto no peito e respiração curta", value: "anxiety" },
+      { text: "Tensão extrema nos ombros e mandíbula", value: "acute_stress" },
+      { text: "Um vazio ou um peso no estômago", value: "sadness" },
+      { text: "Uma exaustão que nem 10 horas de sono curam", value: "burnout" }
     ]
   },
   {
     id: 7,
-    text: "Sobre sua percepção de tempo:",
+    text: "Como você lida com a solidão hoje?",
     options: [
-      { text: "O tempo voa e eu estou sempre atrasado", value: "acute_stress" },
-      { text: "O tempo parou e os dias são todos iguais", value: "depressed" },
-      { text: "O tempo é um peso que eu mal consigo carregar", value: "burnout" },
-      { text: "Sinto saudade de tempos que não voltam mais", value: "sadness" }
+      { text: "Sinto um vazio, como se faltasse conexão", value: "loneliness" },
+      { text: "Prefiro ficar sozinho, as pessoas me irritam", value: "irritability" },
+      { text: "A solidão me traz lembranças dolorosas", value: "grief" },
+      { text: "Uso o tempo sozinho para tentar ser produtivo", value: "mental_fatigue" }
     ]
   },
   {
     id: 8,
-    text: "Se você pudesse escolher um refúgio agora, qual seria?",
+    text: "Se sua vida fosse uma cor agora, qual seria?",
     options: [
-      { text: "Um chalé isolado com uma lareira acesa", value: "loneliness" },
-      { text: "Um campo aberto com o sol batendo no rosto", value: "hopelessness" },
-      { text: "Um quarto escuro e silencioso com lençóis limpos", value: "burnout" },
-      { text: "Uma biblioteca antiga e tranquila", value: "sadness" }
+      { text: "Cinza estático", value: "sadness" },
+      { text: "Vermelho pulsante", value: "acute_stress" },
+      { text: "Amarelo desbotado", value: "hopelessness" },
+      { text: "Roxo elétrico (ansioso)", value: "anxiety" }
     ]
   },
   {
     id: 9,
-    text: "Como está sua motivação para novos projetos?",
+    text: "O que te faria sorrir agora?",
     options: [
-      { text: "Inexistente, sinto cinismo sobre o futuro", value: "burnout" },
-      { text: "Bloqueada por um medo constante de falhar", value: "acute_stress" },
-      { text: "Dormitante, sinto que perdi meu propósito", value: "hopelessness" },
-      { text: "Gostaria de ter alguém para fazer comigo", value: "loneliness" }
+      { text: "Uma notícia de que tudo vai ficar bem", value: "hopelessness" },
+      { text: "Ter uma ideia brilhante para um projeto", value: "creative_block" },
+      { text: "Rever alguém que perdi ou sinto falta", value: "grief" },
+      { text: "Um dia inteiro sem nenhuma obrigação", value: "burnout" }
     ]
   },
   {
     id: 10,
-    text: "Para você, o que é mais difícil de lidar no momento?",
+    text: "Qual frase mais ressoa com você?",
     options: [
-      { text: "A autocobrança e o perfeccionismo", value: "acute_stress" },
-      { text: "A falta de esperança de que as coisas melhorem", value: "hopelessness" },
-      { text: "A apatia emocional perante a vida", value: "burnout" },
-      { text: "A falta de conexão genuína", value: "loneliness" }
+      { text: "'Eu não aguento mais'", value: "burnout" },
+      { text: "'E se algo ruim acontecer?'", value: "anxiety" },
+      { text: "'Eu me sinto invisível'", value: "loneliness" },
+      { text: "'Preciso de um tempo para mim'", value: "acute_stress" }
     ]
   }
 ];
 
 const Quiz = () => {
   const [currentStep, setCurrentStep] = useState(0);
-  const [scores, setScores] = useState<Record<string, number>>({
-    burnout: 0,
-    hopelessness: 0,
-    sadness: 0,
-    acute_stress: 0,
-    loneliness: 0
-  });
+  const [scores, setScores] = useState<Record<string, number>>({});
   const [showResult, setShowResult] = useState(false);
 
   const handleAnswer = (value: string) => {
-    // Handling specific mapping for time question if needed, else general
-    const category = value === 'depressed' ? 'sadness' : value;
-    setScores(prev => ({ ...prev, [category]: (prev[category] || 0) + 1 }));
+    setScores(prev => ({ ...prev, [value]: (prev[value] || 0) + 1 }));
     
     if (currentStep < questions.length - 1) {
       setCurrentStep(prev => prev + 1);
@@ -138,12 +129,13 @@ const Quiz = () => {
 
   const resetQuiz = () => {
     setCurrentStep(0);
-    setScores({ burnout: 0, hopelessness: 0, sadness: 0, acute_stress: 0, loneliness: 0 });
+    setScores({});
     setShowResult(false);
   };
 
   if (showResult) {
-    return <ResultCard profile={candleProfiles[getWinner()]} onReset={resetQuiz} />;
+    const winnerId = getWinner();
+    return <ResultCard profile={candleProfiles[winnerId]} onReset={resetQuiz} />;
   }
 
   const currentQuestion = questions[currentStep];
@@ -152,47 +144,43 @@ const Quiz = () => {
     <div className="max-w-2xl mx-auto px-4">
       <div className="mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="h-[1px] w-8 bg-slate-300"></div>
-          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">
-            Protocolo de Análise S-0{currentStep + 1}
+          <div className="h-[1px] w-8 bg-orange-200"></div>
+          <span className="text-[10px] font-bold text-orange-600 uppercase tracking-[0.3em]">
+            Mapeamento Sensorial • {currentStep + 1} de {questions.length}
           </span>
-          <div className="h-[1px] w-8 bg-slate-300"></div>
+          <div className="h-[1px] w-8 bg-orange-200"></div>
         </div>
         
-        <div className="w-full bg-slate-100 h-1 rounded-full overflow-hidden max-w-xs mx-auto">
+        <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden max-w-xs mx-auto">
           <div 
-            className="bg-slate-900 h-full transition-all duration-1000 ease-out" 
+            className="bg-orange-400 h-full transition-all duration-700 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>
 
-      <div className="space-y-10">
-        <h2 className="text-2xl md:text-3xl font-serif text-center text-slate-800 leading-tight">
+      <div className="space-y-8">
+        <h2 className="text-2xl md:text-4xl font-serif text-center text-slate-800 leading-tight">
           {currentQuestion.text}
         </h2>
         
-        <div className="grid gap-4">
+        <div className="grid gap-3">
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className="group relative w-full text-left p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-900 hover:shadow-lg transition-all duration-300"
+              className="group relative w-full text-left p-5 bg-white border-2 border-slate-100 rounded-2xl hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300"
             >
               <div className="flex items-center justify-between">
-                <span className="text-[16px] text-slate-600 group-hover:text-slate-900 transition-colors pr-8">
+                <span className="text-lg text-slate-600 group-hover:text-slate-900 transition-colors">
                   {option.text}
                 </span>
-                <div className="h-2 w-2 rounded-full bg-slate-200 group-hover:bg-slate-900 transition-colors"></div>
+                <div className="h-2 w-2 rounded-full bg-slate-200 group-hover:bg-orange-400 transition-colors"></div>
               </div>
             </button>
           ))}
         </div>
       </div>
-      
-      <p className="text-center mt-12 text-[10px] text-slate-400 font-medium uppercase tracking-[0.2em]">
-        Privacidade garantida • Processamento anônimo de dados emocionais
-      </p>
     </div>
   );
 };
