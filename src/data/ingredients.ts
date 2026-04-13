@@ -6,179 +6,116 @@ export interface Ingredient {
 }
 
 export const ingredientsData: Record<string, Ingredient> = {
-  // --- ANTERIORES (Mantidos para compatibilidade) ---
-  "Alecrim": {
-    name: "Alecrim",
-    image: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?auto=format&fit=crop&q=80&w=800",
-    benefit: "Foco",
-    description: "Estimula a concentração, melhora a memória e combate o cansaço mental."
-  },
-  "Alecrim Blanc": {
-    name: "Alecrim Blanc",
-    image: "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=80&w=800",
-    benefit: "Clareza",
-    description: "Traz clareza mental com uma sensação limpa e sofisticada."
-  },
+  // --- HERBAIS / TERAPÊUTICOS ---
+  "Alecrim": { name: "Alecrim", image: "", benefit: "Foco", description: "Estimula a concentração, melhora a memória e combate o cansaço mental." },
+  "Alecrim Blanc": { name: "Alecrim Blanc", image: "", benefit: "Clareza", description: "Traz clareza mental com uma sensação limpa e sofisticada." },
+  "Alfazema": { name: "Alfazema", image: "", benefit: "Relaxamento", description: "Acalma a mente, reduz ansiedade e promove relaxamento profundo." },
+  "Arruda": { name: "Arruda", image: "", benefit: "Limpeza", description: "Conhecida por limpeza energética e proteção emocional." },
+  "Arnica": { name: "Arnica", image: "", benefit: "Alívio", description: "Transmite alívio e conforto físico, ideal para relaxamento corporal." },
+  "Andiroba": { name: "Andiroba", image: "", benefit: "Cuidado", description: "Promove sensação de cuidado e equilíbrio do corpo." },
+  "Babosa": { name: "Babosa", image: "", benefit: "Leveza", description: "Refrescante e suave, traz sensação de leveza e renovação." },
+  "Aloe Vera": { name: "Aloe Vera", image: "", benefit: "Frescor", description: "Acalma, hidrata e transmite frescor natural." },
+  "Capim Limão": { name: "Capim Limão", image: "", benefit: "Anti-Estresse", description: "Reduz estresse, ansiedade e traz sensação de leveza." },
+  "Camomila": { name: "Camomila", image: "", benefit: "Sono", description: "Acalma emoções, ajuda no relaxamento e melhora o sono." },
+  "Calêndula": { name: "Calêndula", image: "", benefit: "Bem-estar", description: "Suave e reconfortante, promove bem-estar emocional." },
+  "Cedro": { name: "Cedro", image: "", benefit: "Segurança", description: "Traz estabilidade, segurança e sensação de aterramento." },
+  "Copaíba": { name: "Copaíba", image: "", benefit: "Anti-Tensão", description: "Relaxante, ajuda a aliviar tensões físicas e mentais." },
+  "Erva Cidreira": { name: "Erva Cidreira", image: "", benefit: "Tranquilidade", description: "Reduz ansiedade e promove tranquilidade." },
+  "Erva Doce": { name: "Erva Doce", image: "", benefit: "Conforto", description: "Acolhedora, diminui irritação e promove conforto emocional." },
+  "Eucalipto": { name: "Eucalipto", image: "", benefit: "Respiração", description: "Refrescante, limpa a mente e melhora a respiração." },
+  "Hortelã": { name: "Hortelã", image: "", benefit: "Energia", description: "Energizante, melhora foco e disposição." },
+  "Hortelã-Pimenta": { name: "Hortelã-Pimenta", image: "", benefit: "Estímulo", description: "Aroma intenso, refrescante e altamente estimulante, ideal para aumentar o foco, clarear a mente e reduzir o cansaço físico e mental." },
+  "Manjerona": { name: "Manjerona", image: "", benefit: "Relaxante", description: "Relaxante profundo, ideal para aliviar tensões." },
+  "Mirra": { name: "Mirra", image: "", benefit: "Equilíbrio", description: "Introspectiva, auxilia no equilíbrio emocional." },
+  "Olíbano": { name: "Olíbano", image: "", benefit: "Paz", description: "Promove paz interior e conexão espiritual." },
+  "Patchouly": { name: "Patchouly", image: "", benefit: "Presença", description: "Estabiliza emoções e traz sensação de presença." },
+  "Sândalo": { name: "Sândalo", image: "", benefit: "Equilíbrio", description: "Acalma profundamente e promove equilíbrio emocional." },
+  "Sete Ervas": { name: "Sete Ervas", image: "", benefit: "Limpeza", description: "Limpeza energética e proteção do ambiente." },
+  "Tomilho": { name: "Tomilho", image: "", benefit: "Vitalidade", description: "Fortalece a energia e estimula vitalidade." },
+  "Verbena": { name: "Verbena", image: "", benefit: "Revigorante", description: "Relaxante leve com toque revigorante." },
+  "Bamboo": { name: "Bamboo", image: "", benefit: "Frescor", description: "Traz a sensação de leveza e frescor, ideal para purificar o ambiente." },
+  "Pinho": { name: "Pinho", image: "", benefit: "Limpeza", description: "Conhecido por limpeza energética e proteção emocional." },
+
+  // --- FRUTADOS ---
+  "Abacaxi": { name: "Abacaxi", image: "", benefit: "Alegria", description: "Refrescante e alegre, traz sensação de leveza e energia." },
+  "Açaí": { name: "Açaí", image: "", benefit: "Disposição", description: "Vibrante e envolvente, desperta disposição." },
+  "Ameixa": { name: "Ameixa", image: "", benefit: "Aconchego", description: "Doce e confortável, transmite aconchego." },
+  "Amora Negra": { name: "Amora Negra", image: "", benefit: "Intensidade", description: "Intensa e sofisticada, desperta os sentidos." },
+  "Banana": { name: "Banana", image: "", benefit: "Conforto", description: "Cremosa e acolhedora, transmite conforto." },
+  "Blueberry": { name: "Blueberry", image: "", benefit: "Frescor", description: "Leve e moderno, traz sensação de frescor." },
+  "Caju": { name: "Caju", image: "", benefit: "Humor", description: "Tropical e energizante, estimula o bom humor." },
+  "Cereja": { name: "Cereja", image: "", benefit: "Aconchego", description: "Doce e envolvente, cria um clima aconchegante." },
+  "Cupuaçu": { name: "Cupuaçu", image: "", benefit: "Bem-estar", description: "Exótico e cremoso, promove conforto e bem-estar." },
+  "Figo": { name: "Figo", image: "", benefit: "Elegância", description: "Sofisticado e levemente doce, transmite elegância." },
+  "Framboesa": { name: "Framboesa", image: "", benefit: "Alegria", description: "Vibrante e feminina, estimula alegria." },
+  "Frutas Vermelhas": { name: "Frutas Vermelhas", image: "", benefit: "Positividade", description: "Energizante e marcante, desperta emoções positivas." },
+  "Goiaba": { name: "Goiaba", image: "", benefit: "Conforto", description: "Tropical e leve, traz sensação de conforto." },
+  "Kiwi": { name: "Kiwi", image: "", benefit: "Energia", description: "Refrescante e estimulante, ideal para energia." },
+  "Lichia": { name: "Lichia", image: "", benefit: "Suavidade", description: "Delicada e elegante, transmite suavidade." },
+  "Maçã Verde": { name: "Maçã Verde", image: "", benefit: "Foco", description: "Refrescante, estimula foco e leveza." },
+  "Maçã com Canela": { name: "Maçã com Canela", image: "", benefit: "Conforto", description: "Acolhedora, traz conforto emocional." },
+  "Manga": { name: "Manga", image: "", benefit: "Alegria", description: "Tropical e envolvente, estimula alegria." },
+  "Maracujá": { name: "Maracujá", image: "", benefit: "Calmante", description: "Calmante natural, reduz ansiedade." },
+  "Melancia": { name: "Melancia", image: "", benefit: "Relaxamento", description: "Leve e refrescante, ideal para relaxar." },
+  "Morango": { name: "Morango", image: "", benefit: "Romantismo", description: "Doce e romântico, desperta sensações agradáveis." },
+  "Pêssego": { name: "Pêssego", image: "", benefit: "Conforto", description: "Suave e delicado, promove conforto." },
+  "Pêra": { name: "Pêra", image: "", benefit: "Equilíbrio", description: "Leve e elegante, transmite equilíbrio." },
+  "Tangerina": { name: "Tangerina", image: "", benefit: "Energia", description: "Cítrica e vibrante, traz disposição e alegria." },
+  "Uva": { name: "Uva", image: "", benefit: "Aconchego", description: "Doce e sofisticada, cria ambiente acolhedor." },
+
+  // --- GOURMAND ---
+  "Baunilha": { name: "Baunilha", image: "", benefit: "Conforto", description: "Extremamente acolhedora, reduz ansiedade e traz conforto." },
+  "Black Vanilla": { name: "Black Vanilla", image: "", benefit: "Luxo", description: "Intensa e sofisticada, promove sensação de luxo." },
+  "Chocolate": { name: "Chocolate", image: "", benefit: "Bem-estar", description: "Estimula prazer e bem-estar emocional." },
+  "Caramelo": { name: "Caramelo", image: "", benefit: "Relaxar", description: "Quente e aconchegante, ideal para relaxar." },
+  "Doce de Leite": { name: "Doce de Leite", image: "", benefit: "Carinho", description: "Extremamente acolhedor, transmite carinho e conforto." },
+  "Panetone": { name: "Panetone", image: "", benefit: "Memória", description: "Nostálgico e aconchegante, ativa memórias afetivas." },
+  "Chantilly": { name: "Chantilly", image: "", benefit: "Suavidade", description: "Leve e doce, cria sensação de suavidade." },
+  "Café": { name: "Café", image: "", benefit: "Disposição", description: "Energizante, estimula foco e disposição." },
+  "Café Torrado": { name: "Café Torrado", image: "", benefit: "Ativação", description: "Intenso e marcante, ativa a mente." },
+  "Mel": { name: "Mel", image: "", benefit: "Bem-estar", description: "Doce e calmante, promove bem-estar." },
+  "Coco": { name: "Coco", image: "", benefit: "Férias", description: "Cremoso e relaxante, traz sensação de férias." },
+  "Coco Queimado": { name: "Coco Queimado", image: "", benefit: "Aconchego", description: "Quente e envolvente, transmite aconchego." },
+
+  // --- FLORAIS ---
+  "Lavanda": { name: "Lavanda", image: "", benefit: "Relaxamento", description: "Relaxante profunda, reduz estresse e ansiedade." },
+  "Lavanda Francesa": { name: "Lavanda Francesa", image: "", benefit: "Tranquilidade", description: "Equilíbrio emocional e tranquilidade mental." },
+  "Jasmim": { name: "Jasmim", image: "", benefit: "Autoestima", description: "Estimulante emocional, aumenta autoestima." },
+  "Rosa": { name: "Rosa", image: "", benefit: "Amor", description: "Promove amor, conforto e equilíbrio emocional." },
+  "Rosa Damascena": { name: "Rosa Damascena", image: "", benefit: "Calma", description: "Intensamente calmante e acolhedora." },
+  "Orquídea": { name: "Orquídea", image: "", benefit: "Elegância", description: "Sofisticada e delicada, transmite elegância." },
+  "Lírio": { name: "Lírio", image: "", benefit: "Paz", description: "Suave e relaxante, traz paz interior." },
+  "Flor de Laranjeira": { name: "Flor de Laranjeira", image: "", benefit: "Acolhimento", description: "Calmante e acolhedora." },
+  "Gardênia": { name: "Gardênia", image: "", benefit: "Positividade", description: "Envolvente e elegante, estimula emoções positivas." },
+  "Violeta": { name: "Violeta", image: "", benefit: "Conforto", description: "Delicada e nostálgica, traz conforto emocional." },
+  "Dama da Noite": { name: "Dama da Noite", image: "", benefit: "Sensorial", description: "Intenso e envolvente, cria um clima relaxante e sensorial." },
 
   // --- COMBINAÇÕES / ESPECIAIS ---
-  "Cereja c/ Avelã": {
-    name: "Cereja c/ Avelã",
-    image: "",
-    benefit: "Aconchego",
-    description: "Doce e envolvente, combina aconchego com sofisticação, ideal para relaxar e criar um clima acolhedor."
-  },
-  "Morango c/ Champanhe": {
-    name: "Morango c/ Champanhe",
-    image: "",
-    benefit: "Celebração",
-    description: "Leve, sofisticado e levemente efervescente, desperta alegria e sensação de celebração."
-  },
-  "Pêra c/ Chantilly": {
-    name: "Pêra c/ Chantilly",
-    image: "",
-    benefit: "Conforto",
-    description: "Suave e cremosa, transmite conforto emocional e delicadeza."
-  },
-  "Maçã c/ Canela": {
-    name: "Maçã c/ Canela",
-    image: "",
-    benefit: "Lar",
-    description: "Quente e acolhedora, perfeita para relaxar e trazer sensação de lar."
-  },
-  "Chocolate c/ Pimenta": {
-    name: "Chocolate c/ Pimenta",
-    image: "",
-    benefit: "Energia",
-    description: "Estimulante e envolvente, desperta energia e sensualidade."
-  },
-  "Eucalipto c/ Bergamota": {
-    name: "Eucalipto c/ Bergamota",
-    image: "",
-    benefit: "Humor",
-    description: "Refrescante com toque cítrico, limpa a mente e melhora o humor."
-  },
-  "Lavanda Francesa": {
-    name: "Lavanda Francesa",
-    image: "https://images.unsplash.com/photo-1595165736029-79a02330768c?auto=format&fit=crop&q=80&w=800",
-    benefit: "Calmante",
-    description: "Profundamente calmante, ajuda a desacelerar pensamentos e reduzir ansiedade."
-  },
-  "Capim Limão": {
-    name: "Capim Limão",
-    image: "https://images.unsplash.com/photo-1515544832579-37385966969b?auto=format&fit=crop&q=80&w=800",
-    benefit: "Clareza",
-    description: "Leve e refrescante, reduz estresse e promove clareza mental."
-  },
-  "Coco Queimado": {
-    name: "Coco Queimado",
-    image: "",
-    benefit: "Aconchego",
-    description: "Quente e intenso, traz sensação de aconchego e conforto."
-  },
-  "Café em Grãos": {
-    name: "Café em Grãos",
-    image: "",
-    benefit: "Foco",
-    description: "Energizante e marcante, estimula foco e produtividade."
-  },
-  "Café Torrado": {
-    name: "Café Torrado",
-    image: "",
-    benefit: "Conforto",
-    description: "Intenso e acolhedor, ativa a mente com sensação de conforto."
-  },
+  "Cereja c/ Avelã": { name: "Cereja c/ Avelã", image: "", benefit: "Aconchego", description: "Doce e envolvente, combina aconchego com sofisticação, ideal para relaxar e criar um clima acolhedor." },
+  "Morango c/ Champanhe": { name: "Morango c/ Champanhe", image: "", benefit: "Celebração", description: "Leve, sofisticado e levemente efervescente, desperta alegria e sensação de celebração." },
+  "Pêra c/ Chantilly": { name: "Pêra c/ Chantilly", image: "", benefit: "Conforto", description: "Suave e cremosa, transmite conforto emocional e delicadeza." },
+  "Maçã c/ Canela": { name: "Maçã c/ Canela", image: "", benefit: "Lar", description: "Quente e acolhedora, perfeita para relaxar e trazer sensação de lar." },
+  "Chocolate c/ Pimenta": { name: "Chocolate c/ Pimenta", image: "", benefit: "Sensualidade", description: "Estimulante e envolvente, desperta energy e sensualidade." },
+  "Eucalipto c/ Bergamota": { name: "Eucalipto c/ Bergamota", image: "", benefit: "Humor", description: "Refrescante com toque cítrico, limpa a mente e melhora o humor." },
+  "Café em Grãos": { name: "Café em Grãos", image: "", benefit: "Produtividade", description: "Energizante e marcante, estimula foco e produtividade." },
 
-  // --- PERFUMADOS / MARCA ---
-  "Love Spell": {
-    name: "Love Spell",
-    image: "",
-    benefit: "Feminilidade",
-    description: "Doce e encantador, desperta feminilidade e bem-estar."
-  },
-  "Donna Spark": {
-    name: "Donna Spark",
-    image: "",
-    benefit: "Elegância",
-    description: "Sofisticado e moderno, transmite elegância e confiança."
-  },
-  "Douvie": {
-    name: "Douvie",
-    image: "",
-    benefit: "Acolhedor",
-    description: "Delicado e envolvente, ideal para criar um ambiente acolhedor."
-  },
-  "Eco Brasilis": {
-    name: "Eco Brasilis",
-    image: "",
-    benefit: "Equilíbrio",
-    description: "Fresco e natural, conecta com sensação de natureza e equilíbrio."
-  },
-  "Iguatemi": {
-    name: "Iguatemi",
-    image: "",
-    benefit: "Sofisticação",
-    description: "Elegante e marcante, remete a luxo e sofisticação."
-  },
-  "Marine": {
-    name: "Marine",
-    image: "",
-    benefit: "Tranquilidade",
-    description: "Fresco e aquático, transmite leveza e tranquilidade."
-  },
-  "Noite Feliz": {
-    name: "Noite Feliz",
-    image: "",
-    benefit: "Relaxar",
-    description: "Suave e aconchegante, ideal para relaxar no fim do dia."
-  },
-  "Palmoluxo": {
-    name: "Palmoluxo",
-    image: "",
-    benefit: "Frescor",
-    description: "Limpo e sofisticado, sensação de banho e frescor."
-  },
+  // --- PERFUMARIA / MARCA ---
+  "Love Spell": { name: "Love Spell", image: "", benefit: "Feminilidade", description: "Doce e encantador, desperta feminilidade e bem-estar." },
+  "Donna Spark": { name: "Donna Spark", image: "", benefit: "Confiança", description: "Sofisticado e moderno, transmite elegância e confiança." },
+  "Douvie": { name: "Douvie", image: "", benefit: "Acolhedor", description: "Delicado e envolvente, ideal para criar um ambiente acolhedor." },
+  "Eco Brasilis": { name: "Eco Brasilis", image: "", benefit: "Natureza", description: "Fresco e natural, conecta com sensação de natureza e equilíbrio." },
+  "Iguatemi": { name: "Iguatemi", image: "", benefit: "Luxo", description: "Elegante e marcante, remete a luxo e sofisticação." },
+  "Marine": { name: "Marine", image: "", benefit: "Tranquilidade", description: "Fresco e aquático, transmite leveza e tranquilidade." },
+  "Noite Feliz": { name: "Noite Feliz", image: "", benefit: "Relaxar", description: "Suave e aconchegante, ideal para relaxar no fim do dia." },
+  "Palmoluxo": { name: "Palmoluxo", image: "", benefit: "Frescor", description: "Limpo e sofisticado, sensação de banho e frescor." },
+  "Âmbar Lelis": { name: "Âmbar Lelis", image: "", benefit: "Proteção", description: "Um aroma quente e amadeirado que cria um escudo de proteção energética." },
 
-  // --- OUTROS IMPORTANTES ---
-  "Breu Branco": {
-    name: "Breu Branco",
-    image: "",
-    benefit: "Purificação",
-    description: "Purificante, muito usado para limpeza energética e espiritual."
-  },
-  "Cipreste": {
-    name: "Cipreste",
-    image: "",
-    benefit: "Renovação",
-    description: "Ajuda na renovação emocional e sensação de recomeço."
-  },
-  "Citronela": {
-    name: "Citronela",
-    image: "",
-    benefit: "Proteção",
-    description: "Refrescante e estimulante, traz sensação de proteção e limpeza."
-  },
-  "Cravo e Canela": {
-    name: "Cravo e Canela",
-    image: "",
-    benefit: "Energia",
-    description: "Quente e estimulante, ativa energia e disposição."
-  },
-  "Cupuaçu": {
-    name: "Cupuaçu",
-    image: "",
-    benefit: "Bem-estar",
-    description: "Doce e exótico, promove conforto e bem-estar."
-  },
-  "Dama da Noite": {
-    name: "Dama da Noite",
-    image: "",
-    benefit: "Sensorial",
-    description: "Intenso e envolvente, cria um clima relaxante e sensorial."
-  },
-  "Figo em Calda": {
-    name: "Figo em Calda",
-    image: "",
-    benefit: "Aconchego",
-    description: "Doce e sofisticado, transmite aconchego e elegância."
-  }
+  // --- OUTROS ---
+  "Breu Branco": { name: "Breu Branco", image: "", benefit: "Purificação", description: "Purificante, muito usado para limpeza energética e espiritual." },
+  "Cipreste": { name: "Cipreste", image: "", benefit: "Renovação", description: "Ajuda na renovação emocional e sensação de recomeço." },
+  "Citronela": { name: "Citronela", image: "", benefit: "Proteção", description: "Refrescante e estimulante, traz sensação de proteção e limpeza." },
+  "Cravo e Canela": { name: "Cravo e Canela", image: "", benefit: "Disposição", description: "Quente e estimulante, ativa energia e disposição." },
+  "Figo em Calda": { name: "Figo em Calda", image: "", benefit: "Elegância", description: "Doce e sofisticado, transmite aconchego e elegância." },
+  "Bergamota": { name: "Bergamota", image: "", benefit: "Otimismo", description: "Energizante e cítrica, promove otimismo e combate a tristeza." },
+  "Vet Vert": { name: "Vet Vert", image: "", benefit: "Aterramento", description: "Aroma terroso que ajuda no equilíbrio e na sensação de presença." }
 };
