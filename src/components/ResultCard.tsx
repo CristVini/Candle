@@ -1,9 +1,15 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ShoppingBag, RotateCcw, Info, Sparkles, Wind, Beaker } from 'lucide-react';
+import { ShoppingBag, RotateCcw, Info, Sparkles, Wind, Beaker, Clock } from 'lucide-react';
 import { ingredientsData } from '../data/ingredients';
 import IngredientModal from './IngredientModal';
+
+interface RitualStep {
+  time: string;
+  candle: string;
+  activity: string;
+}
 
 interface Profile {
   id: string;
@@ -11,8 +17,7 @@ interface Profile {
   archetype: string;
   description: string;
   notes: string[];
-  ritual: string;
-  products: string[];
+  candleRitual: RitualStep[];
   imageUrl: string;
   color: string;
 }
@@ -23,7 +28,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   if (!profile) return null;
 
   const phoneNumber = "5515996842962";
-  const message = `Olá! Meu perfil olfativo é: ${profile.name}. Gostaria de conhecer os produtos recomendados para o meu ritual!`;
+  const message = `Olá! Fiz o mapeamento e meu perfil é: ${profile.name}. Gostaria de encomendar meu Kit de Velas Personalizado!`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -51,7 +56,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-            {/* Coluna Esquerda: Descrição e Notas */}
+            {/* Coluna Esquerda: Diagnóstico e Notas */}
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-3">
                 <h4 className="text-[9px] md:text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
@@ -64,7 +69,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
 
               <div className="space-y-3">
                 <h4 className="text-[9px] md:text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Wind size={14} /> Essências
+                  <Wind size={14} /> Essências Chave
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {profile.notes.map((note, i) => (
@@ -81,24 +86,23 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               </div>
             </div>
 
-            {/* Coluna Direita: Ritual e Formatos */}
+            {/* Coluna Direita: Ritual de Velas */}
             <div className="space-y-6 md:space-y-8 p-6 md:p-8 bg-stone-950/40 rounded-[24px] md:rounded-[32px] border border-stone-800/50">
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <h4 className="text-[9px] md:text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Sparkles size={14} className="text-amber-500" /> Ritual
+                  <Clock size={14} className="text-amber-500" /> Ritual de Velas
                 </h4>
-                <p className="text-stone-400 text-xs md:text-sm leading-relaxed italic">
-                  "{profile.ritual}"
-                </p>
-              </div>
-
-              <div className="space-y-3">
-                <h4 className="text-[9px] md:text-[10px] font-bold text-stone-500 uppercase tracking-widest">Formatos</h4>
-                <div className="flex flex-wrap gap-2 md:gap-3">
-                  {profile.products.map((prod, i) => (
-                    <span key={i} className="text-[10px] md:text-[11px] text-stone-200 font-medium border-b border-stone-700 pb-0.5">
-                      {prod}
-                    </span>
+                <div className="space-y-4">
+                  {profile.candleRitual.map((step, i) => (
+                    <div key={i} className="flex gap-4 items-start">
+                      <div className="text-[9px] font-bold text-stone-600 uppercase tracking-tighter pt-1 w-16 shrink-0">
+                        {step.time}
+                      </div>
+                      <div className="space-y-0.5">
+                        <p className="text-stone-200 text-sm font-medium">Vela de {step.candle}</p>
+                        <p className="text-stone-500 text-[11px] leading-tight italic">{step.activity}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -114,7 +118,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               className="flex-1 flex items-center justify-center gap-2 bg-stone-100 text-stone-950 py-4 md:py-6 rounded-full font-bold text-sm md:text-lg hover:bg-white transition-all shadow-xl active:scale-95"
             >
               <ShoppingBag size={18} />
-              Consultar Especialista
+              Garantir meu Kit Personalizado
             </a>
             <button 
               onClick={onReset}
