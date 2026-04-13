@@ -6,130 +6,94 @@ export interface Ingredient {
 }
 
 export const ingredientsData: Record<string, Ingredient> = {
-  "Pinho": {
-    name: "Pinho",
-    image: "https://images.unsplash.com/photo-1547619292-24040a7a5d7a?auto=format&fit=crop&q=80&w=800",
-    benefit: "Liberação Emocional",
-    description: "Conhecido como o 'óleo da liberação', o Pinho ajuda a eliminar a culpa, o ressentimento e o cansaço mental profundo, trazendo a sensação de um novo fôlego."
-  },
-  "Lavanda Francesa": {
-    name: "Lavanda Francesa",
-    image: "https://images.unsplash.com/photo-1595165736029-79a02330768c?auto=format&fit=crop&q=80&w=800",
-    benefit: "Paz Interior",
-    description: "Considerada a 'mãe da aromaterapia', ela envolve o sistema nervoso em um manto de segurança, silenciando o barulho mental e dissolvendo a ansiedade."
-  },
-  "Patchouli": {
-    name: "Patchouli",
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800",
-    benefit: "Aterramento",
-    description: "O 'óleo da presença'. Ele ajuda a trazer a mente de volta ao corpo, combatendo o excesso de pensamentos e conectando você com sua força instintiva."
+  "Bamboo": {
+    name: "Bamboo",
+    image: "https://images.unsplash.com/photo-1542362567-b055001307f4?auto=format&fit=crop&q=80&w=800",
+    benefit: "Flexibilidade",
+    description: "Conhecido como o 'aroma da renovação', o Bamboo ajuda a mente a se adaptar a novas fases, trazendo frescor e leveza para ambientes carregados."
   },
   "Bergamota": {
     name: "Bergamota",
     image: "https://images.unsplash.com/photo-1596726839719-7925e5ec028a?auto=format&fit=crop&q=80&w=800",
     benefit: "Autoestima",
-    description: "Conhecida como 'o raio de sol líquido', a Bergamota transmuta a tristeza em alegria e ajuda a dissipar sentimentos de inadequação e autocrítica."
+    description: "O 'raio de sol líquido'. A Bergamota transmuta a tristeza em alegria espontânea e ajuda a dissipar a autocrítica excessiva."
   },
-  "Sândalo": {
-    name: "Sândalo",
-    image: "https://images.unsplash.com/photo-1621262070138-0857c3272445?auto=format&fit=crop&q=80&w=800",
-    benefit: "Quietude Espiritual",
-    description: "Um aroma sagrado que induz a estados profundos de introspecção. É o óleo da quietude, perfeito para silenciar o ego e encontrar clareza."
-  },
-  "Cedro": {
-    name: "Cedro",
-    image: "https://images.unsplash.com/photo-1628151241198-903dfc87f0b7?auto=format&fit=crop&q=80&w=800",
-    benefit: "Estrutura e Foco",
-    description: "O 'óleo da persistência'. O Cedro traz força e estabilidade em momentos de crise, ajudando a manter a coluna ereta diante dos desafios da vida."
-  },
-  "Eucalipto": {
-    name: "Eucalipto",
-    image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&q=80&w=800",
-    benefit: "Expansão",
-    description: "Promove a abertura das vias respiratórias e emocionais. Ajuda a 'limpar o ar' após conflitos, trazendo uma sensação de liberdade e renovação."
-  },
-  "Hortelã-Pimenta": {
-    name: "Hortelã-Pimenta",
-    image: "https://images.unsplash.com/photo-1594732832278-abd644401426?auto=format&fit=crop&q=80&w=800",
-    benefit: "Clareza Mental",
-    description: "Um tônico para o intelecto. Conhecido como o 'óleo da mente vibrante', ele expulsa a névoa mental e aumenta a velocidade do raciocínio."
-  },
-  "Alecrim": {
-    name: "Alecrim",
+  "Capim Limão": {
+    name: "Capim Limão",
     image: "https://images.unsplash.com/photo-1515586838455-8f8f940d6853?auto=format&fit=crop&q=80&w=800",
-    benefit: "Memória e Ação",
-    description: "O 'óleo do foco'. Estimula a retenção de informação e a coragem para agir, sendo o companheiro ideal para quem precisa de produtividade."
+    benefit: "Intuição",
+    description: "O 'óleo da clareza mental'. Ajuda a limpar pensamentos negativos e estimula a percepção intuitiva para decisões difíceis."
   },
-  "Canela": {
-    name: "Canela",
-    image: "https://images.unsplash.com/photo-1533425576136-e883e40889f5?auto=format&fit=crop&q=80&w=800",
-    benefit: "Aquecimento",
-    description: "O 'óleo da paixão'. Aquece o coração gelado pelo isolamento social e estimula a libido e a criatividade estagnadas."
-  },
-  "Vetiver": {
-    name: "Vetiver",
-    image: "https://images.unsplash.com/photo-1540206276207-3af25c08abbb?auto=format&fit=crop&q=80&w=800",
-    benefit: "Aterramento Profundo",
-    description: "Extraído de raízes profundas, ele é o calmante natural mais potente da aromaterapia. É o óleo para quem se sente 'fora do corpo' ou desconectado."
-  },
-  "Mirra": {
-    name: "Mirra",
-    image: "https://images.unsplash.com/photo-1628151241198-903dfc87f0b7?auto=format&fit=crop&q=80&w=800",
-    benefit: "Cura Emocional",
-    description: "O 'óleo da terra mãe'. Ajuda a curar feridas emocionais profundas e promove um senso de confiança no fluxo natural da vida."
-  },
-  "Incenso": {
-    name: "Incenso",
-    image: "https://images.unsplash.com/photo-1572451479139-6a308211d8be?auto=format&fit=crop&q=80&w=800",
-    benefit: "Conexão Espiritual",
-    description: "Conhecido como o 'Rei dos Óleos'. Ele eleva a vibração energética, ajuda a romper vínculos com o passado e promove estados elevados de consciência."
+  "Flor de Cerejeira": {
+    name: "Flor de Cerejeira",
+    image: "https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&q=80&w=800",
+    benefit: "Recomeço",
+    description: "Simboliza a beleza do efêmero. Convida à gratidão pelo momento presente e traz uma energia de renovação e esperança."
   },
   "Flor de Laranjeira": {
     name: "Flor de Laranjeira",
     image: "https://images.unsplash.com/photo-1615485241031-482937746261?auto=format&fit=crop&q=80&w=800",
-    benefit: "Alívio Traumático",
-    description: "Um bálsamo para o sistema nervoso. Ajuda a acalmar pânicos e choques emocionais, trazendo uma doçura regeneradora para a alma."
+    benefit: "Alívio da Ansiedade",
+    description: "Um bálsamo para o sistema nervoso. Acalma corações agitados e traz uma sensação de paz profunda e acolhedora."
+  },
+  "Jasmim": {
+    name: "Jasmim",
+    image: "https://images.unsplash.com/photo-1533614767277-33152569e236?auto=format&fit=crop&q=80&w=800",
+    benefit: "Sensualidade",
+    description: "O 'rei das flores'. Desperta a autoconfiança, a libido e a capacidade de se permitir sentir prazer e beleza na vida."
+  },
+  "Lavanda": {
+    name: "Lavanda",
+    image: "https://images.unsplash.com/photo-1595165736029-79a02330768c?auto=format&fit=crop&q=80&w=800",
+    benefit: "Paz Interior",
+    description: "O 'colo de mãe'. Envolve o ser em um manto de segurança, silenciando o caos mental e preparando o corpo para o descanso."
   },
   "Limão Siciliano": {
     name: "Limão Siciliano",
     image: "https://images.unsplash.com/photo-1582979512210-99b6a53386f9?auto=format&fit=crop&q=80&w=800",
-    benefit: "Purificação",
-    description: "O 'óleo da limpeza'. Purifica ambientes e mentes carregadas de pensamentos repetitivos, trazendo leveza e brilho para o dia a dia."
+    benefit: "Foco e Purificação",
+    description: "O 'óleo da limpeza'. Purifica ambientes e mentes saturadas de informações, trazendo foco e brilho para o raciocínio."
   },
-  "Âmbar": {
-    name: "Âmbar",
-    image: "https://images.unsplash.com/photo-1589307304022-303726710777?auto=format&fit=crop&q=80&w=800",
-    benefit: "Proteção",
-    description: "Sua resina fóssil simboliza o tempo e a sabedoria. Ele cria um escudo de proteção energética e traz um conforto ancestral e magnético."
+  "Maçã com Canela": {
+    name: "Maçã com Canela",
+    image: "https://images.unsplash.com/photo-1533425576136-e883e40889f5?auto=format&fit=crop&q=80&w=800",
+    benefit: "Memória Afetiva",
+    description: "O 'aroma do lar'. Traz conforto imediato e desperta lembranças de acolhimento, sendo ideal para combater a solidão."
   },
-  "Baunilha Negra": {
-    name: "Baunilha Negra",
+  "Madeiras Nobres": {
+    name: "Madeiras Nobres",
+    image: "https://images.unsplash.com/photo-1628151241198-903dfc87f0b7?auto=format&fit=crop&q=80&w=800",
+    benefit: "Estabilidade",
+    description: "O 'óleo da linhagem'. Traz sofisticação e uma profunda sensação de segurança, autoridade pessoal e pés no chão."
+  },
+  "Melancia": {
+    name: "Melancia",
+    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=800",
+    benefit: "Vitalidade",
+    description: "Resgata a criança interior. Traz leveza, bom humor e uma alegria espontânea para dias que parecem pesados demais."
+  },
+  "Orquídea": {
+    name: "Orquídea",
+    image: "https://images.unsplash.com/photo-1534885110300-2443681432f8?auto=format&fit=crop&q=80&w=800",
+    benefit: "Elevação",
+    description: "O 'aroma da raridade'. Promove a sensação de luxo e exclusividade, ajudando a elevar a vibração energética pessoal."
+  },
+  "Peônia": {
+    name: "Peônia",
+    image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800",
+    benefit: "Abundância",
+    description: "Atrai energias de prosperidade e suaviza a rigidez emocional com sua delicadeza floral encantadora."
+  },
+  "Vanilla": {
+    name: "Vanilla",
     image: "https://images.unsplash.com/photo-1509358271170-b42079298343?auto=format&fit=crop&q=80&w=800",
-    benefit: "Nutrição Emocional",
-    description: "Remete ao acolhimento do colo materno. Dissolve a rigidez e a amargura, permitindo que a pessoa se sinta amada e segura."
+    benefit: "Acolhimento",
+    description: "O 'óleo do carinho'. Dissolve a amargura e a rigidez, permitindo que você se sinta nutrido emocionalmente e seguro."
   },
-  "Grapefruit": {
-    name: "Grapefruit",
-    image: "https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&q=80&w=800",
-    benefit: "Respeito ao Corpo",
-    description: "Ajuda a melhorar a relação com a própria imagem física. É o 'óleo da aceitação', que traz uma energia vibrante de renovação celular e mental."
-  },
-  "Camomila": {
-    name: "Camomila",
-    image: "https://images.unsplash.com/photo-1515531737ef9-994323136709?auto=format&fit=crop&q=80&w=800",
-    benefit: "Paz Profunda",
-    description: "O 'óleo do propósito'. Ajuda a acalmar a insatisfação e a agitação de quem procura seu lugar no mundo, trazendo serenidade para esperar o tempo certo."
-  },
-  "Mel": {
-    name: "Mel",
-    image: "https://images.unsplash.com/photo-1471943311424-646960669fba?auto=format&fit=crop&q=80&w=800",
-    benefit: "Doçura e Cura",
-    description: "Símbolo de regeneração e abundância. Traz doçura para os momentos de aridez emocional e ajuda a digerir experiências difíceis."
-  },
-  "Fava Tonka": {
-    name: "Fava Tonka",
-    image: "https://images.unsplash.com/photo-1509358271170-b42079298343?auto=format&fit=crop&q=80&w=800",
-    benefit: "Equilíbrio Magnético",
-    description: "Conhecida por seu poder de sedução e mistério, ela ajuda a equilibrar as energias yin e yang, promovendo um carisma natural e sereno."
+  "Verbena": {
+    name: "Verbena",
+    image: "https://images.unsplash.com/photo-1594732832278-abd644401426?auto=format&fit=crop&q=80&w=800",
+    benefit: "Equilíbrio",
+    description: "O 'calmante revigorante'. Equilibra o sistema nervoso enquanto mantém a mente alerta e disposta para a ação."
   }
 };
