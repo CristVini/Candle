@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { candleProfiles } from '../data/candleProfiles';
+import { olfactoryProfiles } from '../data/olfactoryProfiles';
 import ResultCard from './ResultCard';
 
 const questions = [
@@ -159,7 +159,7 @@ const Quiz = () => {
     const winnerId = getWinner();
     return (
       <div className="flex items-center justify-center min-h-[80vh] w-full">
-        <ResultCard profile={candleProfiles[winnerId]} onReset={resetQuiz} />
+        <ResultCard profile={olfactoryProfiles[winnerId]} onReset={resetQuiz} />
       </div>
     );
   }
