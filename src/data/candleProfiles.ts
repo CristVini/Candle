@@ -1,53 +1,69 @@
 export interface CandleProfile {
   id: string;
   title: string;
+  archetype: string;
   description: string;
-  symptoms: string[];
+  clinicalContext: string;
   scent: string;
-  benefits: string;
-  psychologicalNote: string;
+  activeIngredients: string;
+  psychologicalAction: string;
   color: string;
 }
 
 export const candleProfiles: Record<string, CandleProfile> = {
-  stressed: {
-    id: 'stressed',
-    title: 'Serenidade Profunda',
-    description: 'Você parece estar enfrentando um nível alto de cortisol e tensão muscular.',
-    symptoms: ['Ansiedade', 'Pensamentos acelerados', 'Tensão nos ombros'],
-    scent: 'Lavanda e Camomila',
-    benefits: 'A lavanda contém linalol, que estudos indicam ter efeitos relaxantes no sistema nervoso central, ajudando a reduzir a frequência cardíaca.',
-    psychologicalNote: 'Foque em técnicas de respiração diafragmática enquanto acende sua vela.',
-    color: 'bg-purple-100 text-purple-800 border-purple-200'
+  burnout: {
+    id: 'burnout',
+    title: 'Restauração de Ciclos',
+    archetype: 'O Guerreiro Exausto',
+    description: 'Você atingiu o limite da sua reserva de energia psíquica. O burnout não é apenas cansaço, é uma despersonalização e falta de realização.',
+    clinicalContext: 'Níveis críticos de fadiga adrenal e exaustão cognitiva.',
+    scent: 'Alecrim e Hortelã-Pimenta',
+    activeIngredients: 'Cineol e Mentol',
+    psychologicalAction: 'Estimula o córtex pré-frontal, combatendo a "névoa mental" e restaurando a clareza para a tomada de decisões.',
+    color: 'bg-red-50 text-red-900 border-red-200'
   },
-  depressed: {
-    id: 'depressed',
-    title: 'Despertar Solar',
-    description: 'Sua energia parece estar baixa, com uma sensação de desânimo ou apatia.',
-    symptoms: ['Falta de motivação', 'Tristeza persistente', 'Letargia'],
-    scent: 'Limão Siciliano e Alecrim',
-    benefits: 'Aromas cítricos são conhecidos por estimular a produção de serotonina e aumentar o estado de alerta mental.',
-    psychologicalNote: 'Pequenos passos importam. O aroma pode ser o gatilho sensorial para iniciar uma atividade leve.',
-    color: 'bg-yellow-100 text-yellow-800 border-yellow-200'
+  hopelessness: {
+    id: 'hopelessness',
+    title: 'Horizonte de Luz',
+    archetype: 'O Viajante no Escuro',
+    description: 'A sensação de que o futuro é nebuloso ou de que nada vai mudar. A desesperança requer um choque de vitalidade sensorial.',
+    clinicalContext: 'Baixa reatividade a estímulos positivos e anedonia.',
+    scent: 'Bergamota e Laranja Doce',
+    activeIngredients: 'Limoneno',
+    psychologicalAction: 'Atua no sistema límbico para promover a liberação de dopamina, associada à antecipação de prazer e esperança.',
+    color: 'bg-amber-50 text-amber-900 border-amber-200'
   },
-  exhausted: {
-    id: 'exhausted',
-    title: 'Refúgio na Floresta',
-    description: 'Você atingiu um estado de esgotamento mental ou burnout.',
-    symptoms: ['Exaustão mental', 'Dificuldade de concentração', 'Sensação de sobrecarga'],
-    scent: 'Eucalipto e Cedro',
-    benefits: 'O eucalipto ajuda na "limpeza" mental e na respiração, enquanto o cedro traz propriedades de aterramento (grounding).',
-    psychologicalNote: 'Permita-se o ócio. Sua produtividade não define seu valor.',
-    color: 'bg-green-100 text-green-800 border-green-200'
+  sadness: {
+    id: 'sadness',
+    title: 'Abraço Mineral',
+    archetype: 'O Poeta Melancólico',
+    description: 'Uma tristeza profunda que parece pesar nos ombros. Você precisa de um aroma que valide seu sentimento enquanto o conforta.',
+    clinicalContext: 'Processamento de luto emocional ou melancolia persistente.',
+    scent: 'Sândalo e Jasmim',
+    activeIngredients: 'Santalol',
+    psychologicalAction: 'Proporciona aterramento (grounding) e conforto emocional, reduzindo a sensação de vazio no peito.',
+    color: 'bg-blue-50 text-blue-900 border-blue-200'
   },
-  lonely: {
-    id: 'lonely',
-    title: 'Abraço de Baunilha',
-    description: 'Você está buscando conforto emocional e uma sensação de acolhimento.',
-    symptoms: ['Solidão', 'Necessidade de conforto', 'Vazio emocional'],
-    scent: 'Baunilha e Sândalo',
-    benefits: 'A baunilha evoca memórias de infância e segurança, promovendo uma sensação de "conforto térmico" emocional.',
-    psychologicalNote: 'Pratique a autocompaixão. Trate-se com a mesma gentileza que trataria um amigo querido.',
-    color: 'bg-orange-100 text-orange-800 border-orange-200'
+  acute_stress: {
+    id: 'acute_stress',
+    title: 'Santuário de Silêncio',
+    archetype: 'O Observador Vigilante',
+    description: 'Seu sistema nervoso está em estado de "luta ou fuga" constante. Tudo parece um alerta de perigo.',
+    clinicalContext: 'Hipervigilância e cortisol elevado.',
+    scent: 'Lavanda Francesa e Vetiver',
+    activeIngredients: 'Linalol e Acetato de Linalila',
+    psychologicalAction: 'Inibe a superestimulação da amígdala, o centro do medo no cérebro, induzindo relaxamento imediato.',
+    color: 'bg-indigo-50 text-indigo-900 border-indigo-200'
+  },
+  loneliness: {
+    id: 'loneliness',
+    title: 'Raízes de Conexão',
+    archetype: 'A Alma Isolada',
+    description: 'Uma sensação de desconexão com o mundo ao redor, mesmo estando acompanhado.',
+    clinicalContext: 'Privação de suporte social percebido.',
+    scent: 'Canela e Baunilha',
+    activeIngredients: 'Aldeído Cinâmico',
+    psychologicalAction: 'Evoca calor físico e memórias olfativas de segurança e pertencimento, combatendo o frio emocional.',
+    color: 'bg-orange-50 text-orange-900 border-orange-200'
   }
 };

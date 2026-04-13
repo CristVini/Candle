@@ -9,82 +9,102 @@ import ResultCard from './ResultCard';
 const questions = [
   {
     id: 1,
-    text: "Como você avalia seu padrão de pensamento nas últimas 24 horas?",
+    text: "Se sua mente fosse um estado climático hoje, como ela estaria?",
     options: [
-      { text: "Acelerado, com dificuldade de focar em uma única coisa", value: "stressed" },
-      { text: "Lento, como se houvesse uma 'névoa mental'", value: "depressed" },
-      { text: "Fragmentado, sinto que esqueço as coisas rapidamente", value: "exhausted" },
-      { text: "Introspectivo, focado em sentimentos de vazio", value: "lonely" }
+      { text: "Uma tempestade elétrica incessante", value: "acute_stress" },
+      { text: "Uma neblina densa e fria que não se dissipa", value: "burnout" },
+      { text: "Um céu cinza e estático, sem vento", value: "sadness" },
+      { text: "Um eclipse total, onde a luz parece ter sumido", value: "hopelessness" }
     ]
   },
   {
     id: 2,
-    text: "Qual é a sua relação com o descanso no momento?",
+    text: "Como você se sente em relação às suas responsabilidades atuais?",
     options: [
-      { text: "Durmo, mas acordo sentindo que não descansei", value: "exhausted" },
-      { text: "Tenho dificuldade para pegar no sono por causa da mente", value: "stressed" },
-      { text: "Sinto vontade de dormir o dia todo para evitar a realidade", value: "depressed" },
-      { text: "O silêncio da noite me traz uma sensação de isolamento", value: "lonely" }
+      { text: "Sufocado, como se estivesse carregando o mundo", value: "acute_stress" },
+      { text: "Indiferente, não sinto mais conexão com o que faço", value: "burnout" },
+      { text: "Incapaz de enxergar sentido em continuar tentando", value: "hopelessness" },
+      { text: "Sinto que ninguém percebe o quanto estou sobrecarregado", value: "loneliness" }
     ]
   },
   {
     id: 3,
-    text: "Como você reage a pequenas interrupções ou imprevistos?",
+    text: "Ao final do dia, qual é o sentimento predominante?",
     options: [
-      { text: "Com irritabilidade ou reações desproporcionais", value: "stressed" },
-      { text: "Com apatia, sinto que não tenho forças para reagir", value: "depressed" },
-      { text: "Com choro fácil ou uma sensação de sobrecarga extrema", value: "exhausted" },
-      { text: "Com o desejo imediato de me isolar ainda mais", value: "lonely" }
+      { text: "Vazio e isolamento, mesmo perto de pessoas", value: "loneliness" },
+      { text: "Esgotamento que vai além do sono físico", value: "burnout" },
+      { text: "Nervosismo e dificuldade em 'desligar' o corpo", value: "acute_stress" },
+      { text: "Uma tristeza silenciosa e profunda", value: "sadness" }
     ]
   },
   {
     id: 4,
-    text: "Sobre sua produtividade e engajamento com tarefas:",
+    text: "Como você descreveria sua 'centelha' interior agora?",
     options: [
-      { text: "Trabalho muito, mas com muita ansiedade e cobrança", value: "stressed" },
-      { text: "Perdi o interesse em atividades que antes me davam prazer", value: "depressed" },
-      { text: "Sinto um esgotamento físico que me impede de produzir", value: "exhausted" },
-      { text: "Trabalho para preencher o tempo e não me sentir só", value: "lonely" }
+      { text: "Parece que o combustível acabou completamente", value: "burnout" },
+      { text: "Ela brilha freneticamente mas está me queimando", value: "acute_stress" },
+      { text: "Sinto que ela se apagou e não sei como reacender", value: "hopelessness" },
+      { text: "Ela brilha fraco, pedindo por um abraço", value: "loneliness" }
     ]
   },
   {
     id: 5,
-    text: "O que seu corpo parece estar 'gritando' agora?",
+    text: "Qual dessas situações mais te define socialmente hoje?",
     options: [
-      { text: "Tensão na mandíbula, pescoço e batimentos acelerados", value: "stressed" },
-      { text: "Peso nos membros e falta de apetite ou excesso dele", value: "depressed" },
-      { text: "Dores de cabeça constantes e cansaço nos olhos", value: "exhausted" },
-      { text: "Uma necessidade física de contato humano ou conforto", value: "lonely" }
+      { text: "Evito as pessoas porque não tenho energia para conversar", value: "burnout" },
+      { text: "Estou entre pessoas mas me sinto a quilômetros de distância", value: "loneliness" },
+      { text: "Fico irritado com barulhos ou conversas triviais", value: "acute_stress" },
+      { text: "Sinto que não sou importante para ninguém", value: "sadness" }
     ]
   },
   {
     id: 6,
-    text: "Como você se sente ao imaginar o futuro próximo?",
+    text: "O que você busca em um momento de pausa?",
     options: [
-      { text: "Apreensivo com a quantidade de coisas a fazer", value: "stressed" },
-      { text: "Pessimista, sinto que nada vai mudar realmente", value: "depressed" },
-      { text: "Incapaz de pensar no futuro, só quero sobreviver ao hoje", value: "exhausted" },
-      { text: "Com medo de enfrentar os desafios sem apoio", value: "lonely" }
+      { text: "Silêncio absoluto e redução de estímulos", value: "acute_stress" },
+      { text: "Sentir que a vida ainda tem cor e alegria", value: "hopelessness" },
+      { text: "Sentir que alguém se importa comigo", value: "loneliness" },
+      { text: "Apenas conseguir fechar os olhos e parar de pensar", value: "burnout" }
     ]
   },
   {
     id: 7,
-    text: "Qual dessas frases mais ressoa com seu estado atual?",
+    text: "Sobre sua percepção de tempo:",
     options: [
-      { text: "'Eu preciso de uma pausa do mundo'", value: "exhausted" },
-      { text: "'Eu só queria conseguir relaxar um pouco'", value: "stressed" },
-      { text: "'Eu queria voltar a sentir alegria nas coisas'", value: "depressed" },
-      { text: "'Eu queria me sentir pertencente e conectado'", value: "lonely" }
+      { text: "O tempo voa e eu estou sempre atrasado", value: "acute_stress" },
+      { text: "O tempo parou e os dias são todos iguais", value: "depressed" },
+      { text: "O tempo é um peso que eu mal consigo carregar", value: "burnout" },
+      { text: "Sinto saudade de tempos que não voltam mais", value: "sadness" }
     ]
   },
   {
     id: 8,
-    text: "Sobre o seu ambiente imediato:",
+    text: "Se você pudesse escolher um refúgio agora, qual seria?",
     options: [
-      { text: "Sinto que o ambiente está bagunçado e isso me agita", value: "stressed" },
-      { text: "Não tenho energia nem para organizar meu espaço", value: "depressed" },
-      { text: "Procuro um ambiente que me traga segurança e calor", value: "lonely" },
-      { text: "Ambientes com muita luz ou barulho me incomodam", value: "exhausted" }
+      { text: "Um chalé isolado com uma lareira acesa", value: "loneliness" },
+      { text: "Um campo aberto com o sol batendo no rosto", value: "hopelessness" },
+      { text: "Um quarto escuro e silencioso com lençóis limpos", value: "burnout" },
+      { text: "Uma biblioteca antiga e tranquila", value: "sadness" }
+    ]
+  },
+  {
+    id: 9,
+    text: "Como está sua motivação para novos projetos?",
+    options: [
+      { text: "Inexistente, sinto cinismo sobre o futuro", value: "burnout" },
+      { text: "Bloqueada por um medo constante de falhar", value: "acute_stress" },
+      { text: "Dormitante, sinto que perdi meu propósito", value: "hopelessness" },
+      { text: "Gostaria de ter alguém para fazer comigo", value: "loneliness" }
+    ]
+  },
+  {
+    id: 10,
+    text: "Para você, o que é mais difícil de lidar no momento?",
+    options: [
+      { text: "A autocobrança e o perfeccionismo", value: "acute_stress" },
+      { text: "A falta de esperança de que as coisas melhorem", value: "hopelessness" },
+      { text: "A apatia emocional perante a vida", value: "burnout" },
+      { text: "A falta de conexão genuína", value: "loneliness" }
     ]
   }
 ];
@@ -92,15 +112,18 @@ const questions = [
 const Quiz = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [scores, setScores] = useState<Record<string, number>>({
-    stressed: 0,
-    depressed: 0,
-    exhausted: 0,
-    lonely: 0
+    burnout: 0,
+    hopelessness: 0,
+    sadness: 0,
+    acute_stress: 0,
+    loneliness: 0
   });
   const [showResult, setShowResult] = useState(false);
 
   const handleAnswer = (value: string) => {
-    setScores(prev => ({ ...prev, [value]: prev[value] + 1 }));
+    // Handling specific mapping for time question if needed, else general
+    const category = value === 'depressed' ? 'sadness' : value;
+    setScores(prev => ({ ...prev, [category]: (prev[category] || 0) + 1 }));
     
     if (currentStep < questions.length - 1) {
       setCurrentStep(prev => prev + 1);
@@ -115,7 +138,7 @@ const Quiz = () => {
 
   const resetQuiz = () => {
     setCurrentStep(0);
-    setScores({ stressed: 0, depressed: 0, exhausted: 0, lonely: 0 });
+    setScores({ burnout: 0, hopelessness: 0, sadness: 0, acute_stress: 0, loneliness: 0 });
     setShowResult(false);
   };
 
@@ -126,42 +149,49 @@ const Quiz = () => {
   const currentQuestion = questions[currentStep];
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="mb-8 text-center">
-        <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">
-          Avaliação Psico-Aromática • {currentStep + 1} de {questions.length}
-        </span>
-        <div className="w-full bg-slate-100 h-1.5 mt-3 rounded-full overflow-hidden">
+    <div className="max-w-2xl mx-auto px-4">
+      <div className="mb-12 text-center">
+        <div className="flex items-center justify-center gap-2 mb-4">
+          <div className="h-[1px] w-8 bg-slate-300"></div>
+          <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.3em]">
+            Protocolo de Análise S-0{currentStep + 1}
+          </span>
+          <div className="h-[1px] w-8 bg-slate-300"></div>
+        </div>
+        
+        <div className="w-full bg-slate-100 h-1 rounded-full overflow-hidden max-w-xs mx-auto">
           <div 
-            className="bg-slate-400 h-full transition-all duration-700 ease-in-out" 
+            className="bg-slate-900 h-full transition-all duration-1000 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>
 
-      <Card className="border-none shadow-xl bg-white/90 backdrop-blur-md ring-1 ring-slate-200">
-        <CardContent className="pt-8 pb-8 px-6 md:px-10">
-          <h2 className="text-xl md:text-2xl font-serif mb-10 text-center text-slate-800 leading-snug">
-            {currentQuestion.text}
-          </h2>
-          <div className="grid gap-3">
-            {currentQuestion.options.map((option, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                className="h-auto py-5 px-6 text-left justify-start text-[15px] border-slate-200 hover:bg-slate-50 hover:border-slate-800 hover:text-slate-900 transition-all duration-200 group"
-                onClick={() => handleAnswer(option.value)}
-              >
-                <span className="opacity-0 group-hover:opacity-100 mr-2 transition-opacity">→</span>
-                {option.text}
-              </Button>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+      <div className="space-y-10">
+        <h2 className="text-2xl md:text-3xl font-serif text-center text-slate-800 leading-tight">
+          {currentQuestion.text}
+        </h2>
+        
+        <div className="grid gap-4">
+          {currentQuestion.options.map((option, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswer(option.value)}
+              className="group relative w-full text-left p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-900 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[16px] text-slate-600 group-hover:text-slate-900 transition-colors pr-8">
+                  {option.text}
+                </span>
+                <div className="h-2 w-2 rounded-full bg-slate-200 group-hover:bg-slate-900 transition-colors"></div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
       
-      <p className="text-center mt-6 text-[10px] text-slate-400 uppercase tracking-tighter">
-        Análise baseada em indicadores de bem-estar emocional
+      <p className="text-center mt-12 text-[10px] text-slate-400 font-medium uppercase tracking-[0.2em]">
+        Privacidade garantida • Processamento anônimo de dados emocionais
       </p>
     </div>
   );
