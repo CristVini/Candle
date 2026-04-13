@@ -2,15 +2,15 @@ export const olfactoryProfiles: Record<string, any> = {
   relax: {
     id: "relax",
     name: "Modo Relaxar",
-    archetype: "Regulação Emocional",
-    description: "Reduz a ansiedade e desacelera a mente através da modulação do sistema límbico.",
-    scientificBasis: "Aumento de ondas cerebrais alfa/θ e redução da Variação Negativa Contingente (CNV ↓), associadas ao relaxamento profundo (Herz, 1998).",
-    expectedEffect: "Queda nos níveis de cortisol e redução da frequência mental.",
+    archetype: "Regulação Parassimpática",
+    description: "Foco na desaceleração do sistema nervoso central. Ideal para momentos de alta carga mental onde o silenciamento dos ruídos externos é vital para a recuperação biológica.",
+    scientificBasis: "Indução de ondas alfa e teta via bulbo olfativo, reduzindo a Variação Negativa Contingente (CNV) e os níveis de cortisol plasmático.",
+    expectedEffect: "Silenciamento mental, relaxamento muscular e preparação para o sono reparador.",
     notes: ["Lavanda", "Camomila", "Maracujá", "Erva Cidreira", "Sândalo"],
     candleRitual: [
-      { title: "Desaceleração", candle: "Lavanda", description: "Sinalize ao cérebro o início do repouso." },
-      { title: "Paz Mental", candle: "Camomila", description: "Silencie pensamentos repetitivos." },
-      { title: "Aterramento", candle: "Sândalo", description: "Estabilize as emoções antes de dormir." }
+      { title: "Sinalização Neural", candle: "Lavanda", description: "Utilize para sinalizar ao cérebro o encerramento das atividades produtivas e o início do protocolo de repouso." },
+      { title: "Higiene Mental", candle: "Camomila", description: "Focada na redução de pensamentos intrusivos e repetitivos, limpando o campo mental para a introspecção." },
+      { title: "Aterramento Emocional", candle: "Sândalo", description: "Nota de base que estabiliza as emoções, criando uma barreira sensorial contra o estresse residual do dia." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&q=80&w=800",
     color: "#6D28D9"
@@ -18,15 +18,15 @@ export const olfactoryProfiles: Record<string, any> = {
   focus: {
     id: "focus",
     name: "Modo Foco",
-    archetype: "Ativação Cognitiva",
-    description: "Aumenta a concentração e a produtividade através do estímulo do córtex pré-frontal.",
-    scientificBasis: "Ativação de ondas beta ligadas à atenção e aumento da frequência cardíaca via estímulo de isômeros de limoneno.",
-    expectedEffect: "Aumento da atenção sustentada e memória de trabalho.",
+    archetype: "Otimização Cognitiva",
+    description: "Desenvolvido para maximizar a atenção sustentada e a memória de trabalho. Atua no córtex pré-frontal para filtrar distrações e manter o estado de 'Flow'.",
+    scientificBasis: "Estímulo de receptores colinérgicos via 1,8-cineol (presente no Alecrim), associado ao aumento da velocidade de processamento visual.",
+    expectedEffect: "Aumento da clareza mental, redução da fadiga cognitiva e precisão na execução de tarefas.",
     notes: ["Alecrim", "Hortelã", "Café", "Eucalipto", "Limão"],
     candleRitual: [
-      { title: "Ignição", candle: "Café", description: "Desperte a acuidade sensorial." },
-      { title: "Fluxo", candle: "Alecrim", description: "Mantenha o trabalho profundo." },
-      { title: "Alerta", candle: "Hortelã", description: "Combata a fadiga mental." }
+      { title: "Ignição Sensorial", candle: "Café", description: "Desperta a acuidade imediata. Use nos primeiros 15 minutos de uma tarefa complexa para romper a inércia mental." },
+      { title: "Manutenção de Fluxo", candle: "Alecrim", description: "A nota principal para o trabalho profundo. Mantém a rede de atenção ativa por períodos prolongados." },
+      { title: "Clareza de Saída", candle: "Limão", description: "Utilize para organizar a conclusão de projetos, evitando o erro por cansaço no final da jornada." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=80&w=800",
     color: "#065F46"
@@ -34,15 +34,15 @@ export const olfactoryProfiles: Record<string, any> = {
   energy: {
     id: "energy",
     name: "Modo Energizar",
-    archetype: "Estímulo Positivo",
-    description: "Eleva o humor e a disposição através da associação de aromas cítricos à serotonina.",
-    scientificBasis: "Aromas cítricos associados ao aumento de vigor e humor positivo via aprendizagem emocional (Herz, 2001).",
-    expectedEffect: "Elevação do humor, aumento da motivação e redução da apatia.",
+    archetype: "Ativação Dopaminérgica",
+    description: "Foco na elevação do tônus vital e entusiasmo. Ideal para combater estados de apatia, procrastinação ou baixa energia matinal.",
+    scientificBasis: "Moléculas de limoneno e citral que atuam na modulação do humor positivo e aumento da percepção de vigor físico.",
+    expectedEffect: "Elevação imediata do humor, disposição para movimento e redução da sensação de peso emocional.",
     notes: ["Laranja", "Tangerina", "Bergamota", "Abacaxi", "Manga"],
     candleRitual: [
-      { title: "Despertar", candle: "Bergamota", description: "Configure um estado mental positivo." },
-      { title: "Vibração", candle: "Tangerina", description: "Ideal para início de projetos criativos." },
-      { title: "Vitalidade", candle: "Laranja", description: "Impulso extra de entusiasmo." }
+      { title: "Despertar Solar", candle: "Bergamota", description: "Conhecida como o 'óleo da felicidade', deve ser a primeira nota para configurar um estado mental otimista." },
+      { title: "Impulso Criativo", candle: "Tangerina", description: "Estimula a curiosidade e a vontade de criar. Ideal para brainstormings ou início de novos ciclos." },
+      { title: "Vigor Ambiental", candle: "Laranja", description: "Mantém a vibração do ambiente alta, combatendo a queda de energia que ocorre no meio da tarde." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1572726710708-20bb91924ee1?auto=format&fit=crop&q=80&w=800",
     color: "#FCD34D"
@@ -50,15 +50,15 @@ export const olfactoryProfiles: Record<string, any> = {
   cozy: {
     id: "cozy",
     name: "Modo Aconchego",
-    archetype: "Memória Afetiva",
-    description: "Gera conforto e sensação de cuidado ao evocar memórias emocionais do hipocampo.",
-    scientificBasis: "Aromas gourmand evocam memórias autobiográficas emocionais e segurança (Herz, 1998).",
-    expectedEffect: "Aumento da sensação de acolhimento e redução do estresse emocional.",
+    archetype: "Segurança Afetiva",
+    description: "Ativa memórias autobiográficas positivas no hipocampo. Cria um 'refúgio sensorial' que remete ao cuidado, proteção e conforto absoluto.",
+    scientificBasis: "Aromas gourmand reduzem a atividade da amígdala (centro do medo) ao evocar associações de nutrição e segurança da infância.",
+    expectedEffect: "Sensação de acolhimento, redução da solidão e conforto emocional profundo.",
     notes: ["Baunilha", "Chocolate", "Caramelo", "Doce de Leite", "Coco"],
     candleRitual: [
-      { title: "Abraço", candle: "Baunilha", description: "Crie um refúgio após um dia exaustivo." },
-      { title: "Nutrição", candle: "Chocolate", description: "Promova o autocuidado introspectivo." },
-      { title: "Doçura", candle: "Mel", description: "Ideal para momentos de descanso no lar." }
+      { title: "Abraço Sensorial", candle: "Baunilha", description: "A base do protocolo. Use para transformar qualquer ambiente frio em um espaço de acolhimento imediato." },
+      { title: "Nutrição Emocional", candle: "Chocolate", description: "Estimula a liberação de endorfinas. Ideal para momentos de leitura ou autocuidado introspectivo." },
+      { title: "Memória de Lar", candle: "Doce de Leite", description: "Finaliza o protocolo trazendo a sensação de pertencimento e paz com a própria rotina." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?auto=format&fit=crop&q=80&w=800",
     color: "#B45309"
@@ -66,15 +66,15 @@ export const olfactoryProfiles: Record<string, any> = {
   sensual: {
     id: "sensual",
     name: "Modo Sensual",
-    archetype: "Resposta Intensa",
-    description: "Cria presença, atração e intensidade através da ativação da amígdala.",
-    scientificBasis: "Estímulo cerebral (CNV ↑) associado a notas florais intensas que elevam a atividade autonômica.",
-    expectedEffect: "Aumento da excitação emocional e presença sensorial.",
+    archetype: "Presença & Magnetismo",
+    description: "Foco na regulação da autoconfiança e intensidade sensorial. Ideal para momentos de conexão profunda, seja consigo mesmo ou com o outro.",
+    scientificBasis: "Notas florais e terrosas que elevam a atividade autonômica e a percepção de atratividade via sistema límbico.",
+    expectedEffect: "Aumento da presença física, confiança pessoal e criação de uma atmosfera de mistério e atração.",
     notes: ["Patchouli", "Jasmim", "Morango", "Cereja", "Pimenta Rosa"],
     candleRitual: [
-      { title: "Magnetismo", candle: "Patchouli", description: "Estabeleça uma base misteriosa." },
-      { title: "Intensidade", candle: "Jasmim", description: "Eleve a vibração sensorial." },
-      { title: "Toque", candle: "Cereja", description: "Finalize a atmosfera sedutora." }
+      { title: "Magnetismo de Base", candle: "Patchouli", description: "Estabelece uma fundação terrosa e misteriosa que ancora a presença no aqui e agora." },
+      { title: "Euforia Floral", candle: "Jasmim", description: "Nota inebriante que atua na autoconfiança. Use para elevar a vibração e a entrega sensorial." },
+      { title: "Toque de Intensidade", candle: "Cereja", description: "Finaliza a atmosfera com uma nota vibrante que desperta o desejo e a curiosidade." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=80&w=800",
     color: "#991B1B"
@@ -82,15 +82,15 @@ export const olfactoryProfiles: Record<string, any> = {
   clean: {
     id: "clean",
     name: "Modo Limpeza",
-    archetype: "Cognição Ambiental",
-    description: "Cria sensação de ordem, frescor e organização através da cognição ambiental.",
-    scientificBasis: "Associação cognitiva entre aromas mentolados/cítricos e revitalização ambiental e ordem mental.",
-    expectedEffect: "Aumento da sensação de organização e clareza mental.",
+    archetype: "Ordem Ambiental",
+    description: "Utiliza a cognição ambiental para gerar sensação de organização e frescor. Ideal para 'resetar' o ambiente após períodos de caos ou estagnação.",
+    scientificBasis: "Associação psicológica entre notas canforadas/mentoladas e a percepção de pureza do ar e clareza de pensamento.",
+    expectedEffect: "Sensação de ambiente renovado, mente organizada e alívio da sobrecarga visual.",
     notes: ["Eucalipto", "Capim Limão", "Bamboo", "Chá Branco", "Ozônio"],
     candleRitual: [
-      { title: "Renovação", candle: "Ozônio", description: "Sele a sensação de frescor pós-limpeza." },
-      { title: "Pureza", candle: "Chá Branco", description: "Ideal para ambientes que precisam de ordem." },
-      { title: "Vigor", candle: "Bamboo", description: "Promova a sensação de renovação constante." }
+      { title: "Purificação de Campo", candle: "Eucalipto", description: "Limpa as vias respiratórias e a 'energia' pesada do ambiente, preparando o terreno para a ordem." },
+      { title: "Equilíbrio de Fluxo", candle: "Bamboo", description: "Traz a leveza da natureza. Ideal para manter a sensação de limpeza por mais tempo." },
+      { title: "Selo de Frescor", candle: "Chá Branco", description: "A nota final que comunica ao cérebro que o ambiente está em perfeita ordem e harmonia." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1558383331-f520f2888351?auto=format&fit=crop&q=80&w=800",
     color: "#0EA5E9"
@@ -98,15 +98,15 @@ export const olfactoryProfiles: Record<string, any> = {
   sophisticated: {
     id: "sophisticated",
     name: "Modo Sofisticado",
-    archetype: "Processamento Simbólico",
-    description: "Eleva a percepção de luxo e status através de notas nobres e complexas.",
-    scientificBasis: "Processamento simbólico de notas nobres associado a status e elegância via córtex orbitofrontal.",
-    expectedEffect: "Aumento da percepção de valor e sensação premium.",
+    archetype: "Status & Elegância",
+    description: "Processamento simbólico de notas nobres para elevar a percepção de valor do espaço. Ideal para recepções, reuniões importantes ou momentos de luxo pessoal.",
+    scientificBasis: "Ativação do córtex orbitofrontal através de composições complexas que o cérebro associa a exclusividade e poder.",
+    expectedEffect: "Aumento da percepção de prestígio, confiança social e atmosfera premium.",
     notes: ["Âmbar", "Figo", "Neroli", "Orquídea", "Iguatemi"],
     candleRitual: [
-      { title: "Assinatura", candle: "Figo", description: "Transforme o ambiente em um espaço de design." },
-      { title: "Aura", candle: "Neroli", description: "Presença refinada para recepções." },
-      { title: "Profundidade", candle: "Âmbar", description: "Base rica que exala poder." }
+      { title: "Assinatura de Design", candle: "Figo", description: "Transforma o ambiente comum em um espaço de curadoria. Use para marcar presença e estilo." },
+      { title: "Aura de Exclusividade", candle: "Neroli", description: "Nota floral cítrica raríssima que comunica sofisticação sem esforço e refinamento." },
+      { title: "Profundidade de Poder", candle: "Âmbar", description: "A base rica que exala estabilidade e sucesso. Ideal para finalizar o dia com sensação de conquista." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1615485240384-552e40df3c9d?auto=format&fit=crop&q=80&w=800",
     color: "#1F2937"
@@ -114,15 +114,15 @@ export const olfactoryProfiles: Record<string, any> = {
   nature: {
     id: "nature",
     name: "Modo Natureza",
-    archetype: "Aterramento",
-    description: "Conecta com o equilíbrio interno através de aromas terrosos e estáveis.",
-    scientificBasis: "Redução de estresse fisiológico através da conexão com fitoncidas e aromas de terra (Herz, 1998).",
-    expectedEffect: "Redução da ansiedade e aumento da estabilidade emocional.",
+    archetype: "Aterramento Biofílico",
+    description: "Reconecta o indivíduo com seus ritmos biológicos originais. Ideal para quem vive em ambientes urbanos e sente a necessidade de 'pé no chão'.",
+    scientificBasis: "Exposição a fitoncidas simulados que reduzem a atividade do sistema nervoso simpático e a pressão arterial.",
+    expectedEffect: "Redução do estresse urbano, sensação de liberdade e equilíbrio fisiológico.",
     notes: ["Cedro", "Patchouli", "Vet Vert", "Pinho", "Terra Molhada"],
     candleRitual: [
-      { title: "Raízes", candle: "Vet Vert", description: "Use quando se sentir disperso." },
-      { title: "Equilíbrio", candle: "Bamboo", description: "Traga a serenidade do jardim." },
-      { title: "Proteção", candle: "Cedro", description: "Barreira contra o caos externo." }
+      { title: "Raízes Profundas", candle: "Vet Vert", description: "Use quando se sentir disperso ou 'voando'. Traz a mente de volta para o corpo e para a terra." },
+      { title: "Respiro da Floresta", candle: "Pinho", description: "Simula a caminhada em mata fechada. Ideal para renovar o fôlego e a perspectiva de vida." },
+      { title: "Proteção de Cedro", candle: "Cedro", description: "Cria uma estrutura de segurança e estabilidade, como a sombra de uma árvore milenar." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800",
     color: "#166534"
@@ -130,15 +130,15 @@ export const olfactoryProfiles: Record<string, any> = {
   romance: {
     id: "romance",
     name: "Modo Romance",
-    archetype: "Afeto / Vínculo",
-    description: "Cria proximidade emocional e empatia através de notas florais clássicas.",
-    scientificBasis: "Notas florais associadas a comportamentos de cuidado e empatia via sistema límbico (Herz, 2001).",
-    expectedEffect: "Aumento da conexão emocional e empatia.",
+    archetype: "Vínculo & Empatia",
+    description: "Foco na abertura emocional e na suavização das defesas. Ideal para diálogos importantes, jantares a dois ou momentos de vulnerabilidade positiva.",
+    scientificBasis: "Notas florais clássicas que estimulam a liberação de ocitocina e promovem comportamentos de cuidado e conexão.",
+    expectedEffect: "Aumento da empatia, suavidade no trato interpessoal e conexão emocional facilitada.",
     notes: ["Rosa", "Rosas Vermelhas", "Pêssego", "Love Spell", "Lírio"],
     candleRitual: [
-      { title: "Coração", candle: "Rosa", description: "Suavize o clima para diálogos." },
-      { title: "Vínculo", candle: "Rosas Brancas", description: "Promova confiança e transparência." },
-      { title: "Encanto", candle: "Love Spell", description: "Desperte o romance e o afeto." }
+      { title: "Abertura de Coração", candle: "Rosa", description: "Suaviza o clima e prepara o ambiente para a transparência e a escuta ativa." },
+      { title: "Vínculo de Confiança", candle: "Lírio", description: "Nota de pureza que promove a sensação de segurança mútua e lealdade emocional." },
+      { title: "Encanto de Pêssego", candle: "Pêssego", description: "Traz a doçura e o frescor necessários para manter o clima leve e apaixonante." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?auto=format&fit=crop&q=80&w=800",
     color: "#F43F5E"
@@ -146,15 +146,15 @@ export const olfactoryProfiles: Record<string, any> = {
   balance: {
     id: "balance",
     name: "Modo Equilíbrio",
-    archetype: "Homeostase",
-    description: "Mantém o estado emocional estável através de aromas reguladores.",
-    scientificBasis: "Fragrâncias discretas mantêm a homeostase do humor via aprendizagem emocional e estabilidade autonômica.",
-    expectedEffect: "Aumento do equilíbrio emocional e redução de oscilações.",
+    archetype: "Homeostase Emocional",
+    description: "Regula as oscilações de humor e mantém o centro de gravidade emocional. Ideal para dias de transição ou quando se busca estabilidade interna.",
+    scientificBasis: "Uso de adaptógenos olfativos que ajudam o corpo a retornar ao seu estado de equilíbrio após picos de estresse ou euforia.",
+    expectedEffect: "Estabilidade emocional, redução de picos de ansiedade e sensação de 'centro'.",
     notes: ["Gerânio", "Lavanda", "Verbena", "Erva Doce", "Mirra"],
     candleRitual: [
-      { title: "Centro", candle: "Gerânio", description: "Regule oscilações emocionais." },
-      { title: "Estabilidade", candle: "Verbena", description: "Mantenha a mente clara." },
-      { title: "Paz", candle: "Mirra", description: "Promova a cura e introspecção." }
+      { title: "Regulação de Centro", candle: "Gerânio", description: "O grande equilibrador. Use para harmonizar as emoções quando estiver se sentindo 'fora do eixo'." },
+      { title: "Estabilidade de Verbena", candle: "Verbena", description: "Mantém a mente clara e o humor estável, evitando reações impulsivas ao longo do dia." },
+      { title: "Paz de Mirra", candle: "Mirra", description: "Nota milenar de introspecção que sela o protocolo com uma sensação de completude e paz." }
     ],
     imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
     color: "#8B5CF6"
