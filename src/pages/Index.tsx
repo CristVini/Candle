@@ -48,23 +48,25 @@ const Index = () => {
         />
       </div>
 
-      {/* Camada Sobreposta: Quiz */}
+      {/* Camada Sobreposta: Quiz (Altura Fixa, Sem Scroll Interno se possível) */}
       <div 
         ref={el => scrollContainerRef.current['quiz'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
+        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center ${
           currentView === 'quiz' ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'quiz' && (
-            <div className="relative min-h-screen py-10 md:py-20">
+            <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
               <button 
                 onClick={handleClose}
                 className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
               >
                 <X size={24} />
               </button>
-              <Quiz />
+              <div className="w-full">
+                <Quiz />
+              </div>
             </div>
           )}
         </Suspense>
