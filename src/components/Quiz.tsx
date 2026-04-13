@@ -163,41 +163,41 @@ const Quiz = () => {
   const currentQuestion = questions[currentStep];
 
   return (
-    <div className="max-w-5xl mx-auto px-6" role="form">
-      <div className="mb-20 text-center space-y-6">
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-[1px] w-12 bg-stone-800"></div>
-          <span className="text-[12px] font-bold text-stone-500 uppercase tracking-[0.5em]">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6" role="form">
+      <div className="mb-10 md:mb-20 text-center space-y-4 md:space-y-6">
+        <div className="flex items-center justify-center gap-3">
+          <div className="h-[1px] w-8 md:w-12 bg-stone-800"></div>
+          <span className="text-[10px] md:text-[12px] font-bold text-stone-500 uppercase tracking-[0.3em] md:tracking-[0.5em]">
             Passo {currentStep + 1} / {questions.length}
           </span>
-          <div className="h-[1px] w-12 bg-stone-800"></div>
+          <div className="h-[1px] w-8 md:w-12 bg-stone-800"></div>
         </div>
         
-        <div className="w-full bg-stone-900/50 h-1.5 rounded-full overflow-hidden max-w-md mx-auto">
+        <div className="w-full bg-stone-900/50 h-1 md:h-1.5 rounded-full overflow-hidden max-w-[200px] md:max-w-md mx-auto">
           <div 
-            className="bg-stone-100 h-full transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1)" 
+            className="bg-stone-100 h-full transition-all duration-700 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>
 
-      <div className="space-y-16 animate-in fade-in slide-in-from-right-8 duration-500">
-        <h2 className="text-4xl md:text-7xl font-serif text-center text-stone-100 leading-[1.1] max-w-4xl mx-auto">
+      <div className="space-y-8 md:space-y-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <h2 className="text-2xl sm:text-4xl md:text-7xl font-serif text-center text-stone-100 leading-tight max-w-4xl mx-auto px-2">
           {currentQuestion.text}
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
           {currentQuestion.options.map((option, index) => (
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className="group relative w-full text-left p-10 bg-stone-900/30 border border-stone-800 rounded-3xl hover:border-stone-400 hover:bg-stone-900/60 transition-all duration-500"
+              className="group relative w-full text-left p-6 md:p-10 bg-stone-900/30 border border-stone-800 rounded-2xl md:rounded-3xl hover:border-stone-400 hover:bg-stone-900/60 transition-all duration-300 active:scale-[0.98]"
             >
-              <div className="flex flex-col gap-4">
-                <span className="text-xl md:text-2xl text-stone-400 group-hover:text-stone-100 transition-colors leading-relaxed">
+              <div className="flex flex-col gap-2 md:gap-4">
+                <span className="text-base md:text-2xl text-stone-400 group-hover:text-stone-100 transition-colors leading-relaxed">
                   {option.text}
                 </span>
-                <div className="h-[1px] w-8 bg-stone-800 group-hover:w-full group-hover:bg-stone-100 transition-all duration-700"></div>
+                <div className="h-[1px] w-6 md:w-8 bg-stone-800 group-hover:w-full group-hover:bg-stone-100 transition-all duration-500"></div>
               </div>
             </button>
           ))}
