@@ -1,65 +1,78 @@
 "use client";
 
-import React, { useState } from 'react';
-import Header from '../components/Header';
+import React, { useState, Suspense, lazy } from 'react';
 import Hero from '../components/Hero';
-import Quiz from '../components/Quiz';
-import Result from '../components/Result';
-import Science from '../components/Science';
-import Footer from '../components/Footer';
-import { archetypesData } from '../data/archetypes';
+import { X, Loader2 } from 'lucide-react';
+
+// Carregamento dinâmico: Só baixa esses componentes quando necessário
+const Quiz = lazy(() => import('../components/Quiz'));
+const Science = lazy(() => import('../components/Science'));
+
+type ViewState = 'hero' | 'quiz' | 'science';
+
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center h-full w-full bg-stone-950">
+    <Loader2 className="w-8 h-8 text-stone-500 animate-spin" />
+  </div>
+);
 
 const Index = () => {
-  const [view, setView] = useState<'hero' | 'quiz' | 'result' | 'science'>('hero');
-  const [selectedArchetype, setSelectedArchetype] = useState(archetypesData[0]);
-
-  const handleStartQuiz = () => setView('quiz');
-  const handleOpenScience = () => setView('science');
-  
-  const handleQuizComplete = (answers: string[]) => {
-    // Lógica simples de sorteio para garantir que o resultado sempre apareça
-    // Em um sistema real, aqui você mapearia as respostas
-    const randomIndex = Math.floor(Math.random() * archetypesData.length);
-    setSelectedArchetype(archetypesData[randomIndex]);
-    setView('result');
-  };
-
-  const reset = () => setView('hero');
+  const [currentView, setCurrentView] = useState<ViewState>('hero');
 
   return (
-    <div className="min-h-screen bg-stone-950 text-stone-100 font-sans selection:bg-amber-500/30">
-      <Header />
-      
-      <main>
-        {view === 'hero' && (
-          <Hero onStartQuiz={handleStartQuiz} onOpenScience={handleOpenScience} />
-        )}
-        
-        {view === 'quiz' && (
-          <Quiz onComplete={handleQuizComplete} />
-        )}
-        
-        {view === 'result' && (
-          <Result archetype={selectedArchetype} onReset={reset} />
-        )}
+    <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100">
+      {/* Camada Base: Hero (Sempre carregada primeiro para FCP rápido) */}
+      <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50' : 'scale-100 opacity-100'}`}>
+        <Hero 
+          onStartQuiz={() => setCurrentView('quiz')} 
+          onOpenScience={() => setCurrentView('science')} 
+        />
+      </div>
 
-        {view === 'science' && (
-          <div className="pt-20">
-            <Science />
-            <div className="pb-20 text-center">
+      {/* Camada Sobreposta: Quiz */}
+      <div 
+        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
+          currentView === 'quiz' ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <Suspense fallback={<LoadingFallback />}>
+          {currentView === 'quiz' && (
+            <div className="relative min-h-screen py-10 md:py-20">
               <button 
-                onClick={reset}
-                className="px-8 py-4 bg-amber-600 rounded-full text-white hover:bg-amber-500 transition-all"
+                onClick={() => setCurrentView('hero')}
+                className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
               >
-                Voltar ao Início
+                <X size={24} />
               </button>
+              <Quiz />
             </div>
-          </div>
-        )}
-      </main>
+          )}
+        </Suspense>
+      </div>
 
-      <Footer />
-    </div>
+      {/* Camada Sobreposta: Ciência */}
+      <div 
+        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
+          currentView === 'science' ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <Suspense fallback={<LoadingFallback />}>
+          {currentView === 'science' && (
+            <div className="relative min-h-screen">
+              <button 
+                onClick={() => setCurrentView('hero')}
+                className="fixed top-6 left-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <div className="pt-20">
+                <Science />
+              </div>
+            </div>
+          )}
+        </Suspense>
+      </div>
+    </main>
   );
 };
 

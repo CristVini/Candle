@@ -3,70 +3,70 @@ export const candleProfiles: Record<string, any> = {
     id: "joy",
     name: "Euphoria",
     archetype: "O Sol Radiante",
-    description: "Sua alma busca luz e expansão. Esta fragrância foi desenhada para elevar sua vibração e transformar qualquer ambiente em um campo de otimismo.",
-    notes: ["Bergamota", "Melancia", "Verbena"],
+    description: "Uma explosão de vitalidade desenhada para elevar a dopamina natural e celebrar a vida. Ideal para momentos de expansão e alegria contagiante.",
+    notes: ["Bergamota", "Grapefruit", "Flor de Laranjeira"],
     emotion: "Alegria",
-    imageUrl: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80&w=1200",
-    color: "#F59E0B"
+    imageUrl: "https://images.unsplash.com/photo-1572726710708-20bb91924ee1?auto=format&fit=crop&q=60&w=800",
+    color: "#FCD34D"
   },
-  peace: {
-    id: "peace",
-    name: "Serenity",
-    archetype: "O Observador Silencioso",
-    description: "Para mentes que buscam um porto seguro. Uma combinação que silencia o ruído externo e convida ao mergulho interior e à paz absoluta.",
-    notes: ["Lavanda", "Flor de Laranjeira", "Bamboo"],
-    emotion: "Calma",
-    imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200",
-    color: "#6366F1"
-  },
-  sensual: {
-    id: "sensual",
+  sensuality: {
+    id: "sensuality",
     name: "Velvet",
-    archetype: "O Amante da Beleza",
-    description: "Uma fragrância magnética e profunda. Desperta os sentidos e celebra a sensualidade natural, criando uma atmosfera de mistério e sofisticação.",
-    notes: ["Jasmim", "Vanilla", "Orquídea"],
+    archetype: "O Amante",
+    description: "Um aroma magnético e profundo que desperta os sentidos e a autoconfiança. Perfeito para criar uma atmosfera de mistério, sedução e luxo absoluto.",
+    notes: ["Patchouli", "Âmbar", "Baunilha Negra"],
     emotion: "Sensualidade",
-    imageUrl: "https://images.unsplash.com/photo-1516715667182-c515c11f74e1?auto=format&fit=crop&q=80&w=1200",
-    color: "#9F1239"
+    imageUrl: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=60&w=800",
+    color: "#991B1B"
   },
-  energy: {
-    id: "energy",
-    name: "Focus",
-    archetype: "O Visionário",
-    description: "Clareza cristalina para momentos que exigem o melhor de você. Esta essência afia os sentidos e remove a névoa mental.",
-    notes: ["Limão Siciliano", "Capim Limão", "Verbena"],
-    emotion: "Clareza",
-    imageUrl: "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&q=80&w=1200",
-    color: "#059669"
-  },
-  comfort: {
-    id: "comfort",
-    name: "Home",
-    archetype: "O Acolhedor",
-    description: "Como um abraço em um dia frio. Esta vela resgata memórias de segurança, doçura e pertencimento, ideal para momentos de autocuidado.",
-    notes: ["Maçã com Canela", "Vanilla", "Peônia"],
-    emotion: "Aconchego",
-    imageUrl: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=1200",
-    color: "#9A3412"
-  },
-  renew: {
-    id: "renew",
-    name: "Renew",
+  burnout: {
+    id: "burnout",
+    name: "Resilience",
     archetype: "O Restaurador",
-    description: "Para quem precisa de um novo fôlego. Uma combinação que simboliza o desabrochar e a purificação das energias estagnadas.",
-    notes: ["Flor de Cerejeira", "Bamboo", "Capim Limão"],
+    description: "Desenvolvido especificamente para mentes exaustas. Suas notas ajudam a baixar o cortisol e restaurar o equilíbrio do sistema nervoso central.",
+    notes: ["Eucalipto", "Pinho", "Cedro"],
     emotion: "Recuperação",
-    imageUrl: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=1200",
-    color: "#0F766E"
+    imageUrl: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=60&w=800",
+    color: "#1E3A8A"
   },
-  stability: {
-    id: "stability",
-    name: "Roots",
+  anxiety: {
+    id: "anxiety",
+    name: "Serenity",
+    archetype: "O Observador",
+    description: "Um abraço olfativo que desacelera o tempo. Ideal para momentos de agitação mental e necessidade de aterramento e paz interior.",
+    notes: ["Lavanda Francesa", "Camomila", "Sândalo"],
+    emotion: "Calma",
+    imageUrl: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&q=60&w=800",
+    color: "#6D28D9"
+  },
+  mental_fatigue: {
+    id: "mental_fatigue",
+    name: "Focus",
+    archetype: "O Sábio",
+    description: "Estimula a clareza cognitiva e o foco. Perfeito para ambientes de trabalho e estudo onde a mente precisa de nitidez e ordem.",
+    notes: ["Hortelã-Pimenta", "Alecrim", "Limão Siciliano"],
+    emotion: "Clareza",
+    imageUrl: "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=60&w=800",
+    color: "#065F46"
+  },
+  loneliness: {
+    id: "loneliness",
+    name: "Cuddle",
+    archetype: "O Acolhedor",
+    description: "Proporciona uma sensação de companhia e conforto térmico. Atua nas memórias afetivas para trazer segurança e calor emocional.",
+    notes: ["Canela", "Mel", "Fava Tonka"],
+    emotion: "Aconchego",
+    imageUrl: "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?auto=format&fit=crop&q=60&w=800",
+    color: "#B45309"
+  },
+  acute_stress: {
+    id: "acute_stress",
+    name: "Silence",
     archetype: "O Guardião",
-    description: "Poder e estabilidade. Uma fragrância que traz autoridade para o ambiente e ajuda a manter o foco no que é essencial e duradouro.",
-    notes: ["Madeiras Nobres", "Orquídea", "Lavanda"],
+    description: "Uma barreira olfativa contra o caos externo. Traz segurança imediata e ajuda a filtrar o excesso de estímulos do mundo moderno.",
+    notes: ["Vetiver", "Incenso", "Mirra"],
     emotion: "Proteção",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200",
-    color: "#292524"
+    imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=60&w=800",
+    color: "#374151"
   }
 };
