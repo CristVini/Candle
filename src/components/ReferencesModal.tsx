@@ -26,7 +26,9 @@ const ReferencesModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
     { title: "The Scent of Desire", author: "Dr. Rachel Herz", year: "2007", focus: "Neurobiologia das emoções olfativas e como aromas resgatam memórias autobiográficas." },
     { title: "Aromatherapy and the Mind", author: "Julia Lawless", year: "1994", focus: "Exploração psicológica dos óleos essenciais e seus efeitos nos estados cognitivos." },
     { title: "Influence of Fragrances on Human Psychophysiological Activity", author: "Sowndhararajan & Kim", year: "2016", focus: "Estudo quantitativo sobre ondas cerebrais (EEG) em resposta a diferentes estímulos aromáticos." },
-    { title: "The Limbic System and Olfaction", author: "Journal of Neuroscience", year: "2021", focus: "Mapeamento das vias neurais entre o bulbo olfativo, a amígdala e o hipocampo." }
+    { title: "The Limbic System and Olfaction", author: "Journal of Neuroscience", year: "2021", focus: "Mapeamento das vias neurais entre o bulbo olfativo, a amígdala e o hipocampo." },
+    { title: "Odor-evoked autobiographical memories", author: "Herz, R. S.", year: "1998", focus: "Estudo sobre como odores evocam memórias emocionais mais vívidas que outros sentidos." },
+    { title: "The Influence of Odors on Mood and Affect", author: "Herz, R. S.", year: "2001", focus: "Pesquisa sobre a influência de fragrâncias no humor e comportamento social." }
   ];
 
   return createPortal(

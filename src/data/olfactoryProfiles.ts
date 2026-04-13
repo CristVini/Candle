@@ -4,7 +4,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Relaxar",
     archetype: "Regulação Emocional",
     description: "Reduz a ansiedade e desacelera a mente através da modulação do sistema límbico.",
-    scientificBasis: "Aumento de ondas cerebrais alfa/θ associadas ao relaxamento profundo (Herz, 1998).",
+    scientificBasis: "Aumento de ondas cerebrais alfa/θ e redução da Variação Negativa Contingente (CNV ↓), associadas ao relaxamento profundo (Herz, 1998).",
     expectedEffect: "Queda nos níveis de cortisol e redução da frequência mental.",
     notes: ["Lavanda", "Camomila", "Maracujá", "Erva Cidreira", "Sândalo"],
     candleRitual: [
@@ -20,7 +20,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Foco",
     archetype: "Ativação Cognitiva",
     description: "Aumenta a concentração e a produtividade através do estímulo do córtex pré-frontal.",
-    scientificBasis: "Ativação de ondas beta ligadas à atenção. Isômeros de limoneno elevam a vigília.",
+    scientificBasis: "Ativação de ondas beta ligadas à atenção e aumento da frequência cardíaca via estímulo de isômeros de limoneno.",
     expectedEffect: "Aumento da atenção sustentada e memória de trabalho.",
     notes: ["Alecrim", "Hortelã", "Café", "Eucalipto", "Limão"],
     candleRitual: [
@@ -36,7 +36,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Energizar",
     archetype: "Estímulo Positivo",
     description: "Eleva o humor e a disposição através da associação de aromas cítricos à serotonina.",
-    scientificBasis: "Aromas cítricos associados ao aumento de vigor e humor positivo (Herz, 2001).",
+    scientificBasis: "Aromas cítricos associados ao aumento de vigor e humor positivo via aprendizagem emocional (Herz, 2001).",
     expectedEffect: "Elevação do humor, aumento da motivação e redução da apatia.",
     notes: ["Laranja", "Tangerina", "Bergamota", "Abacaxi", "Manga"],
     candleRitual: [
@@ -52,7 +52,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Aconchego",
     archetype: "Memória Afetiva",
     description: "Gera conforto e sensação de cuidado ao evocar memórias emocionais do hipocampo.",
-    scientificBasis: "Aromas gourmand evocam bem-estar e segurança emocional (Herz, 1998).",
+    scientificBasis: "Aromas gourmand evocam memórias autobiográficas emocionais e segurança (Herz, 1998).",
     expectedEffect: "Aumento da sensação de acolhimento e redução do estresse emocional.",
     notes: ["Baunilha", "Chocolate", "Caramelo", "Doce de Leite", "Coco"],
     candleRitual: [
@@ -68,7 +68,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Sensual",
     archetype: "Resposta Intensa",
     description: "Cria presença, atração e intensidade através da ativação da amígdala.",
-    scientificBasis: "Estímulo cerebral (CNV ↑) associado a notas florais intensas e orientais.",
+    scientificBasis: "Estímulo cerebral (CNV ↑) associado a notas florais intensas que elevam a atividade autonômica.",
     expectedEffect: "Aumento da excitação emocional e presença sensorial.",
     notes: ["Patchouli", "Jasmim", "Morango", "Cereja", "Pimenta Rosa"],
     candleRitual: [
@@ -84,7 +84,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Limpeza",
     archetype: "Cognição Ambiental",
     description: "Cria sensação de ordem, frescor e organização através da cognição ambiental.",
-    scientificBasis: "Associação cognitiva entre aromas mentolados/cítricos e revitalização ambiental.",
+    scientificBasis: "Associação cognitiva entre aromas mentolados/cítricos e revitalização ambiental e ordem mental.",
     expectedEffect: "Aumento da sensação de organização e clareza mental.",
     notes: ["Eucalipto", "Capim Limão", "Bamboo", "Chá Branco", "Ozônio"],
     candleRitual: [
@@ -100,7 +100,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Sofisticado",
     archetype: "Processamento Simbólico",
     description: "Eleva a percepção de luxo e status através de notas nobres e complexas.",
-    scientificBasis: "Processamento simbólico de notas nobres associado a status e elegância.",
+    scientificBasis: "Processamento simbólico de notas nobres associado a status e elegância via córtex orbitofrontal.",
     expectedEffect: "Aumento da percepção de valor e sensação premium.",
     notes: ["Âmbar", "Figo", "Neroli", "Orquídea", "Iguatemi"],
     candleRitual: [
@@ -116,7 +116,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Natureza",
     archetype: "Aterramento",
     description: "Conecta com o equilíbrio interno através de aromas terrosos e estáveis.",
-    scientificBasis: "Redução de estresse fisiológico através da conexão com fitoncidas (pinho/cedro).",
+    scientificBasis: "Redução de estresse fisiológico através da conexão com fitoncidas e aromas de terra (Herz, 1998).",
     expectedEffect: "Redução da ansiedade e aumento da estabilidade emocional.",
     notes: ["Cedro", "Patchouli", "Vet Vert", "Pinho", "Terra Molhada"],
     candleRitual: [
@@ -132,7 +132,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Romance",
     archetype: "Afeto / Vínculo",
     description: "Cria proximidade emocional e empatia através de notas florais clássicas.",
-    scientificBasis: "Notas florais associadas a comportamentos de cuidado e empatia (Herz, 2001).",
+    scientificBasis: "Notas florais associadas a comportamentos de cuidado e empatia via sistema límbico (Herz, 2001).",
     expectedEffect: "Aumento da conexão emocional e empatia.",
     notes: ["Rosa", "Rosas Vermelhas", "Pêssego", "Love Spell", "Lírio"],
     candleRitual: [
@@ -148,7 +148,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Equilíbrio",
     archetype: "Homeostase",
     description: "Mantém o estado emocional estável através de aromas reguladores.",
-    scientificBasis: "Fragrâncias discretas mantêm a homeostase do humor via aprendizagem emocional.",
+    scientificBasis: "Fragrâncias discretas mantêm a homeostase do humor via aprendizagem emocional e estabilidade autonômica.",
     expectedEffect: "Aumento do equilíbrio emocional e redução de oscilações.",
     notes: ["Gerânio", "Lavanda", "Verbena", "Erva Doce", "Mirra"],
     candleRitual: [
