@@ -22,12 +22,13 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <div className="max-w-6xl mx-auto min-h-[80vh] bg-stone-900/40 border border-stone-800 rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 mx-4">
+    <div className="max-w-6xl mx-auto min-h-[80vh] bg-stone-900/40 border border-stone-800 rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 mx-4">
       <div className="grid lg:grid-cols-12 min-h-full">
         <div className="lg:col-span-5 relative h-72 md:h-auto overflow-hidden">
           <img 
             src={profile.imageUrl} 
             alt={profile.name}
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>

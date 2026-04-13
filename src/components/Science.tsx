@@ -1,9 +1,12 @@
 "use client";
 
-import React from 'react';
-import { Brain, Wind, FlaskConical, ShieldCheck, Microscope } from 'lucide-react';
+import React, { useState } from 'react';
+import { Brain, Wind, FlaskConical, Microscope, BookOpen } from 'lucide-react';
+import ReferencesModal from './ReferencesModal';
 
 const Science = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const principles = [
     {
       icon: <Brain className="w-6 h-6" />,
@@ -51,8 +54,15 @@ const Science = () => {
             </div>
             <h3 className="text-3xl md:text-5xl font-serif leading-tight">Ciência a serviço do bem-estar.</h3>
             <p className="text-stone-700 leading-relaxed">
-              Cada combinação em nosso mapeamento foi validada por estudos de psicologia olfativa, garantindo que o aroma escolhido seja exatamente o que seu sistema nervoso precisa para o equilíbrio.
+              Cada combinação em nosso mapeamento foi validada por estudos de psicologia olfativa, garantindo que o aroma escolhido seja exatamente o que seu sistema nervoso precisa.
             </p>
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="flex items-center gap-2 text-stone-900 font-bold border-b-2 border-stone-900 pb-1 hover:opacity-70 transition-opacity"
+            >
+              <BookOpen size={16} />
+              Ver Referências Bibliográficas
+            </button>
           </div>
           <div className="flex justify-center">
              <div className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
@@ -62,6 +72,8 @@ const Science = () => {
           </div>
         </div>
       </div>
+
+      <ReferencesModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };
