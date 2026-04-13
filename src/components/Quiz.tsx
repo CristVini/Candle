@@ -152,7 +152,6 @@ const Quiz = () => {
   const getWinner = () => {
     const entries = Object.entries(scores);
     if (entries.length === 0) return "energy";
-    // Retorna o perfil com maior pontuação
     return entries.reduce((a, b) => a[1] > b[1] ? a : b)[0];
   };
 
@@ -174,7 +173,7 @@ const Quiz = () => {
   const currentQuestion = questions[currentStep];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center py-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center py-10" style={{ transform: 'translateZ(0)' }}>
       <div className="mb-6 md:mb-12 text-center space-y-3">
         <div className="flex items-center justify-center gap-3">
           <div className="h-[1px] w-6 md:w-8 bg-stone-800"></div>
@@ -186,7 +185,7 @@ const Quiz = () => {
         
         <div className="w-full bg-stone-900/50 h-1 rounded-full overflow-hidden max-w-[120px] md:max-w-[160px] mx-auto">
           <div 
-            className="bg-stone-100 h-full transition-all duration-700 ease-out" 
+            className="bg-stone-100 h-full transition-[width] duration-500 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
@@ -194,7 +193,7 @@ const Quiz = () => {
 
       <div 
         key={currentStep} 
-        className="flex flex-col justify-center space-y-6 md:space-y-12 animate-in fade-in slide-in-from-right-4 duration-500"
+        className="flex flex-col justify-center space-y-6 md:space-y-12 animate-in fade-in duration-300"
       >
         <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-serif text-center text-stone-100 leading-tight max-w-4xl mx-auto min-h-[3em] flex items-center justify-center px-2">
           {currentQuestion.text}
@@ -205,13 +204,13 @@ const Quiz = () => {
             <button
               key={`${currentStep}-${index}`}
               onClick={() => handleAnswer(option.value)}
-              className="group relative w-full text-left p-4 md:p-8 bg-stone-900/30 border border-stone-800 rounded-xl md:rounded-2xl hover:border-stone-500 hover:bg-stone-900/60 transition-all duration-300 active:scale-[0.98]"
+              className="group relative w-full text-left p-4 md:p-8 bg-stone-900/30 border border-stone-800 rounded-xl md:rounded-2xl hover:border-stone-500 hover:bg-stone-900/60 transition-[border-color,background-color] duration-200 active:scale-[0.98]"
             >
               <div className="flex flex-col gap-1.5 md:gap-2">
                 <span className="text-sm md:text-xl text-stone-400 group-hover:text-stone-100 transition-colors leading-snug md:leading-relaxed">
                   {option.text}
                 </span>
-                <div className="h-[1px] w-4 md:w-6 bg-stone-800 group-hover:w-full group-hover:bg-stone-500 transition-all duration-500"></div>
+                <div className="h-[1px] w-4 md:w-6 bg-stone-800 group-hover:w-full group-hover:bg-stone-500 transition-[width,background-color] duration-300"></div>
               </div>
             </button>
           ))}
