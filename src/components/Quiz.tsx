@@ -7,122 +7,122 @@ import ResultCard from './ResultCard';
 const questions = [
   {
     id: 1,
-    text: "Qual é o seu objetivo sensorial prioritário neste momento?",
+    text: "O que você mais está precisando sentir agora?",
     options: [
-      { text: "Celebrar uma vitória e elevar a vibração", value: "joy" },
-      { text: "Despertar o magnetismo e a sedução", value: "sensuality" },
-      { text: "Restaurar a energia após um dia exaustivo", value: "burnout" },
-      { text: "Aterrar a mente e reduzir a ansiedade", value: "anxiety" }
+      { text: "Mais alegria e vontade de celebrar", value: "joy" },
+      { text: "Me sentir mais atraente e confiante", value: "sensuality" },
+      { text: "Recuperar minhas energias, estou exausto(a)", value: "burnout" },
+      { text: "Acalmar os pensamentos e relaxar", value: "anxiety" }
     ]
   },
   {
     id: 2,
-    text: "Como você deseja que seu espaço seja percebido?",
+    text: "Qual clima você quer criar no seu ambiente hoje?",
     options: [
-      { text: "Um ambiente solar, energético e receptivo", value: "joy" },
-      { text: "Um refúgio de mistério e sofisticação", value: "sensuality" },
-      { text: "Um templo de foco e clareza estratégica", value: "mental_fatigue" },
-      { text: "Um abraço acolhedor e seguro", value: "loneliness" }
+      { text: "Um lugar iluminado, animado e aberto", value: "joy" },
+      { text: "Um cantinho íntimo, chique e misterioso", value: "sensuality" },
+      { text: "Um espaço focado, onde eu consiga produzir", value: "mental_fatigue" },
+      { text: "Um refúgio que pareça um abraço quentinho", value: "loneliness" }
     ]
   },
   {
     id: 3,
-    text: "Qual estímulo tátil ressoa mais com seu estado atual?",
+    text: "Se você pudesse tocar em algo agora, o que seria mais gostoso?",
     options: [
-      { text: "Seda pura e veludo", value: "sensuality" },
-      { text: "Linho fresco ao sol", value: "joy" },
-      { text: "Couro rústico e madeira", value: "mental_fatigue" },
-      { text: "Caxemira espessa e envolvente", value: "loneliness" }
+      { text: "O toque luxuoso da seda ou do veludo", value: "sensuality" },
+      { text: "O frescor de um lençol de linho limpo", value: "joy" },
+      { text: "A firmeza de uma mesa de madeira maciça", value: "mental_fatigue" },
+      { text: "Uma manta de lã bem fofinha e pesada", value: "loneliness" }
     ]
   },
   {
     id: 4,
-    text: "Como é sua resposta a ambientes com excesso de informação?",
+    text: "Como você se sente quando está em um lugar com muita gente e barulho?",
     options: [
-      { text: "Sinto necessidade imediata de isolamento", value: "burnout" },
-      { text: "Minha mente acelera e perco o foco", value: "anxiety" },
-      { text: "Consigo filtrar, mas exijo esforço cognitivo", value: "mental_fatigue" },
-      { text: "Absorvo a energia e me sinto estimulado", value: "joy" }
+      { text: "Tenho vontade de fugir para um lugar quieto", value: "burnout" },
+      { text: "Fico impaciente e perco a paciência fácil", value: "anxiety" },
+      { text: "Tento me concentrar, mas minha cabeça dói", value: "mental_fatigue" },
+      { text: "Eu gosto, me sinto vivo(a) e animado(a)", value: "joy" }
     ]
   },
   {
     id: 5,
-    text: "Em qual período sua energia oscila mais drasticamente?",
+    text: "Qual é o momento do dia que você mais sente cansaço?",
     options: [
-      { text: "Início da manhã (dificuldade em despertar)", value: "burnout" },
-      { text: "Meio da tarde (queda de produtividade)", value: "mental_fatigue" },
-      { text: "Crepúsculo (aumento da melancolia/solidão)", value: "loneliness" },
-      { text: "Madrugada (insônia ou hiperatividade mental)", value: "anxiety" }
+      { text: "Logo que acordo, parece que não descansei", value: "burnout" },
+      { text: "No meio da tarde, quando o foco some", value: "mental_fatigue" },
+      { text: "No fim do dia, quando me sinto meio só", value: "loneliness" },
+      { text: "Na hora de dormir, quando a mente não para", value: "anxiety" }
     ]
   },
   {
     id: 6,
-    text: "Qual memória olfativa te traz segurança instantânea?",
+    text: "Que cheiro te faz fechar os olhos e sorrir na hora?",
     options: [
-      { text: "Terra molhada e floresta densa", value: "acute_stress" },
-      { text: "Roupas limpas e brisa marinha", value: "anxiety" },
-      { text: "Especiarias quentes e resinas", value: "sensuality" },
-      { text: "Cítricos e flores frescas", value: "joy" }
+      { text: "Cheiro de terra molhada e mato", value: "acute_stress" },
+      { text: "Cheiro de roupa limpa e brisa do mar", value: "anxiety" },
+      { text: "Cheiro de temperos doces e perfumes intensos", value: "sensuality" },
+      { text: "Cheiro de frutas frescas e flores", value: "joy" }
     ]
   },
   {
     id: 7,
-    text: "Como você descreveria sua 'Bateria Social' hoje?",
+    text: "Como está sua vontade de conversar com as pessoas hoje?",
     options: [
-      { text: "Esgotada. Preciso de silêncio regenerativo", value: "burnout" },
-      { text: "Seletiva. Apenas conexões profundas", value: "sensuality" },
-      { text: "Em alerta. Sinto necessidade de proteção", value: "acute_stress" },
-      { text: "Carregada. Pronta para expansão", value: "joy" }
+      { text: "Zero. Só quero o meu próprio silêncio", value: "burnout" },
+      { text: "Só quero falar com quem eu gosto muito", value: "sensuality" },
+      { text: "Me sinto na defensiva, meio irritado(a)", value: "acute_stress" },
+      { text: "Estou ótimo(a), quero ver gente!", value: "joy" }
     ]
   },
   {
     id: 8,
-    text: "Qual é a sua relação atual com o silêncio?",
+    text: "Para você, o silêncio é...",
     options: [
-      { text: "É o único lugar onde me sinto seguro", value: "loneliness" },
-      { text: "É necessário para meu trabalho intelectual", value: "mental_fatigue" },
-      { text: "Às vezes é ensurdecedor e gera angústia", value: "anxiety" },
-      { text: "Um espaço para contemplação e prazer", value: "sensuality" }
+      { text: "Meu porto seguro, onde eu me encontro", value: "loneliness" },
+      { text: "Essencial para eu conseguir pensar", value: "mental_fatigue" },
+      { text: "Meio agoniante, prefiro um som de fundo", value: "anxiety" },
+      { text: "Um luxo para eu aproveitar meu momento", value: "sensuality" }
     ]
   },
   {
     id: 9,
-    text: "O que mais te impede de entrar em estado de 'Flow'?",
+    text: "O que mais atrapalha o seu dia de fluir bem?",
     options: [
-      { text: "Cansaço físico e mental acumulado", value: "burnout" },
-      { text: "Interrupções externas e ruído visual", value: "mental_fatigue" },
-      { text: "Pensamentos intrusivos sobre o futuro", value: "anxiety" },
-      { text: "Falta de propósito ou estímulo emocional", value: "joy" }
+      { text: "O cansaço que carrego dos últimos dias", value: "burnout" },
+      { text: "Muita gente me chamando toda hora", value: "mental_fatigue" },
+      { text: "Preocupações com o que ainda vai acontecer", value: "anxiety" },
+      { text: "Falta de algo que me deixe empolgado(a)", value: "joy" }
     ]
   },
   {
     id: 10,
-    text: "Se sua ansiedade fosse uma textura, qual seria?",
+    text: "Se o seu estresse fosse um toque na pele, como ele seria?",
     options: [
-      { text: "Lixa áspera e persistente", value: "anxiety" },
-      { text: "Nuvem densa e opaca", value: "burnout" },
-      { text: "Espinhos metálicos e frios", value: "acute_stress" },
-      { text: "Areia movediça e instável", value: "loneliness" }
+      { text: "Algo áspero que incomoda o tempo todo", value: "anxiety" },
+      { text: "Um peso invisível que me aperta", value: "burnout" },
+      { text: "Algo frio e pontiagudo que me assusta", value: "acute_stress" },
+      { text: "Uma sensação de estar afundando", value: "loneliness" }
     ]
   },
   {
     id: 11,
-    text: "Qual é o seu 'Ritual de Poder' favorito?",
+    text: "O que você faz para 'recarregar as pilhas' de verdade?",
     options: [
-      { text: "Um banho longo com óleos essenciais", value: "sensuality" },
-      { text: "Uma caminhada rápida ao ar livre", value: "joy" },
-      { text: "Organizar meticulosamente meu espaço", value: "mental_fatigue" },
-      { text: "Meditação ou escrita terapêutica", value: "acute_stress" }
+      { text: "Um banho bem longo e relaxante", value: "sensuality" },
+      { text: "Uma caminhada ou algo ao ar livre", value: "joy" },
+      { text: "Arrumar minhas coisas e organizar a casa", value: "mental_fatigue" },
+      { text: "Ficar quietinho(a) lendo ou escrevendo", value: "acute_stress" }
     ]
   },
   {
     id: 12,
-    text: "O que sua mente mais pede neste exato segundo?",
+    text: "Se pudesse ganhar um presente para sua mente agora, o que seria?",
     options: [
-      { text: "Expansão e brilho", value: "joy" },
-      { text: "Desejo e conexão profunda", value: "sensuality" },
-      { text: "Estrutura e foco cognitivo", value: "mental_fatigue" },
-      { text: "Pausa e silêncio regenerativo", value: "burnout" }
+      { text: "Muita energia e alegria de viver", value: "joy" },
+      { text: "Poder e magnetismo pessoal", value: "sensuality" },
+      { text: "Clareza para tomar decisões difíceis", value: "mental_fatigue" },
+      { text: "Paz absoluta e descanso profundo", value: "burnout" }
     ]
   }
 ];
