@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { X, Sparkles, Droplets } from 'lucide-react';
 import { Ingredient } from '../data/ingredients';
 
@@ -10,20 +10,13 @@ interface IngredientModalProps {
 }
 
 const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
-  const modalRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (ingredient) {
-      // Bloquear o scroll do corpo da página ao abrir o modal
+      // Bloqueia o scroll do corpo
       document.body.style.overflow = 'hidden';
-      // Forçar o container do modal a começar no topo absoluto
-      if (modalRef.current) {
-        modalRef.current.scrollTo(0, 0);
-      }
     } else {
       document.body.style.overflow = 'unset';
     }
-    
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -33,36 +26,36 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
 
   return (
     <div 
-      ref={modalRef}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-start p-0 md:p-10 bg-stone-950/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto touch-pan-y"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-stone-950/98 backdrop-blur-2xl animate-in fade-in duration-300"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-xl bg-stone-900 border-x border-b md:border border-stone-800 rounded-b-[40px] md:rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] animate-in zoom-in-95 slide-in-from-top-10 duration-500 my-0 md:my-auto"
+        className="relative w-full max-w-xl max-h-[90vh] bg-stone-900 border border-stone-800 rounded-[40px] shadow-[0_0_100px_rgba(0,0,0,1)] animate-in zoom-in-95 slide-in-from-bottom-10 duration-500 overflow-y-auto custom-scrollbar"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Botão de Fechar Fixo no Modal */}
         <button 
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-3 bg-stone-950/80 text-white rounded-full hover:bg-stone-800 transition-all active:scale-90 border border-stone-800"
+          className="absolute top-6 right-6 z-30 p-2 bg-stone-950/50 text-white rounded-full hover:bg-stone-100 hover:text-stone-950 transition-all active:scale-90 border border-stone-800"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
 
         {ingredient.image && (
-          <div className="h-64 md:h-80 overflow-hidden relative">
+          <div className="h-56 md:h-72 overflow-hidden relative shrink-0">
             <img 
               src={ingredient.image} 
               alt={ingredient.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"></div>
           </div>
         )}
 
-        <div className={`p-8 md:p-14 space-y-6 ${ingredient.image ? '-mt-12' : 'pt-20'} relative z-10 bg-stone-900`}>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-stone-100 text-stone-950 rounded-full flex items-center justify-center shrink-0">
-               <Droplets size={20} />
+        <div className={`p-8 md:p-12 space-y-6 ${ingredient.image ? '-mt-10' : 'pt-16'} relative z-10`}>
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 bg-stone-100 text-stone-950 rounded-2xl flex items-center justify-center shrink-0 shadow-lg">
+               <Droplets size={24} />
             </div>
             <div>
               <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.3em]">Propriedade Terapêutica</span>
@@ -70,26 +63,30 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
             </div>
           </div>
           
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-stone-800 border border-stone-700 text-stone-200 text-[10px] md:text-xs font-bold rounded-full uppercase tracking-widest">
-            <Sparkles size={12} className="text-stone-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-stone-800 border border-stone-700 text-stone-100 text-xs font-bold rounded-full uppercase tracking-widest shadow-sm">
+            <Sparkles size={14} className="text-stone-400" />
             {ingredient.benefit}
           </div>
           
-          <div className="space-y-4">
-            <p className="text-stone-300 leading-relaxed text-lg md:text-xl font-light italic">
+          <div className="space-y-6">
+            <p className="text-stone-200 leading-relaxed text-xl md:text-2xl font-light italic font-serif">
               "{ingredient.description}"
             </p>
-            <div className="pt-4 border-t border-stone-800">
-              <p className="text-stone-500 text-sm font-light">
-                Esta essência atua diretamente no sistema límbico, auxiliando no processo de {ingredient.benefit.toLowerCase()}.
+            <div className="pt-6 border-t border-stone-800/50">
+              <p className="text-stone-400 text-sm leading-relaxed">
+                Esta essência atua diretamente no sistema límbico, auxiliando no processo de <span className="text-stone-200 font-medium">{ingredient.benefit.toLowerCase()}</span> e equilíbrio emocional.
               </p>
             </div>
           </div>
+
+          <button 
+            onClick={onClose}
+            className="w-full py-4 mt-4 bg-stone-800 hover:bg-stone-700 text-stone-200 rounded-2xl text-sm font-bold uppercase tracking-widest transition-colors border border-stone-700 md:hidden"
+          >
+            Fechar
+          </button>
         </div>
       </div>
-      
-      {/* Espaçador de segurança para o final do modal */}
-      <div className="h-10 shrink-0"></div>
     </div>
   );
 };
