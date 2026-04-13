@@ -14,7 +14,7 @@ export const candleProfiles: Record<string, any> = {
     name: "Velvet",
     archetype: "O Amante",
     description: "Um mergulho na autoaceitação e no magnetismo pessoal. Deixe que o aroma envolva seus sentidos em um abraço de luxo.",
-    notes: ["Cereja c/ Avelã", "Black Vanilla", "Patchouly"],
+    notes: ["Cereja c/ Avelã", "Black Vanilla", "Patchouli"],
     emotion: "Sensualidade",
     imageUrl: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=80&w=800",
     color: "#991B1B"
