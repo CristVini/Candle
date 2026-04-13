@@ -128,8 +128,8 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
         {/* Footer: CTA */}
         <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-stone-800/40">
           <div className="space-y-1">
-            <p className="text-stone-500 text-[10px] font-bold uppercase tracking-widest">Finalizar Experiência</p>
-            <p className="text-stone-300 text-xl font-light">Seu kit personalizado está pronto para ser enviado.</p>
+            <p className="text-stone-500 text-[10px] font-bold uppercase tracking-widest">Próximo Passo</p>
+            <p className="text-stone-300 text-xl font-light max-w-md">Fale com nosso especialista para garantir seu kit personalizado.</p>
           </div>
           
           <a 
