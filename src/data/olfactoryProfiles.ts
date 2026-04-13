@@ -2,24 +2,24 @@ export const olfactoryProfiles: Record<string, any> = {
   joy: {
     id: "joy",
     name: "Euphoria",
-    archetype: "O Sol Radiante",
-    description: "Seu sistema nervoso pede luz e expansão. É hora de abrir as janelas da mente e deixar o entusiasmo entrar.",
+    archetype: "Perfil Estimulante",
+    description: "Seu sistema nervoso apresenta baixa resposta a estímulos positivos. O objetivo é a ativação dopaminérgica para elevar o entusiasmo e a disposição.",
     notes: ["Bergamota", "Tangerina", "Mel"],
     candleRitual: [
       { 
-        title: "Despertar Solar", 
+        title: "Ativação Matinal", 
         candle: "Bergamota", 
-        description: "Ao acordar, abra as janelas e acenda a Bergamota. Sinta o cítrico vibrar no ar enquanto você planeja suas vitórias do dia. É o seu café da manhã olfativo." 
+        description: "Utilize ao iniciar o dia. As moléculas cítricas auxiliam na clareza mental e na prontidão para as tarefas diárias." 
       },
       { 
-        title: "Pausa de Vitalidade", 
+        title: "Reforço de Vitalidade", 
         candle: "Tangerina", 
-        description: "No meio da tarde, quando a energia oscilar, deixe a Tangerina inundar o ambiente. Respire fundo e sinta o entusiasmo renovando cada célula." 
+        description: "Aplicação recomendada no meio da tarde para combater a queda de energia e manter o foco produtivo." 
       },
       { 
-        title: "Acalento Doce", 
+        title: "Finalização Suave", 
         candle: "Mel", 
-        description: "Termine o dia com a doçura do Mel. Deixe o aroma te abraçar enquanto você agradece pelas pequenas alegrias que viveu hoje." 
+        description: "Uso noturno para promover uma sensação de conforto e recompensa após a jornada de trabalho." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1572726710708-20bb91924ee1?auto=format&fit=crop&q=80&w=800",
@@ -28,24 +28,24 @@ export const olfactoryProfiles: Record<string, any> = {
   sensuality: {
     id: "sensuality",
     name: "Velvet",
-    archetype: "O Amante",
-    description: "Buscamos o magnetismo. É sobre se sentir presente na própria pele, celebrando o mistério e a autoconfiança.",
+    archetype: "Perfil Envolvente",
+    description: "Foco na regulação da autoconfiança e presença sensorial. Ideal para momentos de desconexão do estresse externo e foco no bem-estar pessoal.",
     notes: ["Cereja c/ Avelã", "Black Vanilla", "Patchouli"],
     candleRitual: [
       { 
-        title: "Banho de Vênus", 
+        title: "Momento de Autocuidado", 
         candle: "Cereja c/ Avelã", 
-        description: "Deixe o vapor do banho se misturar com a doçura da Cereja. Sinta o aroma envolver seu corpo como uma seda invisível, celebrando sua beleza única." 
+        description: "Recomendado durante o banho ou rotina de cuidados pessoais para estimular a percepção sensorial positiva." 
       },
       { 
-        title: "Aura de Mistério", 
+        title: "Modulação de Ambiente", 
         candle: "Black Vanilla", 
-        description: "Prepare o ambiente para a noite. A Baunilha Negra cria um magnetismo denso, transformando sua sala em um refúgio de sofisticação e desejo." 
+        description: "Cria uma atmosfera de sofisticação e conforto, ideal para recepções ou momentos de relaxamento social." 
       },
       { 
-        title: "Conexão Profunda", 
+        title: "Aterramento Sensorial", 
         candle: "Patchouli", 
-        description: "No silêncio do quarto, o Patchouli aterra seus sentidos. É o momento de se desconectar do mundo e se reconectar com o que te faz vibrar." 
+        description: "Uso focado na redução da ansiedade através de notas terrosas que promovem a sensação de presença." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=80&w=800",
@@ -54,24 +54,24 @@ export const olfactoryProfiles: Record<string, any> = {
   burnout: {
     id: "burnout",
     name: "Resilience",
-    archetype: "O Restaurador",
-    description: "Sua mente precisa de um porto seguro. Vamos trocar a exaustão pelo silêncio regenerador das florestas.",
+    archetype: "Perfil Regenerativo",
+    description: "Indicado para estados de exaustão mental crônica. O protocolo foca na redução de cortisol e na recuperação da homeostase do sistema nervoso.",
     notes: ["Pinho", "Eucalipto", "Cedro"],
     candleRitual: [
       { 
         title: "Descompressão Imediata", 
         candle: "Eucalipto", 
-        description: "Chegou em casa? Acenda o Eucalipto. Imagine que o frescor está limpando todo o ruído e o peso que você carregou nos ombros hoje." 
+        description: "Utilize logo após chegar em casa para sinalizar ao cérebro o fim da jornada de trabalho e o início do descanso." 
       },
       { 
-        title: "Raízes no Chão", 
+        title: "Recuperação de Eixo", 
         candle: "Pinho", 
-        description: "Sente-se por 5 minutos em silêncio com o Pinho. Sinta o aroma de terra molhada te devolvendo o eixo e a estabilidade que o caos tentou tirar." 
+        description: "Notas silvestres que auxiliam na estabilização emocional e na redução da sensação de sobrecarga." 
       },
       { 
-        title: "Santuário de Sono", 
+        title: "Higiene do Sono", 
         candle: "Cedro", 
-        description: "O Cedro é o seu abraço de madeira. Deixe que ele proteja seu sono, criando uma barreira entre você e as preocupações de amanhã." 
+        description: "Prepare o ambiente de repouso com o Cedro para facilitar a transição para o sono profundo e reparador." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?auto=format&fit=crop&q=80&w=800",
@@ -80,24 +80,24 @@ export const olfactoryProfiles: Record<string, any> = {
   anxiety: {
     id: "anxiety",
     name: "Serenity",
-    archetype: "O Observador",
-    description: "O mundo está barulhento demais. Vamos criar um casulo de paz onde seus pensamentos podem finalmente descansar.",
+    archetype: "Perfil Estabilizador",
+    description: "Foco na modulação da ansiedade e hiperestimulação. O protocolo utiliza moléculas que promovem a desaceleração dos pensamentos.",
     notes: ["Lavanda", "Camomila", "Bamboo"],
     candleRitual: [
       { 
-        title: "Foco Leve", 
+        title: "Foco Equilibrado", 
         candle: "Bamboo", 
-        description: "Durante o trabalho, o Bamboo limpa o excesso. É como uma brisa que passa pela mesa, levando embora a urgência e deixando apenas a clareza." 
+        description: "Uso diurno para manter a calma durante tarefas complexas, evitando picos de estresse por excesso de informação." 
       },
       { 
         title: "Pausa de Respiro", 
         candle: "Camomila", 
-        description: "Sinta a Camomila acalmar as batidas do coração. Feche os olhos e visualize um campo tranquilo, onde nada é urgente e tudo está bem." 
+        description: "Intervenção rápida em momentos de agitação para auxiliar no controle da frequência cardíaca e respiratória." 
       },
       { 
-        title: "Paz Absoluta", 
+        title: "Indução ao Relaxamento", 
         candle: "Lavanda", 
-        description: "A Lavanda é sua ponte para o sonho. Leia um livro sob sua luz suave e sinta os pensamentos desacelerando até se tornarem silêncio." 
+        description: "Protocolo noturno clássico para redução da atividade cerebral e preparação para o repouso absoluto." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&q=80&w=800",
@@ -106,24 +106,24 @@ export const olfactoryProfiles: Record<string, any> = {
   mental_fatigue: {
     id: "mental_fatigue",
     name: "Focus",
-    archetype: "O Sábio",
-    description: "A névoa mental se dissipa agora. Vamos aguçar seus sentidos e devolver a nitidez aos seus objetivos.",
+    archetype: "Perfil Cognitivo",
+    description: "Desenvolvido para combater a névoa mental e a fadiga de decisão. Estimula a acuidade visual e a retenção de informações.",
     notes: ["Alecrim Blanc", "Capim Limão", "Hortelã-Pimenta"],
     candleRitual: [
       { 
-        title: "Clareza Mental", 
+        title: "Clareza Operacional", 
         candle: "Capim Limão", 
-        description: "Comece sua tarefa mais difícil com o Capim Limão. Ele atua como um interruptor, ligando sua percepção e afastando a preguiça intelectual." 
+        description: "Inicie blocos de trabalho intenso com esta nota para aumentar a percepção e a agilidade mental." 
       },
       { 
-        title: "Imersão Criativa", 
+        title: "Foco Profundo", 
         candle: "Alecrim Blanc", 
-        description: "O Alecrim é o combustível do gênio. Deixe que ele sustente seu foco por horas, mantendo sua mente afiada e pronta para solucionar desafios." 
+        description: "Manutenção da concentração em tarefas de longa duração, auxiliando na memória de curto prazo." 
       },
       { 
-        title: "Choque de Ânimo", 
+        title: "Recuperação de Alerta", 
         candle: "Hortelã-Pimenta", 
-        description: "Sentiu o cansaço bater? A Hortelã é um despertar gelado. Respire o frescor e sinta a energia voltando instantaneamente para os seus olhos." 
+        description: "Utilize em momentos de sonolência ou queda de produtividade para um despertar cognitivo imediato." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?auto=format&fit=crop&q=80&w=800",
@@ -132,24 +132,24 @@ export const olfactoryProfiles: Record<string, any> = {
   loneliness: {
     id: "loneliness",
     name: "Cuddle",
-    archetype: "O Acolhedor",
-    description: "Ninguém está sozinho quando está cercado de memórias doces. Vamos preencher o espaço com calor e afeto.",
+    archetype: "Perfil de Conforto",
+    description: "Foco na regulação emocional através de memórias olfativas positivas. Promove a sensação de acolhimento e segurança no ambiente.",
     notes: ["Black Vanilla", "Mel", "Canela"],
     candleRitual: [
       { 
-        title: "Abraço de Inverno", 
+        title: "Acolhimento do Ambiente", 
         candle: "Canela", 
-        description: "A Canela aquece as paredes da alma. Acenda-a e sinta o ambiente se tornar mais acolhedor, como se a casa estivesse te dando as boas-vindas." 
+        description: "Notas quentes que aumentam a percepção de temperatura e conforto térmico/emocional do espaço." 
       },
       { 
-        title: "Nutrição Emocional", 
+        title: "Suporte Emocional", 
         candle: "Mel", 
-        description: "O Mel traz a sensação de cuidado. É o aroma do conforto, lembrando que você é sua melhor companhia e merece esse carinho." 
+        description: "Uso recomendado em momentos de introspecção para promover uma sensação de nutrição e bem-estar." 
       },
       { 
-        title: "Doce Refúgio", 
+        title: "Finalização Aconchegante", 
         candle: "Black Vanilla", 
-        description: "Termine a noite envolto em Baunilha. É um abraço olfativo que te prepara para dormir sentindo-se amado(a) e protegido(a)." 
+        description: "Cria um 'casulo' olfativo para o final do dia, reduzindo a sensação de isolamento através do conforto doce." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1520627977056-c307aeb9a625?auto=format&fit=crop&q=80&w=800",
@@ -158,24 +158,24 @@ export const olfactoryProfiles: Record<string, any> = {
   acute_stress: {
     id: "acute_stress",
     name: "Shield",
-    archetype: "O Guardião",
-    description: "Momentos difíceis pedem blindagem. Vamos criar um escudo de proteção onde nada externo pode te abalar.",
+    archetype: "Perfil de Proteção",
+    description: "Protocolo de blindagem contra estressores externos. Utiliza resinas e notas densas para promover estabilidade em ambientes caóticos.",
     notes: ["Âmbar Lelis", "Mirra", "Vet Vert"],
     candleRitual: [
       { 
-        title: "Eixo Central", 
+        title: "Regulação de Estresse", 
         candle: "Mirra", 
-        description: "Em momentos de crise, a Mirra te devolve ao centro. Respire o aroma resinoso e sinta sua força interior se reconstruindo, tijolo por tijolo." 
+        description: "Uso focado na recuperação do centro emocional durante ou após situações de conflito ou alta pressão." 
       },
       { 
-        title: "Presença Absoluta", 
+        title: "Estabilização de Presença", 
         candle: "Vet Vert", 
-        description: "O Vetiver te prende ao agora. Sinta o aroma terroso e perceba que, neste exato momento, você está seguro(a) e no controle." 
+        description: "Notas de raiz que auxiliam no 'grounding', mantendo o foco no presente e reduzindo a reatividade emocional." 
       },
       { 
-        title: "Blindagem de Luz", 
+        title: "Barreira de Conforto", 
         candle: "Âmbar Lelis", 
-        description: "O Âmbar cria uma redoma de calor e proteção. Deixe que ele sele seu dia, garantindo que apenas energias boas permaneçam no seu espaço." 
+        description: "Cria uma camada de proteção sensorial que ajuda a filtrar ruídos e distrações do ambiente externo." 
       }
     ],
     imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",

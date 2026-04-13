@@ -28,7 +28,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   if (!profile) return null;
 
   const phoneNumber = "5515996842962";
-  const message = `Olá! Fiz o mapeamento e meu perfil é: ${profile.name}. Quero manifestar esse ritual na minha vida e encomendar meu Kit!`;
+  const message = `Olá! Concluí meu mapeamento olfativo e meu perfil é: ${profile.name}. Gostaria de encomendar meu Kit Personalizado!`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const getIcon = (index: number) => {
@@ -40,7 +40,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   return (
     <div className="w-full max-w-5xl mx-auto bg-stone-900/40 border border-stone-800/50 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 backdrop-blur-xl">
       <div className="flex flex-col lg:flex-row">
-        {/* Imagem - Ocupa topo no mobile e lateral no desktop */}
+        {/* Imagem */}
         <div className="lg:w-1/3 relative h-48 md:h-64 lg:h-auto overflow-hidden shrink-0">
           <img 
             src={profile.imageUrl} 
@@ -55,7 +55,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
           {/* Header */}
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="text-[9px] font-bold text-stone-500 uppercase tracking-[0.4em]">Seu Perfil Olfativo</span>
+              <span className="text-[9px] font-bold text-stone-500 uppercase tracking-[0.4em]">Resultado do Mapeamento</span>
               <div className="h-[1px] flex-1 bg-stone-800/50"></div>
             </div>
             <h2 className="text-4xl md:text-6xl font-serif text-stone-100 leading-tight">{profile.name}</h2>
@@ -68,7 +68,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
             <div className="space-y-10">
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Beaker size={14} /> O Chamado da Mente
+                  <Beaker size={14} /> Diagnóstico Olfativo
                 </h4>
                 <p className="text-stone-200 text-lg md:text-xl leading-relaxed font-light italic font-serif border-l-2 border-stone-800 pl-6">
                   "{profile.description}"
@@ -77,7 +77,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
 
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Wind size={14} /> Notas de Poder
+                  <Wind size={14} /> Notas de Atuação
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {profile.notes.map((note, i) => (
@@ -94,10 +94,10 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               </div>
             </div>
 
-            {/* Coluna 2: Ritual */}
+            {/* Coluna 2: Protocolo */}
             <div className="space-y-6">
               <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                <Sparkles size={14} className="text-amber-500" /> Ritual de Transformação
+                <Sparkles size={14} className="text-amber-500" /> Protocolo de Uso Recomendado
               </h4>
               <div className="space-y-6">
                 {profile.candleRitual.map((step, i) => (
@@ -128,7 +128,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               className="flex-[2] flex items-center justify-center gap-3 bg-stone-100 text-stone-950 py-5 rounded-full font-bold text-base md:text-lg hover:bg-white transition-all shadow-xl active:scale-95 group"
             >
               <ShoppingBag size={20} className="group-hover:rotate-12 transition-transform" />
-              Manifestar meu Ritual
+              Encomendar meu Kit Personalizado
             </a>
             <button 
               onClick={onReset}
