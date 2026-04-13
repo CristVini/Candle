@@ -4,14 +4,15 @@ import React, { useMemo } from 'react';
 
 const Fireflies = () => {
   const particles = useMemo(() => {
-    return Array.from({ length: 40 }).map((_, i) => ({
+    return Array.from({ length: 60 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
-      duration: 15 + Math.random() * 20,
+      duration: 10 + Math.random() * 15, // Mais rápidos
       delay: Math.random() * -20,
-      size: 1 + Math.random() * 2.5,
-      color: Math.random() > 0.3 ? 'rgba(251, 191, 36, 0.6)' : 'rgba(190, 242, 100, 0.5)',
+      size: 2 + Math.random() * 4, // Maiores
+      // Cores mais vibrantes (Âmbar e Ouro)
+      color: Math.random() > 0.3 ? 'rgba(255, 191, 0, 0.9)' : 'rgba(255, 240, 150, 0.8)',
     }));
   }, []);
 
@@ -27,10 +28,11 @@ const Fireflies = () => {
             width: `${p.size}px`,
             height: `${p.size}px`,
             backgroundColor: p.color,
-            boxShadow: `0 0 ${p.size * 3}px ${p.size}px ${p.color}`,
+            // Brilho muito mais forte
+            boxShadow: `0 0 ${p.size * 4}px ${p.size * 1.5}px ${p.color}, 0 0 ${p.size * 8}px ${p.size}px rgba(251, 191, 36, 0.4)`,
             animation: `
               wander-firefly ${p.duration}s infinite ease-in-out ${p.delay}s,
-              twinkle-firefly ${3 + Math.random() * 4}s infinite ease-in-out ${p.delay}s
+              twinkle-firefly ${2 + Math.random() * 3}s infinite ease-in-out ${p.delay}s
             `,
           }}
         />
@@ -38,20 +40,20 @@ const Fireflies = () => {
       <style>{`
         @keyframes wander-firefly {
           0%, 100% { transform: translate(0, 0); }
-          25% { transform: translate(40px, -30px); }
-          50% { transform: translate(-15px, -60px); }
-          75% { transform: translate(-50px, -20px); }
+          25% { transform: translate(60px, -40px); }
+          50% { transform: translate(-20px, -80px); }
+          75% { transform: translate(-70px, -30px); }
         }
 
         @keyframes twinkle-firefly {
           0%, 100% {
-            opacity: 0.1;
-            transform: scale(0.8);
+            opacity: 0.3;
+            transform: scale(0.7);
           }
           50% {
-            opacity: 0.6;
-            transform: scale(1.1);
-            box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.4);
+            opacity: 1;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px 4px rgba(255, 191, 0, 0.8);
           }
         }
       `}</style>
