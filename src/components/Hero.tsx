@@ -1,14 +1,15 @@
 "use client";
 
 import React from 'react';
-import { Sparkles, BookOpen } from 'lucide-react';
+import { Sparkles, BookOpen, Droplets } from 'lucide-react';
 
 interface HeroProps {
   onStartQuiz: () => void;
   onOpenScience: () => void;
+  onOpenIngredients: () => void;
 }
 
-const Hero = ({ onStartQuiz, onOpenScience }: HeroProps) => {
+const Hero = ({ onStartQuiz, onOpenScience, onOpenIngredients }: HeroProps) => {
   return (
     <header className="relative h-screen flex flex-col items-center justify-center px-4 text-center overflow-hidden">
       {/* Background Ambience */}
@@ -35,7 +36,7 @@ const Hero = ({ onStartQuiz, onOpenScience }: HeroProps) => {
           Descubra a assinatura olfativa desenvolvida para o seu estado emocional através do nosso protocolo exclusivo.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 px-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 pt-8 px-4">
           <button 
             onClick={onStartQuiz}
             className="group relative w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 bg-stone-100 text-stone-950 rounded-full font-bold text-base md:text-lg transition-all hover:scale-105 active:scale-95 shadow-2xl"
@@ -43,13 +44,23 @@ const Hero = ({ onStartQuiz, onOpenScience }: HeroProps) => {
             Começar Mapeamento
           </button>
           
-          <button 
-            onClick={onOpenScience}
-            className="flex items-center gap-3 px-8 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium"
-          >
-            <BookOpen size={20} />
-            <span>A Ciência por trás</span>
-          </button>
+          <div className="flex flex-wrap items-center justify-center gap-1">
+            <button 
+              onClick={onOpenScience}
+              className="flex items-center gap-2 px-6 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium text-sm md:text-base"
+            >
+              <BookOpen size={18} />
+              <span>Ciência</span>
+            </button>
+            <div className="w-[1px] h-4 bg-stone-800 hidden md:block"></div>
+            <button 
+              onClick={onOpenIngredients}
+              className="flex items-center gap-2 px-6 py-5 text-stone-400 hover:text-stone-100 transition-colors font-medium text-sm md:text-base"
+            >
+              <Droplets size={18} />
+              <span>Essências</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
