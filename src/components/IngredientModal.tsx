@@ -16,7 +16,7 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
     if (ingredient) {
       // Bloquear o scroll do corpo da página ao abrir o modal
       document.body.style.overflow = 'hidden';
-      // Garantir que o container do modal comece no topo
+      // Forçar o container do modal a começar no topo absoluto
       if (modalRef.current) {
         modalRef.current.scrollTo(0, 0);
       }
@@ -34,11 +34,11 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
   return (
     <div 
       ref={modalRef}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-start md:justify-center p-0 md:p-4 bg-stone-950/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto touch-pan-y"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-start p-0 md:p-10 bg-stone-950/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto touch-pan-y"
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-xl bg-stone-900 border-x border-b md:border border-stone-800 rounded-b-[40px] md:rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] animate-in zoom-in-95 slide-in-from-top-10 md:slide-in-from-bottom-10 duration-500 my-0 md:my-8"
+        className="relative w-full max-w-xl bg-stone-900 border-x border-b md:border border-stone-800 rounded-b-[40px] md:rounded-[40px] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] animate-in zoom-in-95 slide-in-from-top-10 duration-500 my-0 md:my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button 
@@ -88,8 +88,8 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
         </div>
       </div>
       
-      {/* Espaçador para garantir que o modal não fique colado no rodapé no mobile se for longo */}
-      <div className="h-8 md:hidden shrink-0"></div>
+      {/* Espaçador de segurança para o final do modal */}
+      <div className="h-10 shrink-0"></div>
     </div>
   );
 };
