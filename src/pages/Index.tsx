@@ -2,6 +2,7 @@
 
 import React, { useState, Suspense, lazy, useEffect, useRef } from 'react';
 import Hero from '../components/Hero';
+import Fireflies from '../components/Fireflies';
 import { X, Loader2 } from 'lucide-react';
 
 // Carregamento dinâmico
@@ -35,6 +36,9 @@ const Index = () => {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
+      {/* Camada de Fundo: Vagalumes */}
+      <Fireflies />
+
       {/* Camada Base: Hero */}
       <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50' : 'scale-100 opacity-100'}`}>
         <Hero 
