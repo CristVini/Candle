@@ -7,122 +7,122 @@ import ResultCard from './ResultCard';
 const questions = [
   {
     id: 1,
-    text: "Qual desses aromas te traz mais conforto ou saudade de momentos felizes do passado?",
+    text: "Quando você para por um momento, o que mais pesa dentro de você?",
     options: [
-      { text: "Cheiro de bolo caseiro assando", value: "cozy" },
-      { text: "Perfume marcante de um amor antigo", value: "romance,sensual" },
-      { text: "Brisa fresca após chuva na floresta", value: "nature" },
-      { text: "Xícara de café fresco pela manhã", value: "focus,energy" }
+      { text: "Um cansaço difícil de explicar", value: "relax" },
+      { text: "Pensamentos que não se organizam", value: "focus" },
+      { text: "Falta de motivação ou entusiasmo", value: "energy" },
+      { text: "Nada pesa, mas sinto que algo poderia ser melhor", value: "balance,sophisticated" }
     ]
   },
   {
     id: 2,
-    text: "Quando você quer relaxar após um dia estressante, aromas te fazem sentir...",
+    text: "Como você descreveria seu estado interno hoje?",
     options: [
-      { text: "Calmo e sereno (como numa praia tranquila)", value: "relax" },
-      { text: "Aconchegado e protegido (como em casa)", value: "cozy" },
-      { text: "Energizado e renovado", value: "energy" },
-      { text: "Confiante e sofisticado", value: "sophisticated" }
+      { text: "Sobrecarregado", value: "relax" },
+      { text: "Disperso", value: "focus" },
+      { text: "Apático", value: "energy" },
+      { text: "Estável, porém sem destaque", value: "balance" }
     ]
   },
   {
     id: 3,
-    text: "Qual cheiro você escolheria para manter o foco enquanto estuda ou trabalha?",
+    text: "O que mais tem consumido sua energia ultimamente?",
     options: [
-      { text: "Alecrim ou hortelã-pimenta", value: "focus" },
-      { text: "Ambiente natural (cheiro de pinho/cedro)", value: "nature,focus" },
-      { text: "Lavanda suave", value: "relax" },
-      { text: "Café forte", value: "focus,energy" }
+      { text: "Emoções e preocupações", value: "relax,romance" },
+      { text: "Excesso de tarefas ou estímulos", value: "focus,clean" },
+      { text: "Falta de novidade ou propósito", value: "energy,sensual" },
+      { text: "Rotina repetitiva", value: "cozy,nature" }
     ]
   },
   {
     id: 4,
-    text: "Para criar um clima acolhedor em casa, você prefere aromas...",
+    text: "Se você pudesse ajustar algo em você agora, seria:",
     options: [
-      { text: "Doces e quentes (baunilha, chocolate)", value: "cozy" },
-      { text: "Amadeirados elegantes (sândalo, âmbar)", value: "sophisticated" },
-      { text: "Florais suaves (jasmim, camomila)", value: "sensual,relax" },
-      { text: "Frescos e herbais (capim-limão, ervas)", value: "clean,energy" }
+      { text: "Acalmar a mente e o corpo", value: "relax" },
+      { text: "Ter mais clareza e direção", value: "focus" },
+      { text: "Sentir mais energia e vontade", value: "energy" },
+      { text: "Tornar seus momentos mais agradáveis", value: "cozy,sophisticated" }
     ]
   },
   {
     id: 5,
-    text: "Em uma ocasião especial ou encontro romântico, que aroma você acha mais apropriado?",
+    text: "Como você reage quando finalmente tem um tempo livre?",
     options: [
-      { text: "Florais intensos (jasmim, rosa)", value: "sensual,romance" },
-      { text: "Doce/oriental (baunilha, patchouli)", value: "sensual,cozy" },
-      { text: "Amadeirados sofisticados (oud, âmbar)", value: "sophisticated" },
-      { text: "Frutados leves (manga, maracujá)", value: "romance,energy" }
+      { text: "Só quer descansar e se desligar", value: "relax,nature" },
+      { text: "Tenta se organizar ou resolver coisas", value: "focus,clean" },
+      { text: "Procura algo que te anime", value: "energy" },
+      { text: "Quer aproveitar de forma leve e confortável", value: "cozy,balance" }
     ]
   },
   {
     id: 6,
-    text: "Depois de limpar a casa, qual aroma você escolheria para manter o ar fresco?",
+    text: "O que você sente que está faltando no seu dia a dia?",
     options: [
-      { text: "Cítricos energizantes (limão, grapefruit)", value: "clean,energy" },
-      { text: "Menta ou eucalipto", value: "clean" },
-      { text: "Florais leves (lírio-do-vale)", value: "clean,balance" },
-      { text: "Natureza pura (pinheiro, terra molhada)", value: "nature,clean" }
+      { text: "Paz", value: "relax,balance" },
+      { text: "Foco", value: "focus" },
+      { text: "Energia", value: "energy" },
+      { text: "Prazer/conforto", value: "cozy,sensual" }
     ]
   },
   {
     id: 7,
-    text: "Ao escolher seu perfume favorito, você prefere...",
+    text: "Qual dessas situações mais se aproxima da sua realidade?",
     options: [
-      { text: "Aromas sofisticados e amadeirados", value: "sophisticated" },
-      { text: "Notas doces e acolhedoras", value: "cozy" },
-      { text: "Perfumes florais marcantes", value: "romance,sensual" },
-      { text: "Fragrâncias frescas e energizantes", value: "energy,clean" }
+      { text: "Minha mente não desacelera", value: "relax" },
+      { text: "Eu começo coisas e não termino", value: "focus" },
+      { text: "Eu não tenho vontade de começar", value: "energy" },
+      { text: "Faço tudo, mas sem prazer", value: "cozy,sophisticated" }
     ]
   },
   {
     id: 8,
-    text: "Quando está cansado e precisa de estímulo, você procura aromas que...",
+    text: "Quando você entra em um ambiente ideal, ele precisa ter:",
     options: [
-      { text: "Te acordem (café, chá preto)", value: "focus,energy" },
-      { text: "Revigorem com frescor (menta, limão)", value: "focus,energy" },
-      { text: "Acalmem antes de dormir (camomila, lavanda)", value: "relax" },
-      { text: "Tragam conforto imediato (baunilha, chocolate)", value: "cozy" }
+      { text: "Silêncio e calma", value: "relax,nature" },
+      { text: "Organização e estímulo mental", value: "focus,clean" },
+      { text: "Leveza e energia", value: "energy" },
+      { text: "Aconchego e conforto", value: "cozy" }
     ]
   },
   {
     id: 9,
-    text: "Para se sentir confiante em um dia importante, você usaria um aroma...",
+    text: "Como você gostaria de se sentir ao final do dia?",
     options: [
-      { text: "Forte e marcante (gengibre, patchouli)", value: "sensual,energy" },
-      { text: "Amadeirado e sofisticado (âmbar, cedro)", value: "sophisticated" },
-      { text: "Leve e fresco (cítrico, menta)", value: "energy,focus" },
-      { text: "Doce e acolhedor (baunilha, caramelo)", value: "cozy" }
+      { text: "Em paz", value: "relax,balance" },
+      { text: "Satisfeito com o que produziu", value: "focus" },
+      { text: "Animado e leve", value: "energy" },
+      { text: "Confortável e acolhido", value: "cozy,romance" }
     ]
   },
   {
     id: 10,
-    text: "Quando busca equilíbrio emocional, prefere aromas...",
+    text: "Qual dessas frases mais combina com você hoje?",
     options: [
-      { text: "Suaves e neutros", value: "balance" },
-      { text: "Herbais e calmantes (verbena, erva-doce)", value: "balance,relax" },
-      { text: "Flores discretas e leves", value: "balance" },
-      { text: "Madeirados sutis (olíbano, cedro)", value: "balance,sophisticated" }
+      { text: "“Eu preciso desacelerar”", value: "relax" },
+      { text: "“Eu preciso me organizar”", value: "focus,clean" },
+      { text: "“Eu preciso me animar”", value: "energy" },
+      { text: "“Eu só quero me sentir bem”", value: "balance,cozy" }
     ]
   },
   {
     id: 11,
-    text: "Para atrair elogios com um novo perfume, você escolheria...",
+    text: "O que mais te desconecta de você mesmo?",
     options: [
-      { text: "Florais românticos (rosa, lírio)", value: "romance,sensual" },
-      { text: "Orientais misteriosos (patchouli, âmbar)", value: "sensual,sophisticated" },
-      { text: "Cítricos vibrantes (bergamota, limão)", value: "energy" },
-      { text: "Gourmand adocicados (caramelo, coco)", value: "cozy,sensual" }
+      { text: "Ansiedade ou excesso de emoção", value: "relax,balance" },
+      { text: "Distrações constantes", value: "focus" },
+      { text: "Falta de estímulo", value: "energy,sensual" },
+      { text: "Rotina sem prazer", value: "cozy,sophisticated" }
     ]
   },
   {
     id: 12,
-    text: "Quando está em casa sozinho, prefere velas com aroma que te façam sentir...",
+    text: "Se você pudesse criar um momento perfeito agora, ele seria:",
     options: [
-      { text: "Totalmente relaxado e zen", value: "relax" },
-      { text: "Convidativo e acolhedor para os amigos", value: "cozy" },
-      { text: "Fresco e limpo no ambiente", value: "clean" },
-      { text: "Energizado para realizar tarefas", value: "energy,focus" }
+      { text: "Um espaço calmo para descansar", value: "relax,nature" },
+      { text: "Um ambiente que te faça focar", value: "focus" },
+      { text: "Um clima leve e estimulante", value: "energy" },
+      { text: "Um espaço acolhedor e prazeroso", value: "cozy,sensual" }
     ]
   }
 ];
