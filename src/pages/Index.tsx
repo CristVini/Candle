@@ -36,7 +36,7 @@ const Index = () => {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
-      {/* Camada de Fundo: Vagalumes */}
+      {/* Camada Global: Vagalumes/Brasas (agora em Z-70) */}
       <Fireflies />
 
       {/* Camada Base: Hero */}
@@ -48,7 +48,7 @@ const Index = () => {
         />
       </div>
 
-      {/* Camada Sobreposta: Quiz (Altura Fixa, Sem Scroll Interno se possível) */}
+      {/* Camada Sobreposta: Quiz */}
       <div 
         ref={el => scrollContainerRef.current['quiz'] = el}
         className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center ${
@@ -60,7 +60,7 @@ const Index = () => {
             <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
               >
                 <X size={24} />
               </button>
@@ -84,7 +84,7 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 left-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+                className="fixed top-6 left-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
               >
                 <X size={24} />
               </button>
@@ -108,7 +108,7 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
               >
                 <X size={24} />
               </button>
