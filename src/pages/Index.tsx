@@ -4,6 +4,7 @@ import React, { useState, Suspense, lazy } from 'react';
 import Hero from '../components/Hero';
 import { X, Loader2 } from 'lucide-react';
 
+// Carregamento dinâmico: Só baixa esses componentes quando necessário
 const Quiz = lazy(() => import('../components/Quiz'));
 const Science = lazy(() => import('../components/Science'));
 
@@ -20,8 +21,8 @@ const Index = () => {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100">
-      {/* Camada Base: Hero */}
-      <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50 blur-sm' : 'scale-100 opacity-100'}`}>
+      {/* Camada Base: Hero (Sempre carregada primeiro para FCP rápido) */}
+      <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50' : 'scale-100 opacity-100'}`}>
         <Hero 
           onStartQuiz={() => setCurrentView('quiz')} 
           onOpenScience={() => setCurrentView('science')} 
@@ -64,7 +65,7 @@ const Index = () => {
               >
                 <X size={24} />
               </button>
-              <div className="pt-24 md:pt-32">
+              <div className="pt-20">
                 <Science />
               </div>
             </div>
