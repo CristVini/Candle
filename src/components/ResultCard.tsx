@@ -127,7 +127,7 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
 
         {/* Footer: CTA */}
         <div className="pt-12 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-stone-800/40">
-          <div className="space-y-1">
+          <div className="space-y-1 text-center md:text-left">
             <p className="text-stone-500 text-[10px] font-bold uppercase tracking-widest">Próximo Passo</p>
             <p className="text-stone-300 text-xl font-light max-w-md">Fale com nosso especialista para garantir seu kit personalizado.</p>
           </div>
@@ -136,11 +136,11 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-auto flex items-center justify-center gap-8 bg-stone-100 text-stone-950 px-14 py-7 rounded-full font-bold text-sm uppercase tracking-[0.4em] hover:bg-white hover:scale-[1.02] transition-all shadow-[0_20px_80px_rgba(0,0,0,0.5)] active:scale-95 group"
+            className="w-full md:w-auto flex items-center justify-center gap-4 md:gap-8 bg-stone-100 text-stone-950 px-8 py-5 md:px-14 md:py-7 rounded-full font-bold text-xs md:text-sm uppercase tracking-[0.2em] md:tracking-[0.4em] hover:bg-white hover:scale-[1.02] transition-all shadow-[0_20px_80px_rgba(0,0,0,0.5)] active:scale-95 group"
           >
-            <ShoppingBag size={20} />
+            <ShoppingBag size={18} className="md:w-5 md:h-5" />
             Garantir meu Protocolo
-            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            <ArrowRight size={18} className="md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
           </a>
         </div>
       </div>
