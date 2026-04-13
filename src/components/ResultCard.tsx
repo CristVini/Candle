@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ShoppingBag, RotateCcw, Info, Sparkles, Wind, Moon, Sun, Coffee, ArrowRight } from 'lucide-react';
+import { ShoppingBag, RotateCcw, Info, Sparkles, Wind, Moon, Sun, Coffee, ArrowRight, Brain, Zap } from 'lucide-react';
 import { ingredientsData } from '../data/ingredients';
 import IngredientModal from './IngredientModal';
 
@@ -16,6 +16,8 @@ interface Profile {
   name: string;
   archetype: string;
   description: string;
+  scientificBasis: string;
+  expectedEffect: string;
   notes: string[];
   candleRitual: RitualStep[];
   imageUrl: string;
@@ -52,16 +54,35 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
                 <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.5em]">Perfil Identificado</span>
               </div>
               <div className="space-y-2">
-                <h2 className="text-7xl md:text-8xl font-serif text-stone-100 tracking-tighter leading-none">
+                <h2 className="text-5xl md:text-7xl font-serif text-stone-100 tracking-tighter leading-none">
                   {profile.name}
                 </h2>
                 <p className="text-amber-500/80 text-xl font-light italic tracking-wide">
                   {profile.archetype}
                 </p>
               </div>
-              <p className="text-stone-400 text-lg font-serif italic leading-relaxed border-l border-stone-800 pl-6">
-                "{profile.description}"
-              </p>
+              
+              <div className="space-y-6 pt-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-stone-500">
+                    <Brain size={14} />
+                    <span className="text-[9px] font-bold uppercase tracking-widest">Base Científica</span>
+                  </div>
+                  <p className="text-stone-400 text-sm leading-relaxed italic">
+                    {profile.scientificBasis}
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-stone-500">
+                    <Zap size={14} />
+                    <span className="text-[9px] font-bold uppercase tracking-widest">Efeito Esperado</span>
+                  </div>
+                  <p className="text-stone-300 text-sm font-medium leading-relaxed">
+                    {profile.expectedEffect}
+                  </p>
+                </div>
+              </div>
             </div>
 
             <button 

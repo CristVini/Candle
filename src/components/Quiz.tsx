@@ -9,120 +9,120 @@ const questions = [
     id: 1,
     text: "O que você mais está precisando sentir agora?",
     options: [
-      { text: "Mais alegria e vontade de celebrar", value: "joy" },
-      { text: "Me sentir mais atraente e confiante", value: "sensuality" },
-      { text: "Recuperar minhas energias, estou exausto(a)", value: "burnout" },
-      { text: "Acalmar os pensamentos e relaxar", value: "anxiety" }
+      { text: "Mais alegria e vontade de celebrar", value: "energy" },
+      { text: "Me sentir mais atraente e confiante", value: "sensual" },
+      { text: "Recuperar minhas energias, estou exausto(a)", value: "relax" },
+      { text: "Acalmar os pensamentos e relaxar", value: "balance" }
     ]
   },
   {
     id: 2,
     text: "Qual clima você quer criar no seu ambiente hoje?",
     options: [
-      { text: "Um lugar iluminado, animado e aberto", value: "joy" },
-      { text: "Um cantinho íntimo, chique e misterioso", value: "sensuality" },
-      { text: "Um espaço focado, onde eu consiga produzir", value: "mental_fatigue" },
-      { text: "Um refúgio que pareça um abraço quentinho", value: "loneliness" }
+      { text: "Um lugar iluminado, animado e aberto", value: "energy" },
+      { text: "Um cantinho íntimo, chique e misterioso", value: "sophisticated" },
+      { text: "Um espaço focado, onde eu consiga produzir", value: "focus" },
+      { text: "Um refúgio que pareça um abraço quentinho", value: "cozy" }
     ]
   },
   {
     id: 3,
     text: "Se você pudesse tocar em algo agora, o que seria mais gostoso?",
     options: [
-      { text: "O toque luxuoso da seda ou do veludo", value: "sensuality" },
-      { text: "O frescor de um lençol de linho limpo", value: "joy" },
-      { text: "A firmeza de uma mesa de madeira maciça", value: "mental_fatigue" },
-      { text: "Uma manta de lã bem fofinha e pesada", value: "loneliness" }
+      { text: "O toque luxuoso da seda ou do veludo", value: "sophisticated" },
+      { text: "O frescor de um lençol de linho limpo", value: "clean" },
+      { text: "A firmeza de uma mesa de madeira maciça", value: "nature" },
+      { text: "Uma manta de lã bem fofinha e pesada", value: "comfort" }
     ]
   },
   {
     id: 4,
     text: "Como você se sente quando está em um lugar com muita gente e barulho?",
     options: [
-      { text: "Tenho vontade de fugir para um lugar quieto", value: "burnout" },
-      { text: "Fico impaciente e perco a paciência fácil", value: "anxiety" },
-      { text: "Tento me concentrar, mas minha cabeça dói", value: "mental_fatigue" },
-      { text: "Eu gosto, me sinto vivo(a) e animado(a)", value: "joy" }
+      { text: "Tenho vontade de fugir para um lugar quieto", value: "relax" },
+      { text: "Fico impaciente e perco a paciência fácil", value: "balance" },
+      { text: "Tento me concentrar, mas minha cabeça dói", value: "soft" },
+      { text: "Eu gosto, me sinto vivo(a) e animado(a)", value: "energy" }
     ]
   },
   {
     id: 5,
     text: "Qual é o momento do dia que você mais sente cansaço?",
     options: [
-      { text: "Logo que acordo, parece que não descansei", value: "burnout" },
-      { text: "No meio da tarde, quando o foco some", value: "mental_fatigue" },
-      { text: "No fim do dia, quando me sinto meio só", value: "loneliness" },
-      { text: "Na hora de dormir, quando a mente não para", value: "anxiety" }
+      { text: "Logo que acordo, parece que não descansei", value: "stimulus" },
+      { text: "No meio da tarde, quando o foco some", value: "focus" },
+      { text: "No fim do dia, quando me sinto meio só", value: "connection" },
+      { text: "Na hora de dormir, quando a mente não para", value: "relax" }
     ]
   },
   {
     id: 6,
     text: "Que cheiro te faz fechar os olhos e sorrir na hora?",
     options: [
-      { text: "Cheiro de terra molhada e mato", value: "acute_stress" },
-      { text: "Cheiro de roupa limpa e brisa do mar", value: "anxiety" },
-      { text: "Cheiro de temperos doces e perfumes intensos", value: "sensuality" },
-      { text: "Cheiro de frutas frescas e flores", value: "joy" }
+      { text: "Cheiro de terra molhada e mato", value: "nature" },
+      { text: "Cheiro de roupa limpa e brisa do mar", value: "clean" },
+      { text: "Cheiro de temperos doces e perfumes intensos", value: "sensual" },
+      { text: "Cheiro de frutas frescas e flores", value: "energy" }
     ]
   },
   {
     id: 7,
     text: "Como está sua vontade de conversar com as pessoas hoje?",
     options: [
-      { text: "Zero. Só quero o meu próprio silêncio", value: "burnout" },
-      { text: "Só quero falar com quem eu gosto muito", value: "sensuality" },
-      { text: "Me sinto na defensiva, meio irritado(a)", value: "acute_stress" },
-      { text: "Estou ótimo(a), quero ver gente!", value: "joy" }
+      { text: "Zero. Só quero o meu próprio silêncio", value: "relax" },
+      { text: "Só quero falar com quem eu gosto muito", value: "connection" },
+      { text: "Me sinto na defensiva, meio irritado(a)", value: "balance" },
+      { text: "Estou ótimo(a), quero ver gente!", value: "energy" }
     ]
   },
   {
     id: 8,
     text: "Para você, o silêncio é...",
     options: [
-      { text: "Meu porto seguro, onde eu me encontro", value: "loneliness" },
-      { text: "Essencial para eu conseguir pensar", value: "mental_fatigue" },
-      { text: "Meio agoniante, prefiro um som de fundo", value: "anxiety" },
-      { text: "Um luxo para eu aproveitar meu momento", value: "sensuality" }
+      { text: "Meu porto seguro, onde eu me encontro", value: "nature" },
+      { text: "Essencial para eu conseguir pensar", value: "focus" },
+      { text: "Meio agoniante, prefiro um som de fundo", value: "soft" },
+      { text: "Um luxo para eu aproveitar meu momento", value: "sophisticated" }
     ]
   },
   {
     id: 9,
     text: "O que mais atrapalha o seu dia de fluir bem?",
     options: [
-      { text: "O cansaço que carrego dos últimos dias", value: "burnout" },
-      { text: "Muita gente me chamando toda hora", value: "mental_fatigue" },
-      { text: "Preocupações com o que ainda vai acontecer", value: "anxiety" },
-      { text: "Falta de algo que me deixe empolgado(a)", value: "joy" }
+      { text: "O cansaço que carrego dos últimos dias", value: "stimulus" },
+      { text: "Muita gente me chamando toda hora", value: "focus" },
+      { text: "Preocupações com o que ainda vai acontecer", value: "balance" },
+      { text: "Falta de algo que me deixe empolgado(a)", value: "escape" }
     ]
   },
   {
     id: 10,
     text: "Se o seu estresse fosse um toque na pele, como ele seria?",
     options: [
-      { text: "Algo áspero que incomoda o tempo todo", value: "anxiety" },
-      { text: "Um peso invisível que me aperta", value: "burnout" },
-      { text: "Algo frio e pontiagudo que me assusta", value: "acute_stress" },
-      { text: "Uma sensação de estar afundando", value: "loneliness" }
+      { text: "Algo áspero que incomoda o tempo todo", value: "soft" },
+      { text: "Um peso invisível que me aperta", value: "nature" },
+      { text: "Algo frio e pontiagudo que me assusta", value: "clean" },
+      { text: "Uma sensação de estar afundando", value: "escape" }
     ]
   },
   {
     id: 11,
     text: "O que você faz para 'recarregar as pilhas' de verdade?",
     options: [
-      { text: "Um banho bem longo e relaxante", value: "sensuality" },
-      { text: "Uma caminhada ou algo ao ar livre", value: "joy" },
-      { text: "Arrumar minhas coisas e organizar a casa", value: "mental_fatigue" },
-      { text: "Ficar quietinho(a) lendo ou escrevendo", value: "acute_stress" }
+      { text: "Um banho bem longo e relaxante", value: "sensual" },
+      { text: "Uma caminhada ou algo ao ar livre", value: "nature" },
+      { text: "Arrumar minhas coisas e organizar a casa", value: "clean" },
+      { text: "Ficar quietinho(a) lendo ou escrevendo", value: "cozy" }
     ]
   },
   {
     id: 12,
     text: "Se pudesse ganhar um presente para sua mente agora, o que seria?",
     options: [
-      { text: "Muita energia e alegria de viver", value: "joy" },
-      { text: "Poder e magnetismo pessoal", value: "sensuality" },
-      { text: "Clareza para tomar decisões difíceis", value: "mental_fatigue" },
-      { text: "Paz absoluta e descanso profundo", value: "burnout" }
+      { text: "Muita energia e alegria de viver", value: "energy" },
+      { text: "Poder e magnetismo pessoal", value: "sophisticated" },
+      { text: "Clareza para tomar decisões difíceis", value: "focus" },
+      { text: "Paz absoluta e descanso profundo", value: "relax" }
     ]
   }
 ];
@@ -145,7 +145,7 @@ const Quiz = () => {
 
   const getWinner = () => {
     const entries = Object.entries(scores);
-    if (entries.length === 0) return "joy";
+    if (entries.length === 0) return "energy";
     return entries.reduce((a, b) => a[1] > b[1] ? a : b)[0];
   };
 
