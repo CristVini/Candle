@@ -22,13 +22,12 @@ const Index = () => {
   const [currentView, setCurrentView] = useState<ViewState>('hero');
   const scrollContainerRef = useRef<Record<string, HTMLDivElement | null>>({});
 
-  // Resetar o scroll sempre que a view mudar
   useEffect(() => {
     const activeContainer = scrollContainerRef.current[currentView];
     if (activeContainer) {
-      activeContainer.scrollTo(0, 0);
+      activeContainer.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [currentView]);
 
@@ -36,11 +35,10 @@ const Index = () => {
 
   return (
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
-      {/* Camada Global: Vagalumes/Brasas (agora em Z-70) */}
       <Fireflies />
 
-      {/* Camada Base: Hero */}
-      <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50' : 'scale-100 opacity-100'}`}>
+      {/* Camada Base: Hero com transição de opacidade mais lenta */}
+      <div className={`w-full h-full transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) ${currentView !== 'hero' ? 'scale-[0.98] opacity-30 blur-sm' : 'scale-100 opacity-100 blur-0'}`}>
         <Hero 
           onStartQuiz={() => setCurrentView('quiz')} 
           onOpenScience={() => setCurrentView('science')} 
@@ -48,11 +46,11 @@ const Index = () => {
         />
       </div>
 
-      {/* Camada Sobreposta: Quiz */}
+      {/* Camada Sobreposta: Quiz - Transição Vertical Suave */}
       <div 
         ref={el => scrollContainerRef.current['quiz'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center ${
-          currentView === 'quiz' ? 'translate-y-0' : 'translate-y-full'
+        className={`fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-sm transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center ${
+          currentView === 'quiz' ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
       >
         <Suspense fallback={<LoadingFallback />}>
@@ -60,9 +58,9 @@ const Index = () => {
             <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
+                className="fixed top-8 right-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
               <div className="w-full">
                 <Quiz />
@@ -72,11 +70,11 @@ const Index = () => {
         </Suspense>
       </div>
 
-      {/* Camada Sobreposta: Ciência */}
+      {/* Camada Sobreposta: Ciência - Transição Lateral Suave */}
       <div 
         ref={el => scrollContainerRef.current['science'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
-          currentView === 'science' ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-md transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto ${
+          currentView === 'science' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
         <Suspense fallback={<LoadingFallback />}>
@@ -84,11 +82,11 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 left-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
+                className="fixed top-8 left-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
-              <div className="pt-20">
+              <div className="pt-24 pb-12">
                 <Science />
               </div>
             </div>
@@ -96,11 +94,11 @@ const Index = () => {
         </Suspense>
       </div>
 
-      {/* Camada Sobreposta: Ingredientes */}
+      {/* Camada Sobreposta: Ingredientes - Transição Lateral Suave */}
       <div 
         ref={el => scrollContainerRef.current['ingredients'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
-          currentView === 'ingredients' ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-md transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto ${
+          currentView === 'ingredients' ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
         <Suspense fallback={<LoadingFallback />}>
@@ -108,11 +106,11 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors backdrop-blur-md"
+                className="fixed top-8 right-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
-              <div className="pt-20">
+              <div className="pt-24 pb-12">
                 <IngredientsGallery />
               </div>
             </div>
