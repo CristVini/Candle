@@ -25,16 +25,18 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
           <X size={24} />
         </button>
 
-        <div className="h-72 overflow-hidden relative">
-          <img 
-            src={ingredient.image} 
-            alt={ingredient.name}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"></div>
-        </div>
+        {ingredient.image && (
+          <div className="h-72 overflow-hidden relative">
+            <img 
+              src={ingredient.image} 
+              alt={ingredient.name}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent"></div>
+          </div>
+        )}
 
-        <div className="p-10 md:p-14 space-y-6 -mt-10 relative z-10">
+        <div className={`p-10 md:p-14 space-y-6 ${ingredient.image ? '-mt-10' : ''} relative z-10`}>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-stone-100 text-stone-950 rounded-full flex items-center justify-center">
                <Droplets size={20} />
