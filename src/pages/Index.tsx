@@ -1,46 +1,78 @@
 "use client";
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState, Suspense, lazy } from 'react';
+import Hero from '../components/Hero';
+import { X, Loader2 } from 'lucide-react';
+
+// Carregamento dinâmico: Só baixa esses componentes quando necessário
+const Quiz = lazy(() => import('../components/Quiz'));
+const Science = lazy(() => import('../components/Science'));
+
+type ViewState = 'hero' | 'quiz' | 'science';
+
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center h-full w-full bg-stone-950">
+    <Loader2 className="w-8 h-8 text-stone-500 animate-spin" />
+  </div>
+);
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<ViewState>('hero');
+
   return (
-    <div className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 overflow-hidden">
-      {/* Background Decorativo */}
-      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-amber-200/20 blur-[100px] rounded-full" />
-      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-stone-200/40 blur-[100px] rounded-full" />
-
-      <div className="max-w-4xl w-full text-center z-10">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-stone-100 text-stone-500 text-xs font-bold uppercase tracking-widest mb-8 border border-stone-200">
-          <Sparkles className="w-3 h-3 text-amber-500" /> Neurobiologia do Aroma
-        </div>
-        
-        <h1 className="text-5xl md:text-8xl font-bold text-stone-800 mb-8 tracking-tighter leading-[0.9]">
-          Sua mente em <br />
-          <span className="italic font-light text-amber-600">equilíbrio.</span>
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-stone-500 mb-12 max-w-2xl mx-auto leading-relaxed italic">
-          Descubra o arquétipo olfativo que sua mente precisa agora através de um mapeamento emocional guiado pela ciência.
-        </p>
-
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <Link 
-            to="/quiz" 
-            className="group w-full md:w-auto bg-stone-900 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-amber-700 transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl shadow-stone-300"
-          >
-            Iniciar Mapeamento <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link 
-            to="/ingredients" 
-            className="w-full md:w-auto px-10 py-5 rounded-full font-bold text-lg text-stone-600 hover:bg-stone-100 transition-colors"
-          >
-            Explorar Aromas
-          </Link>
-        </div>
+    <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100">
+      {/* Camada Base: Hero (Sempre carregada primeiro para FCP rápido) */}
+      <div className={`w-full h-full transition-all duration-700 ease-in-out ${currentView !== 'hero' ? 'scale-95 opacity-50' : 'scale-100 opacity-100'}`}>
+        <Hero 
+          onStartQuiz={() => setCurrentView('quiz')} 
+          onOpenScience={() => setCurrentView('science')} 
+        />
       </div>
-    </div>
+
+      {/* Camada Sobreposta: Quiz */}
+      <div 
+        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
+          currentView === 'quiz' ? 'translate-y-0' : 'translate-y-full'
+        }`}
+      >
+        <Suspense fallback={<LoadingFallback />}>
+          {currentView === 'quiz' && (
+            <div className="relative min-h-screen py-10 md:py-20">
+              <button 
+                onClick={() => setCurrentView('hero')}
+                className="fixed top-6 right-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <Quiz />
+            </div>
+          )}
+        </Suspense>
+      </div>
+
+      {/* Camada Sobreposta: Ciência */}
+      <div 
+        className={`fixed inset-0 z-50 bg-stone-950 transition-transform duration-700 ease-in-out overflow-y-auto ${
+          currentView === 'science' ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <Suspense fallback={<LoadingFallback />}>
+          {currentView === 'science' && (
+            <div className="relative min-h-screen">
+              <button 
+                onClick={() => setCurrentView('hero')}
+                className="fixed top-6 left-6 z-[60] p-3 bg-stone-900/50 border border-stone-800 rounded-full text-stone-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <div className="pt-20">
+                <Science />
+              </div>
+            </div>
+          )}
+        </Suspense>
+      </div>
+    </main>
   );
 };
 
