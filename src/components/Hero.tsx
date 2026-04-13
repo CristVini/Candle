@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const scrollToQuiz = () => {
@@ -9,41 +9,45 @@ const Hero = () => {
   };
 
   return (
-    <header className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 px-4 text-center">
-      {/* Dark Ambient Glows */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-stone-800/20 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-stone-900/40 rounded-full blur-[120px] animate-pulse delay-700"></div>
+    <header className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 px-6 text-center overflow-hidden">
+      {/* Background Ambience */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] bg-stone-800/20 rounded-full blur-[160px] animate-pulse"></div>
+        <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] bg-stone-900/40 rounded-full blur-[160px] animate-pulse delay-1000"></div>
       </div>
 
-      <div className="space-y-6 max-w-4xl mx-auto">
-        <div className="inline-block px-4 py-1.5 bg-stone-100 text-stone-950 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          Alta Perfumaria & Neurociência
+      <div className="w-full max-w-6xl mx-auto space-y-10">
+        <div className="flex justify-center animate-in fade-in slide-in-from-bottom-4 duration-1000">
+          <div className="flex items-center gap-3 px-6 py-2 bg-stone-900/50 border border-stone-800 rounded-full">
+            <Sparkles className="w-3 h-3 text-stone-400" />
+            <span className="text-[11px] font-bold text-stone-300 uppercase tracking-[0.4em]">
+              Engenharia Olfativa de Precisão
+            </span>
+          </div>
         </div>
         
-        <h1 className="text-5xl md:text-8xl font-serif text-stone-100 leading-[0.9] tracking-tight animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
-          Sua mente desenha o <br />
-          <span className="italic font-light text-stone-500">ambiente que habita.</span>
+        <h1 className="text-6xl md:text-[120px] font-serif text-stone-100 leading-[0.85] tracking-tight animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150">
+          O aroma que <br />
+          <span className="italic font-light text-stone-600 block mt-4">define sua alma.</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
-          Descubra a assinatura olfativa desenvolvida para o seu estado emocional atual através do nosso protocolo de mapeamento arquétipo.
+        <p className="text-xl md:text-2xl text-stone-400 max-w-3xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+          Descubra a assinatura olfativa desenvolvida para o seu estado emocional através do nosso protocolo de mapeamento arquétipo exclusivo.
         </p>
 
-        <div className="pt-10 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-500">
+        <div className="pt-12 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-500">
           <button 
             onClick={scrollToQuiz}
-            aria-label="Iniciar Mapeamento Sensorial"
-            className="group relative px-12 py-5 bg-stone-100 text-stone-950 rounded-full font-bold overflow-hidden transition-all hover:scale-105 active:scale-95"
+            className="group relative inline-flex items-center justify-center px-16 py-6 bg-stone-100 text-stone-950 rounded-full font-bold text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]"
           >
-            <span className="relative z-10">Iniciar Mapeamento Gratuito</span>
+            <span className="relative z-10 tracking-tight">Iniciar Mapeamento Sensorial</span>
             <div className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
           </button>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20 text-stone-100">
-        <ArrowDown className="w-6 h-6" />
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+        <div className="w-px h-16 bg-gradient-to-b from-stone-100 to-transparent"></div>
       </div>
     </header>
   );
