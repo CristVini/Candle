@@ -32,57 +32,59 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const getIcon = (index: number) => {
-    if (index === 0) return <Sun size={16} className="text-amber-400" />;
-    if (index === 1) return <Coffee size={16} className="text-stone-400" />;
-    return <Moon size={16} className="text-indigo-400" />;
+    if (index === 0) return <Sun size={14} className="text-amber-400" />;
+    if (index === 1) return <Coffee size={14} className="text-stone-400" />;
+    return <Moon size={14} className="text-indigo-400" />;
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto bg-stone-900/60 border border-stone-800 rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 mb-10 backdrop-blur-md">
-      <div className="grid lg:grid-cols-12">
-        {/* Imagem Lateral */}
-        <div className="lg:col-span-4 relative h-56 md:h-72 lg:h-auto overflow-hidden">
+    <div className="w-full max-w-5xl mx-auto bg-stone-900/40 border border-stone-800/50 rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-700 backdrop-blur-xl">
+      <div className="flex flex-col lg:flex-row">
+        {/* Imagem - Ocupa topo no mobile e lateral no desktop */}
+        <div className="lg:w-1/3 relative h-48 md:h-64 lg:h-auto overflow-hidden shrink-0">
           <img 
             src={profile.imageUrl} 
             alt={profile.name}
             className="absolute inset-0 w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-transparent to-transparent lg:bg-gradient-to-r"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-stone-900/40"></div>
         </div>
         
-        {/* Conteúdo Principal */}
-        <div className="lg:col-span-8 p-6 md:p-12 lg:p-16 flex flex-col space-y-10 md:space-y-16">
-          <div className="space-y-4">
+        {/* Conteúdo */}
+        <div className="flex-1 p-6 md:p-10 lg:p-14 flex flex-col space-y-10">
+          {/* Header */}
+          <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <span className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.5em]">Sua Jornada Olfativa</span>
-              <div className="h-[1px] flex-1 bg-stone-800"></div>
+              <span className="text-[9px] font-bold text-stone-500 uppercase tracking-[0.4em]">Seu Perfil Olfativo</span>
+              <div className="h-[1px] flex-1 bg-stone-800/50"></div>
             </div>
-            <h2 className="text-5xl md:text-7xl font-serif text-stone-100 leading-tight">{profile.name}</h2>
-            <p className="text-stone-400 italic text-xl md:text-3xl font-light">{profile.archetype}</p>
+            <h2 className="text-4xl md:text-6xl font-serif text-stone-100 leading-tight">{profile.name}</h2>
+            <p className="text-stone-400 italic text-lg md:text-xl font-light">{profile.archetype}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-            {/* Coluna Esquerda: Diagnóstico e Notas */}
+          {/* Grid de Informações */}
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
+            {/* Coluna 1: Diagnóstico e Notas */}
             <div className="space-y-10">
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Beaker size={14} /> O Chamado da sua Mente
+                  <Beaker size={14} /> O Chamado da Mente
                 </h4>
-                <p className="text-stone-200 text-lg md:text-xl leading-relaxed font-light italic font-serif">
+                <p className="text-stone-200 text-lg md:text-xl leading-relaxed font-light italic font-serif border-l-2 border-stone-800 pl-6">
                   "{profile.description}"
                 </p>
               </div>
 
               <div className="space-y-4">
                 <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
-                  <Wind size={14} /> Suas Notas de Poder
+                  <Wind size={14} /> Notas de Poder
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {profile.notes.map((note, i) => (
                     <button 
                       key={i} 
                       onClick={() => setSelectedIngredient(ingredientsData[note] || { name: note, description: "Uma nota olfativa essencial.", benefit: "Equilíbrio", image: "" })}
-                      className="group flex items-center gap-2 px-4 py-2 bg-stone-800/40 text-stone-400 text-[11px] rounded-full border border-stone-700/30 uppercase tracking-widest hover:bg-stone-100 hover:text-stone-950 transition-all"
+                      className="group flex items-center gap-2 px-4 py-2 bg-stone-800/30 text-stone-400 text-[10px] rounded-full border border-stone-700/30 uppercase tracking-widest hover:bg-stone-100 hover:text-stone-950 transition-all"
                     >
                       {note}
                       <Info size={12} className="opacity-40 group-hover:opacity-100" />
@@ -92,22 +94,22 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
               </div>
             </div>
 
-            {/* Coluna Direita: Ritual Narrativo */}
-            <div className="space-y-8">
+            {/* Coluna 2: Ritual */}
+            <div className="space-y-6">
               <h4 className="text-[10px] font-bold text-stone-500 uppercase tracking-widest flex items-center gap-2">
                 <Sparkles size={14} className="text-amber-500" /> Ritual de Transformação
               </h4>
-              <div className="space-y-8">
+              <div className="space-y-6">
                 {profile.candleRitual.map((step, i) => (
-                  <div key={i} className="relative pl-8 border-l border-stone-800 group">
+                  <div key={i} className="relative pl-8 border-l border-stone-800/50 group">
                     <div className="absolute -left-[9px] top-0 w-4 h-4 bg-stone-900 border border-stone-800 rounded-full flex items-center justify-center">
                       {getIcon(i)}
                     </div>
                     <div className="space-y-1">
-                      <h5 className="text-stone-100 text-sm font-bold uppercase tracking-widest flex items-center gap-2">
-                        {step.title} <span className="text-[10px] text-stone-600 font-normal">— Vela de {step.candle}</span>
+                      <h5 className="text-stone-100 text-[11px] font-bold uppercase tracking-widest">
+                        {step.title} <span className="text-stone-600 font-normal ml-1">— {step.candle}</span>
                       </h5>
-                      <p className="text-stone-400 text-xs md:text-sm leading-relaxed font-light">
+                      <p className="text-stone-400 text-xs leading-relaxed font-light">
                         {step.description}
                       </p>
                     </div>
@@ -118,21 +120,21 @@ const ResultCard = ({ profile, onReset }: { profile: Profile; onReset: () => voi
           </div>
 
           {/* Ações */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-6">
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-stone-800/50">
             <a 
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-3 bg-stone-100 text-stone-950 py-6 rounded-full font-bold text-lg hover:bg-white transition-all shadow-2xl active:scale-95 group"
+              className="flex-[2] flex items-center justify-center gap-3 bg-stone-100 text-stone-950 py-5 rounded-full font-bold text-base md:text-lg hover:bg-white transition-all shadow-xl active:scale-95 group"
             >
-              <ShoppingBag size={22} className="group-hover:rotate-12 transition-transform" />
+              <ShoppingBag size={20} className="group-hover:rotate-12 transition-transform" />
               Manifestar meu Ritual
             </a>
             <button 
               onClick={onReset}
-              className="flex items-center justify-center gap-3 px-10 py-6 bg-stone-900 text-stone-500 border border-stone-800 rounded-full font-bold text-lg hover:bg-stone-800 hover:text-stone-100 transition-all active:scale-95"
+              className="flex-1 flex items-center justify-center gap-3 px-8 py-5 bg-stone-900/50 text-stone-500 border border-stone-800 rounded-full font-bold text-base md:text-lg hover:bg-stone-800 hover:text-stone-100 transition-all active:scale-95"
             >
-              <RotateCcw size={20} />
+              <RotateCcw size={18} />
               Refazer
             </button>
           </div>

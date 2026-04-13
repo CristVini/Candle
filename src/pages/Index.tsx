@@ -37,7 +37,7 @@ const Index = () => {
     <main className="relative w-full h-screen overflow-hidden bg-stone-950 text-stone-100 font-sans">
       <Fireflies />
 
-      {/* Camada Base: Hero com transição de opacidade mais lenta */}
+      {/* Camada Base: Hero */}
       <div className={`w-full h-full transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) ${currentView !== 'hero' ? 'scale-[0.98] opacity-30 blur-sm' : 'scale-100 opacity-100 blur-0'}`}>
         <Hero 
           onStartQuiz={() => setCurrentView('quiz')} 
@@ -46,23 +46,23 @@ const Index = () => {
         />
       </div>
 
-      {/* Camada Sobreposta: Quiz - Transição Vertical Suave */}
+      {/* Camada Sobreposta: Quiz & Result */}
       <div 
         ref={el => scrollContainerRef.current['quiz'] = el}
-        className={`fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-sm transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto md:overflow-hidden flex flex-col items-center justify-center ${
+        className={`fixed inset-0 z-50 bg-stone-950/95 backdrop-blur-md transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto ${
           currentView === 'quiz' ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'quiz' && (
-            <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
+            <div className="relative min-h-screen w-full flex flex-col items-center py-20 px-4">
               <button 
                 onClick={handleClose}
-                className="fixed top-8 right-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
+                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/80 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800 shadow-xl"
               >
                 <X size={20} />
               </button>
-              <div className="w-full">
+              <div className="w-full max-w-5xl">
                 <Quiz />
               </div>
             </div>
@@ -70,7 +70,7 @@ const Index = () => {
         </Suspense>
       </div>
 
-      {/* Camada Sobreposta: Ciência - Transição Lateral Suave */}
+      {/* Camada Sobreposta: Ciência */}
       <div 
         ref={el => scrollContainerRef.current['science'] = el}
         className={`fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-md transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto ${
@@ -82,7 +82,7 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-8 left-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
+                className="fixed top-6 left-6 z-[80] p-3 bg-stone-900/80 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800 shadow-xl"
               >
                 <X size={20} />
               </button>
@@ -94,7 +94,7 @@ const Index = () => {
         </Suspense>
       </div>
 
-      {/* Camada Sobreposta: Ingredientes - Transição Lateral Suave */}
+      {/* Camada Sobreposta: Ingredientes */}
       <div 
         ref={el => scrollContainerRef.current['ingredients'] = el}
         className={`fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-md transition-all duration-1000 cubic-bezier(0.4, 0, 0.2, 1) overflow-y-auto ${
@@ -106,7 +106,7 @@ const Index = () => {
             <div className="relative min-h-screen">
               <button 
                 onClick={handleClose}
-                className="fixed top-8 right-8 z-[80] p-4 bg-stone-900/40 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800"
+                className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/80 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800 shadow-xl"
               >
                 <X size={20} />
               </button>
