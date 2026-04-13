@@ -1,109 +1,108 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Button } from './ui/button';
 import { candleProfiles } from '../data/candleProfiles';
 import ResultCard from './ResultCard';
 
 const questions = [
   {
     id: 1,
-    text: "Como você descreveria o 'clima' da sua mente agora?",
+    text: "Qual é o seu objetivo principal ao acender uma vela agora?",
     options: [
-      { text: "Uma tempestade de pensamentos que não param", value: "anxiety" },
-      { text: "Uma neblina densa, sinto-me esgotado", value: "burnout" },
-      { text: "Um deserto seco, sem ideias ou inspiração", value: "creative_block" },
-      { text: "Um vulcão prestes a entrar em erupção", value: "irritability" }
+      { text: "Celebrar uma conquista ou elevar a energia", value: "joy" },
+      { text: "Criar um clima de sedução e intimidade", value: "sensuality" },
+      { text: "Recuperar-me de um dia exaustivo", value: "burnout" },
+      { text: "Acalmar pensamentos acelerados", value: "anxiety" }
     ]
   },
   {
     id: 2,
-    text: "O que mais te incomoda no seu dia a dia ultimamente?",
+    text: "Como você quer que as pessoas se sintam ao entrar no seu ambiente?",
     options: [
-      { text: "A falta de paciência com as pessoas", value: "irritability" },
-      { text: "A sensação de estar sempre atrasado ou ansioso", value: "anxiety" },
-      { text: "Não conseguir focar em nada por muito tempo", value: "mental_fatigue" },
-      { text: "Sentir que nada mais me traz prazer", value: "hopelessness" }
+      { text: "Energizadas e felizes", value: "joy" },
+      { text: "Atraídas pelo mistério e sofisticação", value: "sensuality" },
+      { text: "Respeitadas pelo silêncio e ordem", value: "mental_fatigue" },
+      { text: "Acolhidas e seguras", value: "loneliness" }
     ]
   },
   {
     id: 3,
-    text: "Como você se sente ao olhar para o seu futuro?",
+    text: "Se você pudesse escolher uma textura para o seu momento, qual seria?",
     options: [
-      { text: "Com medo do que pode dar errado", value: "anxiety" },
-      { text: "Sem esperança de que algo mude", value: "hopelessness" },
-      { text: "Cansado só de pensar no trabalho", value: "burnout" },
-      { text: "Sinto falta de alguém ou de um tempo que passou", value: "grief" }
+      { text: "Seda preta e veludo (Sensual)", value: "sensuality" },
+      { text: "Linho branco ao sol (Alegre)", value: "joy" },
+      { text: "Couro rústico e madeira (Foco)", value: "mental_fatigue" },
+      { text: "Lã grossa e quente (Conforto)", value: "loneliness" }
     ]
   },
   {
     id: 4,
-    text: "Qual é o seu maior desejo sensorial agora?",
+    text: "Qual bebida combina mais com o seu estado de espírito atual?",
     options: [
-      { text: "Um silêncio absoluto para relaxar", value: "acute_stress" },
-      { text: "Um abraço quente e acolhedor", value: "loneliness" },
-      { text: "Um choque de energia para acordar", value: "mental_fatigue" },
-      { text: "Sentir que estou flutuando sem peso", value: "creative_block" }
+      { text: "Um drink cítrico e refrescante", value: "joy" },
+      { text: "Um vinho tinto encorpado ou whisky", value: "sensuality" },
+      { text: "Um café preto forte e curto", value: "mental_fatigue" },
+      { text: "Um chá de ervas calmante", value: "acute_stress" }
     ]
   },
   {
     id: 5,
-    text: "Como está sua produtividade?",
+    text: "O que te faz sentir mais poderoso(a)?",
     options: [
-      { text: "Trabalho muito, mas sinto que não saio do lugar", value: "burnout" },
-      { text: "Minha mente 'trava' quando preciso criar algo", value: "creative_block" },
-      { text: "Estou distraído por notificações e ruídos", value: "mental_fatigue" },
-      { text: "Fico irritado quando sou interrompido", value: "irritability" }
+      { text: "Minha capacidade de contagiar os outros com alegria", value: "joy" },
+      { text: "Meu magnetismo e mistério pessoal", value: "sensuality" },
+      { text: "Minha disciplina e clareza mental", value: "mental_fatigue" },
+      { text: "Minha resiliência em momentos difíceis", value: "burnout" }
     ]
   },
   {
     id: 6,
-    text: "O que você sente no corpo quando está sob pressão?",
+    text: "Como está sua energia social hoje?",
     options: [
-      { text: "Aperto no peito e respiração curta", value: "anxiety" },
-      { text: "Tensão extrema nos ombros e mandíbula", value: "acute_stress" },
-      { text: "Um vazio ou um peso no estômago", value: "sadness" },
-      { text: "Uma exaustão que nem 10 horas de sono curam", value: "burnout" }
+      { text: "No auge, quero celebrar!", value: "joy" },
+      { text: "Intensa, focada em conexões profundas", value: "sensuality" },
+      { text: "Baixa, preciso de isolamento para curar", value: "burnout" },
+      { text: "Irritada, prefiro que não me amolem", value: "irritability" }
     ]
   },
   {
     id: 7,
-    text: "Como você lida com a solidão hoje?",
+    text: "Qual é o seu maior desafio no momento?",
     options: [
-      { text: "Sinto um vazio, como se faltasse conexão", value: "loneliness" },
-      { text: "Prefiro ficar sozinho, as pessoas me irritam", value: "irritability" },
-      { text: "A solidão me traz lembranças dolorosas", value: "grief" },
-      { text: "Uso o tempo sozinho para tentar ser produtivo", value: "mental_fatigue" }
+      { text: "Manter esse estado de felicidade e gratidão", value: "joy" },
+      { text: "Explorar mais minha autoconfiança e desejo", value: "sensuality" },
+      { text: "Vencer o bloqueio de novas ideias", value: "creative_block" },
+      { text: "Controlar o estresse constante", value: "acute_stress" }
     ]
   },
   {
     id: 8,
-    text: "Se sua vida fosse uma cor agora, qual seria?",
+    text: "Escolha um cenário ideal:",
     options: [
-      { text: "Cinza estático", value: "sadness" },
-      { text: "Vermelho pulsante", value: "acute_stress" },
-      { text: "Amarelo desbotado", value: "hopelessness" },
-      { text: "Roxo elétrico (ansioso)", value: "anxiety" }
+      { text: "Uma festa vibrante com amigos", value: "joy" },
+      { text: "Um encontro à meia-luz e sem pressa", value: "sensuality" },
+      { text: "Um escritório silencioso e produtivo", value: "mental_fatigue" },
+      { text: "Uma cabana isolada nas montanhas", value: "loneliness" }
     ]
   },
   {
     id: 9,
-    text: "O que te faria sorrir agora?",
+    text: "Qual palavra define sua semana?",
     options: [
-      { text: "Uma notícia de que tudo vai ficar bem", value: "hopelessness" },
-      { text: "Ter uma ideia brilhante para um projeto", value: "creative_block" },
-      { text: "Rever alguém que perdi ou sinto falta", value: "grief" },
-      { text: "Um dia inteiro sem nenhuma obrigação", value: "burnout" }
+      { text: "Brilho", value: "joy" },
+      { text: "Intensidade", value: "sensuality" },
+      { text: "Sobrevivência", value: "burnout" },
+      { text: "Estratégia", value: "hopelessness" }
     ]
   },
   {
     id: 10,
-    text: "Qual frase mais ressoa com você?",
+    text: "O que você busca na 'Luz & Essência' hoje?",
     options: [
-      { text: "'Eu não aguento mais'", value: "burnout" },
-      { text: "'E se algo ruim acontecer?'", value: "anxiety" },
-      { text: "'Eu me sinto invisível'", value: "loneliness" },
-      { text: "'Preciso de um tempo para mim'", value: "acute_stress" }
+      { text: "Um presente para celebrar a vida", value: "joy" },
+      { text: "Um segredo para noites inesquecíveis", value: "sensuality" },
+      { text: "Uma ferramenta de foco e trabalho", value: "mental_fatigue" },
+      { text: "Um remédio para a alma cansada", value: "burnout" }
     ]
   }
 ];
@@ -144,23 +143,23 @@ const Quiz = () => {
     <div className="max-w-2xl mx-auto px-4">
       <div className="mb-12 text-center">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <div className="h-[1px] w-8 bg-orange-200"></div>
-          <span className="text-[10px] font-bold text-orange-600 uppercase tracking-[0.3em]">
-            Mapeamento Sensorial • {currentStep + 1} de {questions.length}
+          <div className="h-[1px] w-8 bg-stone-300"></div>
+          <span className="text-[10px] font-bold text-stone-600 uppercase tracking-[0.3em]">
+            Engenharia do Estado Mental • {currentStep + 1} de {questions.length}
           </span>
-          <div className="h-[1px] w-8 bg-orange-200"></div>
+          <div className="h-[1px] w-8 bg-stone-300"></div>
         </div>
         
-        <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden max-w-xs mx-auto">
+        <div className="w-full bg-stone-100 h-1 rounded-full overflow-hidden max-w-xs mx-auto">
           <div 
-            className="bg-orange-400 h-full transition-all duration-700 ease-out" 
+            className="bg-stone-800 h-full transition-all duration-700 ease-out" 
             style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
           />
         </div>
       </div>
 
       <div className="space-y-8">
-        <h2 className="text-2xl md:text-4xl font-serif text-center text-slate-800 leading-tight">
+        <h2 className="text-3xl md:text-5xl font-serif text-center text-stone-800 leading-tight">
           {currentQuestion.text}
         </h2>
         
@@ -169,13 +168,13 @@ const Quiz = () => {
             <button
               key={index}
               onClick={() => handleAnswer(option.value)}
-              className="group relative w-full text-left p-5 bg-white border-2 border-slate-100 rounded-2xl hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-300"
+              className="group relative w-full text-left p-6 bg-white/50 border border-stone-200 rounded-xl hover:border-stone-800 hover:bg-stone-50 transition-all duration-300"
             >
               <div className="flex items-center justify-between">
-                <span className="text-lg text-slate-600 group-hover:text-slate-900 transition-colors">
+                <span className="text-lg text-stone-600 group-hover:text-stone-900 transition-colors">
                   {option.text}
                 </span>
-                <div className="h-2 w-2 rounded-full bg-slate-200 group-hover:bg-orange-400 transition-colors"></div>
+                <div className="h-1.5 w-1.5 rounded-full bg-stone-200 group-hover:bg-stone-800 transition-colors"></div>
               </div>
             </button>
           ))}
