@@ -6,9 +6,9 @@ import Quiz from '../components/Quiz';
 import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
 
 const Index = () => {
-  // Define o título da aba do navegador para a marca do cliente
+  // Atualiza o título da aba do navegador para a marca do cliente
   useEffect(() => {
-    document.title = "Luz & Essência | Mapeamento Arquétipo Sensorial";
+    document.title = "Luz & Essência | Mapeamento de Arquétipos Olfativos";
   }, []);
 
   return (
@@ -24,7 +24,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Section - 100% White Label */}
       <section className="py-20 bg-stone-50 border-y border-stone-200" aria-labelledby="trust-heading">
         <div className="container mx-auto px-4">
           <h2 id="trust-heading" className="text-[10px] font-bold uppercase tracking-[0.4em] text-center text-stone-400 mb-16">
@@ -34,7 +33,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <article className="text-center space-y-4">
               <div className="flex justify-center text-stone-800"><ShieldCheck className="w-8 h-8" /></div>
-              <h3 className="font-serif text-xl text-stone-900">Aromaterapia Clínica</h3>
+              <h3 className="font-serif text-xl">Aromaterapia Clínica</h3>
               <p className="text-sm text-stone-500 leading-relaxed">
                 Nossas fórmulas utilizam óleos essenciais puros com bioativos validados para interagir com o sistema límbico.
               </p>
@@ -42,7 +41,7 @@ const Index = () => {
 
             <article className="text-center space-y-4">
               <div className="flex justify-center text-stone-800"><Sparkles className="w-8 h-8" /></div>
-              <h3 className="font-serif text-xl text-stone-900">Design de Experiência</h3>
+              <h3 className="font-serif text-xl">Design de Experiência</h3>
               <p className="text-sm text-stone-500 leading-relaxed">
                 Mais que velas decorativas, criamos ferramentas de modulação ambiental para alta performance e cura emocional.
               </p>
@@ -50,7 +49,7 @@ const Index = () => {
 
             <article className="text-center space-y-4">
               <div className="flex justify-center text-stone-800"><Heart className="w-8 h-8" /></div>
-              <h3 className="font-serif text-xl text-stone-900">Artesanal e Sustentável</h3>
+              <h3 className="font-serif text-xl">Artesanal e Sustentável</h3>
               <p className="text-sm text-stone-500 leading-relaxed">
                 Produção consciente com ceras vegetais e pavios de algodão, garantindo uma queima limpa e segura.
               </p>
