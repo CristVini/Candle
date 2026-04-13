@@ -4,8 +4,8 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Relaxar",
     archetype: "Regulação Emocional",
     description: "Reduz a ansiedade e desacelera a mente através da modulação do sistema límbico.",
-    scientificBasis: "Redução da atividade da amígdala cerebral. Estudos comprovam o efeito calmante de lavanda e camomila.",
-    expectedEffect: "Queda nos níveis de cortisol, redução da frequência mental e aumento da sensação de segurança.",
+    scientificBasis: "Aumento de ondas cerebrais alfa/θ associadas ao relaxamento profundo (Herz, 1998).",
+    expectedEffect: "Queda nos níveis de cortisol e redução da frequência mental.",
     notes: ["Lavanda", "Camomila", "Maracujá", "Erva Cidreira", "Sândalo"],
     candleRitual: [
       { title: "Desaceleração", candle: "Lavanda", description: "Sinalize ao cérebro o início do repouso." },
@@ -20,8 +20,8 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Foco",
     archetype: "Ativação Cognitiva",
     description: "Aumenta a concentração e a produtividade através do estímulo do córtex pré-frontal.",
-    scientificBasis: "Ativação do córtex pré-frontal. EEG mostra aumento de atenção com mentol e alecrim.",
-    expectedEffect: "Aumento da atenção sustentada, memória de trabalho e energia mental.",
+    scientificBasis: "Ativação de ondas beta ligadas à atenção. Isômeros de limoneno elevam a vigília.",
+    expectedEffect: "Aumento da atenção sustentada e memória de trabalho.",
     notes: ["Alecrim", "Hortelã", "Café", "Eucalipto", "Limão"],
     candleRitual: [
       { title: "Ignição", candle: "Café", description: "Desperte a acuidade sensorial." },
@@ -36,7 +36,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Energizar",
     archetype: "Estímulo Positivo",
     description: "Eleva o humor e a disposição através da associação de aromas cítricos à serotonina.",
-    scientificBasis: "Aromas cítricos associados ao aumento de serotonina e motivação.",
+    scientificBasis: "Aromas cítricos associados ao aumento de vigor e humor positivo (Herz, 2001).",
     expectedEffect: "Elevação do humor, aumento da motivação e redução da apatia.",
     notes: ["Laranja", "Tangerina", "Bergamota", "Abacaxi", "Manga"],
     candleRitual: [
@@ -52,7 +52,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Aconchego",
     archetype: "Memória Afetiva",
     description: "Gera conforto e sensação de cuidado ao evocar memórias emocionais do hipocampo.",
-    scientificBasis: "Ligação direta com o hipocampo. Aromas doces evocam infância e segurança.",
+    scientificBasis: "Aromas gourmand evocam bem-estar e segurança emocional (Herz, 1998).",
     expectedEffect: "Aumento da sensação de acolhimento e redução do estresse emocional.",
     notes: ["Baunilha", "Chocolate", "Caramelo", "Doce de Leite", "Coco"],
     candleRitual: [
@@ -68,8 +68,8 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Sensual",
     archetype: "Resposta Intensa",
     description: "Cria presença, atração e intensidade através da ativação da amígdala.",
-    scientificBasis: "Ativação da amígdala e resposta emocional ligada à atração.",
-    expectedEffect: "Aumento da excitação emocional, atenção social e presença.",
+    scientificBasis: "Estímulo cerebral (CNV ↑) associado a notas florais intensas e orientais.",
+    expectedEffect: "Aumento da excitação emocional e presença sensorial.",
     notes: ["Patchouli", "Jasmim", "Morango", "Cereja", "Pimenta Rosa"],
     candleRitual: [
       { title: "Magnetismo", candle: "Patchouli", description: "Estabeleça uma base misteriosa." },
@@ -84,7 +84,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Limpeza",
     archetype: "Cognição Ambiental",
     description: "Cria sensação de ordem, frescor e organização através da cognição ambiental.",
-    scientificBasis: "Aromas frescos aumentam a percepção de limpeza e organização.",
+    scientificBasis: "Associação cognitiva entre aromas mentolados/cítricos e revitalização ambiental.",
     expectedEffect: "Aumento da sensação de organização e clareza mental.",
     notes: ["Eucalipto", "Capim Limão", "Bamboo", "Chá Branco", "Ozônio"],
     candleRitual: [
@@ -100,7 +100,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Sofisticado",
     archetype: "Processamento Simbólico",
     description: "Eleva a percepção de luxo e status através de notas nobres e complexas.",
-    scientificBasis: "Aromas influenciam o julgamento de valor e status social.",
+    scientificBasis: "Processamento simbólico de notas nobres associado a status e elegância.",
     expectedEffect: "Aumento da percepção de valor e sensação premium.",
     notes: ["Âmbar", "Figo", "Neroli", "Orquídea", "Iguatemi"],
     candleRitual: [
@@ -116,7 +116,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Natureza",
     archetype: "Aterramento",
     description: "Conecta com o equilíbrio interno através de aromas terrosos e estáveis.",
-    scientificBasis: "Aromas terrosos associados à estabilidade e redução de estresse fisiológico.",
+    scientificBasis: "Redução de estresse fisiológico através da conexão com fitoncidas (pinho/cedro).",
     expectedEffect: "Redução da ansiedade e aumento da estabilidade emocional.",
     notes: ["Cedro", "Patchouli", "Vet Vert", "Pinho", "Terra Molhada"],
     candleRitual: [
@@ -132,7 +132,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Romance",
     archetype: "Afeto / Vínculo",
     description: "Cria proximidade emocional e empatia através de notas florais clássicas.",
-    scientificBasis: "Aromas florais associados a comportamentos de cuidado e conexão social.",
+    scientificBasis: "Notas florais associadas a comportamentos de cuidado e empatia (Herz, 2001).",
     expectedEffect: "Aumento da conexão emocional e empatia.",
     notes: ["Rosa", "Rosas Vermelhas", "Pêssego", "Love Spell", "Lírio"],
     candleRitual: [
@@ -148,7 +148,7 @@ export const olfactoryProfiles: Record<string, any> = {
     name: "Modo Equilíbrio",
     archetype: "Homeostase",
     description: "Mantém o estado emocional estável através de aromas reguladores.",
-    scientificBasis: "Aromas reguladores ajudam na estabilidade do sistema nervoso.",
+    scientificBasis: "Fragrâncias discretas mantêm a homeostase do humor via aprendizagem emocional.",
     expectedEffect: "Aumento do equilíbrio emocional e redução de oscilações.",
     notes: ["Gerânio", "Lavanda", "Verbena", "Erva Doce", "Mirra"],
     candleRitual: [
@@ -158,37 +158,5 @@ export const olfactoryProfiles: Record<string, any> = {
     ],
     imageUrl: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
     color: "#8B5CF6"
-  },
-  stimulus: {
-    id: "stimulus",
-    name: "Modo Estímulo",
-    archetype: "Ativação Física",
-    description: "Desperta a energia corporal através de aromas especiados.",
-    scientificBasis: "Aromas especiados aumentam a ativação fisiológica e circulação.",
-    expectedEffect: "Aumento da circulação, energia e alerta físico.",
-    notes: ["Canela", "Cravo", "Noz Moscada", "Cardamomo", "Pimenta Preta"],
-    candleRitual: [
-      { title: "Fogo", candle: "Canela", description: "Desperte a energia corporal." },
-      { title: "Vigor", candle: "Gengibre", description: "Combata a letargia física." },
-      { title: "Ativação", candle: "Cravo", description: "Prontidão e resposta rápida." }
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&q=80&w=800",
-    color: "#B91C1C"
-  },
-  comfort: {
-    id: "comfort",
-    name: "Modo Conforto",
-    archetype: "Segurança",
-    description: "Cria uma sensação de lar e proteção através de aromas suaves.",
-    scientificBasis: "Aromas suaves aumentam a sensação de proteção e memória doméstica.",
-    expectedEffect: "Aumento da segurança e relaxamento leve.",
-    notes: ["Algodão", "Talco", "Flor de Algodão", "Donna Spark", "Marine"],
-    candleRitual: [
-      { title: "Ninho", candle: "Algodão", description: "Ideal para o quarto e descanso." },
-      { title: "Nostalgia", candle: "Talco", description: "Acalme mentes agitadas." },
-      { title: "Brisa", candle: "Marine", description: "Traga a leveza do mar para o lar." }
-    ],
-    imageUrl: "https://images.unsplash.com/photo-1528459061998-5645ad99e39f?auto=format&fit=crop&q=80&w=800",
-    color: "#94A3B8"
   }
 };

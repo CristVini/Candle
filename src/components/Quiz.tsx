@@ -7,122 +7,122 @@ import ResultCard from './ResultCard';
 const questions = [
   {
     id: 1,
-    text: "O que você mais está precisando sentir agora?",
+    text: "Qual desses aromas te traz mais conforto ou saudade de momentos felizes do passado?",
     options: [
-      { text: "Mais alegria e vontade de celebrar", value: "energy" },
-      { text: "Me sentir mais atraente e confiante", value: "sensual" },
-      { text: "Recuperar minhas energias, estou exausto(a)", value: "relax" },
-      { text: "Acalmar os pensamentos e relaxar", value: "balance" }
+      { text: "Cheiro de bolo caseiro assando", value: "cozy" },
+      { text: "Perfume marcante de um amor antigo", value: "romance,sensual" },
+      { text: "Brisa fresca após chuva na floresta", value: "nature" },
+      { text: "Xícara de café fresco pela manhã", value: "focus,energy" }
     ]
   },
   {
     id: 2,
-    text: "Qual clima você quer criar no seu ambiente hoje?",
+    text: "Quando você quer relaxar após um dia estressante, aromas te fazem sentir...",
     options: [
-      { text: "Um lugar iluminado, animado e aberto", value: "energy" },
-      { text: "Um cantinho íntimo, chique e misterioso", value: "sophisticated" },
-      { text: "Um espaço focado, onde eu consiga produzir", value: "focus" },
-      { text: "Um refúgio que pareça um abraço quentinho", value: "cozy" }
+      { text: "Calmo e sereno (como numa praia tranquila)", value: "relax" },
+      { text: "Aconchegado e protegido (como em casa)", value: "cozy" },
+      { text: "Energizado e renovado", value: "energy" },
+      { text: "Confiante e sofisticado", value: "sophisticated" }
     ]
   },
   {
     id: 3,
-    text: "Se você pudesse tocar em algo agora, o que seria mais gostoso?",
+    text: "Qual cheiro você escolheria para manter o foco enquanto estuda ou trabalha?",
     options: [
-      { text: "O toque luxuoso da seda ou do veludo", value: "sophisticated" },
-      { text: "O frescor de um lençol de linho limpo", value: "clean" },
-      { text: "A firmeza de uma mesa de madeira maciça", value: "nature" },
-      { text: "Uma manta de lã bem fofinha e pesada", value: "comfort" }
+      { text: "Alecrim ou hortelã-pimenta", value: "focus" },
+      { text: "Ambiente natural (cheiro de pinho/cedro)", value: "nature,focus" },
+      { text: "Lavanda suave", value: "relax" },
+      { text: "Café forte", value: "focus,energy" }
     ]
   },
   {
     id: 4,
-    text: "Como você se sente quando está em um lugar com muita gente e barulho?",
+    text: "Para criar um clima acolhedor em casa, você prefere aromas...",
     options: [
-      { text: "Tenho vontade de fugir para um lugar quieto", value: "relax" },
-      { text: "Fico impaciente e perco a paciência fácil", value: "balance" },
-      { text: "Tento me concentrar, mas minha cabeça dói", value: "soft" },
-      { text: "Eu gosto, me sinto vivo(a) e animado(a)", value: "energy" }
+      { text: "Doces e quentes (baunilha, chocolate)", value: "cozy" },
+      { text: "Amadeirados elegantes (sândalo, âmbar)", value: "sophisticated" },
+      { text: "Florais suaves (jasmim, camomila)", value: "sensual,relax" },
+      { text: "Frescos e herbais (capim-limão, ervas)", value: "clean,energy" }
     ]
   },
   {
     id: 5,
-    text: "Qual é o momento do dia que você mais sente cansaço?",
+    text: "Em uma ocasião especial ou encontro romântico, que aroma você acha mais apropriado?",
     options: [
-      { text: "Logo que acordo, parece que não descansei", value: "stimulus" },
-      { text: "No meio da tarde, quando o foco some", value: "focus" },
-      { text: "No fim do dia, quando me sinto meio só", value: "connection" },
-      { text: "Na hora de dormir, quando a mente não para", value: "relax" }
+      { text: "Florais intensos (jasmim, rosa)", value: "sensual,romance" },
+      { text: "Doce/oriental (baunilha, patchouli)", value: "sensual,cozy" },
+      { text: "Amadeirados sofisticados (oud, âmbar)", value: "sophisticated" },
+      { text: "Frutados leves (manga, maracujá)", value: "romance,energy" }
     ]
   },
   {
     id: 6,
-    text: "Que cheiro te faz fechar os olhos e sorrir na hora?",
+    text: "Depois de limpar a casa, qual aroma você escolheria para manter o ar fresco?",
     options: [
-      { text: "Cheiro de terra molhada e mato", value: "nature" },
-      { text: "Cheiro de roupa limpa e brisa do mar", value: "clean" },
-      { text: "Cheiro de temperos doces e perfumes intensos", value: "sensual" },
-      { text: "Cheiro de frutas frescas e flores", value: "energy" }
+      { text: "Cítricos energizantes (limão, grapefruit)", value: "clean,energy" },
+      { text: "Menta ou eucalipto", value: "clean" },
+      { text: "Florais leves (lírio-do-vale)", value: "clean,balance" },
+      { text: "Natureza pura (pinheiro, terra molhada)", value: "nature,clean" }
     ]
   },
   {
     id: 7,
-    text: "Como está sua vontade de conversar com as pessoas hoje?",
+    text: "Ao escolher seu perfume favorito, você prefere...",
     options: [
-      { text: "Zero. Só quero o meu próprio silêncio", value: "relax" },
-      { text: "Só quero falar com quem eu gosto muito", value: "connection" },
-      { text: "Me sinto na defensiva, meio irritado(a)", value: "balance" },
-      { text: "Estou ótimo(a), quero ver gente!", value: "energy" }
+      { text: "Aromas sofisticados e amadeirados", value: "sophisticated" },
+      { text: "Notas doces e acolhedoras", value: "cozy" },
+      { text: "Perfumes florais marcantes", value: "romance,sensual" },
+      { text: "Fragrâncias frescas e energizantes", value: "energy,clean" }
     ]
   },
   {
     id: 8,
-    text: "Para você, o silêncio é...",
+    text: "Quando está cansado e precisa de estímulo, você procura aromas que...",
     options: [
-      { text: "Meu porto seguro, onde eu me encontro", value: "nature" },
-      { text: "Essencial para eu conseguir pensar", value: "focus" },
-      { text: "Meio agoniante, prefiro um som de fundo", value: "soft" },
-      { text: "Um luxo para eu aproveitar meu momento", value: "sophisticated" }
+      { text: "Te acordem (café, chá preto)", value: "focus,energy" },
+      { text: "Revigorem com frescor (menta, limão)", value: "focus,energy" },
+      { text: "Acalmem antes de dormir (camomila, lavanda)", value: "relax" },
+      { text: "Tragam conforto imediato (baunilha, chocolate)", value: "cozy" }
     ]
   },
   {
     id: 9,
-    text: "O que mais atrapalha o seu dia de fluir bem?",
+    text: "Para se sentir confiante em um dia importante, você usaria um aroma...",
     options: [
-      { text: "O cansaço que carrego dos últimos dias", value: "stimulus" },
-      { text: "Muita gente me chamando toda hora", value: "focus" },
-      { text: "Preocupações com o que ainda vai acontecer", value: "balance" },
-      { text: "Falta de algo que me deixe empolgado(a)", value: "escape" }
+      { text: "Forte e marcante (gengibre, patchouli)", value: "sensual,energy" },
+      { text: "Amadeirado e sofisticado (âmbar, cedro)", value: "sophisticated" },
+      { text: "Leve e fresco (cítrico, menta)", value: "energy,focus" },
+      { text: "Doce e acolhedor (baunilha, caramelo)", value: "cozy" }
     ]
   },
   {
     id: 10,
-    text: "Se o seu estresse fosse um toque na pele, como ele seria?",
+    text: "Quando busca equilíbrio emocional, prefere aromas...",
     options: [
-      { text: "Algo áspero que incomoda o tempo todo", value: "soft" },
-      { text: "Um peso invisível que me aperta", value: "nature" },
-      { text: "Algo frio e pontiagudo que me assusta", value: "clean" },
-      { text: "Uma sensação de estar afundando", value: "escape" }
+      { text: "Suaves e neutros", value: "balance" },
+      { text: "Herbais e calmantes (verbena, erva-doce)", value: "balance,relax" },
+      { text: "Flores discretas e leves", value: "balance" },
+      { text: "Madeirados sutis (olíbano, cedro)", value: "balance,sophisticated" }
     ]
   },
   {
     id: 11,
-    text: "O que você faz para 'recarregar as pilhas' de verdade?",
+    text: "Para atrair elogios com um novo perfume, você escolheria...",
     options: [
-      { text: "Um banho bem longo e relaxante", value: "sensual" },
-      { text: "Uma caminhada ou algo ao ar livre", value: "nature" },
-      { text: "Arrumar minhas coisas e organizar a casa", value: "clean" },
-      { text: "Ficar quietinho(a) lendo ou escrevendo", value: "cozy" }
+      { text: "Florais românticos (rosa, lírio)", value: "romance,sensual" },
+      { text: "Orientais misteriosos (patchouli, âmbar)", value: "sensual,sophisticated" },
+      { text: "Cítricos vibrantes (bergamota, limão)", value: "energy" },
+      { text: "Gourmand adocicados (caramelo, coco)", value: "cozy,sensual" }
     ]
   },
   {
     id: 12,
-    text: "Se pudesse ganhar um presente para sua mente agora, o que seria?",
+    text: "Quando está em casa sozinho, prefere velas com aroma que te façam sentir...",
     options: [
-      { text: "Muita energia e alegria de viver", value: "energy" },
-      { text: "Poder e magnetismo pessoal", value: "sophisticated" },
-      { text: "Clareza para tomar decisões difíceis", value: "focus" },
-      { text: "Paz absoluta e descanso profundo", value: "relax" }
+      { text: "Totalmente relaxado e zen", value: "relax" },
+      { text: "Convidativo e acolhedor para os amigos", value: "cozy" },
+      { text: "Fresco e limpo no ambiente", value: "clean" },
+      { text: "Energizado para realizar tarefas", value: "energy,focus" }
     ]
   }
 ];
@@ -133,7 +133,13 @@ const Quiz = () => {
   const [showResult, setShowResult] = useState(false);
 
   const handleAnswer = (value: string) => {
-    const newScores = { ...scores, [value]: (scores[value] || 0) + 1 };
+    const profiles = value.split(',');
+    const newScores = { ...scores };
+    
+    profiles.forEach(p => {
+      newScores[p] = (newScores[p] || 0) + 1;
+    });
+    
     setScores(newScores);
     
     if (currentStep < questions.length - 1) {
@@ -146,6 +152,7 @@ const Quiz = () => {
   const getWinner = () => {
     const entries = Object.entries(scores);
     if (entries.length === 0) return "energy";
+    // Retorna o perfil com maior pontuação
     return entries.reduce((a, b) => a[1] > b[1] ? a : b)[0];
   };
 
@@ -168,7 +175,6 @@ const Quiz = () => {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center py-10">
-      {/* Header Fixo */}
       <div className="mb-6 md:mb-12 text-center space-y-3">
         <div className="flex items-center justify-center gap-3">
           <div className="h-[1px] w-6 md:w-8 bg-stone-800"></div>
@@ -186,7 +192,6 @@ const Quiz = () => {
         </div>
       </div>
 
-      {/* Container de Perguntas com Key para resetar estado no mobile */}
       <div 
         key={currentStep} 
         className="flex flex-col justify-center space-y-6 md:space-y-12 animate-in fade-in slide-in-from-right-4 duration-500"
