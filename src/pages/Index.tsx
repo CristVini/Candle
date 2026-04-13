@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Sparkles, Brain, Heart, Wind, ArrowRight, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -14,57 +13,38 @@ const Index = () => {
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/50 to-transparent pointer-events-none" />
         
-        <div className="max-w-4xl w-full text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 text-sm font-medium mb-8"
-          >
+        <div className="max-w-4xl w-full text-center relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4" />
             <span>Aromaterapia Baseada em Ciência</span>
-          </motion.div>
+          </div>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-6xl md:text-8xl font-serif text-slate-900 mb-8 leading-tight"
-          >
+          <h1 className="text-6xl md:text-8xl font-serif text-slate-900 mb-8 leading-tight">
             Sua mente em <br />
             <span className="text-indigo-600 italic">equilíbrio.</span>
-          </motion.h1>
+          </h1>
           
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed"
-          >
+          <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
             Descubra a vela perfeita para o seu estado emocional através de um mapeamento de arquétipos e neurociência olfativa.
-          </motion.p>
+          </p>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/quiz">
-              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-7 rounded-full text-lg shadow-xl shadow-indigo-200 group">
+              <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-7 rounded-full text-lg shadow-xl shadow-indigo-200 group transition-all duration-300 hover:scale-105">
                 Começar Jornada
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             
             <Link to="/science">
-              <Button size="lg" variant="outline" className="px-10 py-7 rounded-full text-lg border-2 hover:bg-slate-50 gap-2">
+              <Button size="lg" variant="outline" className="px-10 py-7 rounded-full text-lg border-2 hover:bg-slate-50 gap-2 transition-all duration-300">
                 <BookOpen className="w-5 h-5" />
                 Ver Biblioteca de Aromas
               </Button>
             </Link>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </section>
 
       {/* Features */}
       <section className="py-24 px-6 bg-white">
