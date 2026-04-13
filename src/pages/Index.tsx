@@ -55,14 +55,14 @@ const Index = () => {
       >
         <Suspense fallback={<LoadingFallback />}>
           {currentView === 'quiz' && (
-            <div className="relative min-h-screen w-full flex flex-col items-center py-20 px-4">
+            <div className="relative min-h-screen w-full flex flex-col items-center justify-center py-10 px-4 md:px-10">
               <button 
                 onClick={handleClose}
                 className="fixed top-6 right-6 z-[80] p-3 bg-stone-900/80 border border-stone-800/50 rounded-full text-stone-400 hover:text-white transition-all hover:bg-stone-800 shadow-xl"
               >
                 <X size={20} />
               </button>
-              <div className="w-full max-w-5xl">
+              <div className="w-full max-w-7xl">
                 <Quiz />
               </div>
             </div>
