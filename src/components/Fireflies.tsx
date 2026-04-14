@@ -4,14 +4,14 @@ import React, { useMemo } from 'react';
 
 const Fireflies = () => {
   const particles = useMemo(() => {
-    return Array.from({ length: 50 }).map((_, i) => ({ 
+    return Array.from({ length: 25 }).map((_, i) => ({ 
       id: i,
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       duration: 15 + Math.random() * 25,
       delay: Math.random() * -20,
-      size: 3 + Math.random() * 3, // Aumentado levemente o tamanho base
-      color: Math.random() > 0.3 ? '#ffcc00' : '#fff4b3', // Cores mais saturadas
+      size: 3 + Math.random() * 3,
+      color: Math.random() > 0.3 ? '#ffcc00' : '#fff4b3',
     }));
   }, []);
 
@@ -29,7 +29,6 @@ const Fireflies = () => {
             backgroundColor: p.color,
             willChange: 'transform, opacity',
             transform: 'translate3d(0,0,0)',
-            // Aumentado significativamente o raio do brilho (glow)
             boxShadow: `0 0 15px 4px ${p.color}, 0 0 30px 8px ${p.color}44`,
             animation: `
               wander-firefly ${p.duration}s infinite ease-in-out ${p.delay}s,
@@ -47,8 +46,8 @@ const Fireflies = () => {
         }
 
         @keyframes twinkle-firefly {
-          0%, 100% { opacity: 0.4; } /* Aumentada a opacidade mínima para não sumirem tanto */
-          50% { opacity: 1; }   /* Opacidade máxima total */
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 1; }
         }
       `}</style>
     </div>
