@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Sparkles, Droplets, Wind, ShoppingBag, ArrowRight } from 'lucide-react';
+import { X, Sparkles, Droplets, Wind, ArrowRight } from 'lucide-react';
 import { Ingredient } from '../data/ingredients';
 
 interface IngredientModalProps {
@@ -106,11 +106,10 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-4 w-full bg-stone-100 text-stone-950 py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-all group"
+                  className="flex items-center justify-between gap-4 w-full bg-stone-100 text-stone-950 p-6 md:p-8 rounded-[24px] font-bold text-xs md:text-sm uppercase tracking-[0.3em] hover:bg-white transition-all group shadow-[0_20px_50px_rgba(0,0,0,0.3)] active:scale-[0.98]"
                 >
-                  <ShoppingBag size={18} />
-                  Pedir uma vela desta essência
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <span className="flex-1 text-center">Pedir uma vela desta essência</span>
+                  <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform shrink-0" />
                 </a>
               </div>
             </div>
