@@ -2,7 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { X, Sparkles, Droplets, Wind } from 'lucide-react';
+import { X, Sparkles, Droplets, Wind, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Ingredient } from '../data/ingredients';
 
 interface IngredientModalProps {
@@ -27,6 +27,10 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
   }, [ingredient]);
 
   if (!ingredient) return null;
+
+  const phoneNumber = "5515996842962";
+  const message = `Olá! Estava explorando a Biblioteca de Essências e gostaria de pedir uma vela personalizada com a essência: ${ingredient.name}.`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return createPortal(
     <div 
@@ -77,7 +81,6 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
                 "{ingredient.description}"
               </p>
 
-              {/* Seção de Notas de Perfumaria */}
               {ingredient.notes && (
                 <div className="pt-8 border-t border-stone-800/50 space-y-4">
                   <div className="flex items-center gap-2 text-stone-500">
@@ -94,10 +97,21 @@ const IngredientModal = ({ ingredient, onClose }: IngredientModalProps) => {
                 </div>
               )}
 
-              <div className="pt-8 border-t border-stone-800/50">
+              <div className="pt-8 border-t border-stone-800/50 space-y-8">
                 <p className="text-stone-400 text-sm md:text-base leading-relaxed max-w-prose">
                   Este extrato molecular atua nos receptores olfativos para modular o estado de <span className="text-stone-100 font-medium">{ingredient.benefit.toLowerCase()}</span>.
                 </p>
+
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-4 w-full bg-stone-100 text-stone-950 py-5 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-all group"
+                >
+                  <ShoppingBag size={18} />
+                  Pedir uma vela desta essência
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
           </div>
